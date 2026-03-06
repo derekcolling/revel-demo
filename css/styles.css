@@ -46,9 +46,10 @@ input, select, textarea {
   font-size: 16px !important;
 }
 
-/* Let the big inline dance input keep its size */
-#currentDanceInput {
-  font-size: inherit !important;
+/* Let the big inline dance input keep its size (matches Tailwind text-6xl) */
+input#currentDanceInput {
+  font-size: 3.75rem !important;
+  line-height: 1 !important;
 }
 
 #currentDanceInput::placeholder {
