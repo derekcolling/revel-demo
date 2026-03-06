@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
 
 <head>
     <meta charset="utf-8" />
@@ -27,7 +27,7 @@
     <link href="css/styles.css" rel="stylesheet">
 </head>
 
-<body class="flex flex-col min-h-screen max-w-md mx-auto overflow-x-hidden bg-dark text-white antialiased">
+<body class="flex flex-col min-h-screen max-w-md mx-auto overflow-x-hidden bg-dark text-white antialiased w-full">
 
     <!-- Header -->
     <header class="pt-6 px-6 pb-4 flex justify-between items-center">
@@ -63,7 +63,7 @@
                 <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-2">Set Current Dance</p>
                 <div class="flex gap-2">
                     <input type="text" id="currentDanceInput" placeholder="Dance # on stage"
-                        class="bg-dark border border-gray-700 rounded-xl px-4 py-2.5 flex-1 text-sm focus:outline-none focus:border-neonGreen transition-colors"
+                        class="bg-dark border border-gray-700 rounded-xl px-4 py-2.5 flex-1 min-w-0 text-sm focus:outline-none focus:border-neonGreen transition-colors"
                         inputmode="text">
                     <button id="setCurrentBtn"
                         class="bg-neonGreen text-dark font-bold px-5 rounded-xl hover:shadow-[0_0_20px_rgba(57,255,20,0.3)] active:scale-95 transition-all">
@@ -79,7 +79,7 @@
                 <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-2">Track a Dance</p>
                 <div class="flex gap-2">
                     <input type="text" id="danceTrackInput" placeholder="Search by #, name, or studio"
-                        class="bg-dark border border-gray-700 rounded-xl px-4 py-2.5 flex-1 text-sm focus:outline-none focus:border-electricBlue transition-colors"
+                        class="bg-dark border border-gray-700 rounded-xl px-4 py-2.5 flex-1 min-w-0 text-sm focus:outline-none focus:border-electricBlue transition-colors"
                         autocomplete="off">
                     <button id="addTrackBtn"
                         class="bg-electricBlue text-dark font-bold px-5 rounded-xl hover:bg-cyan-300 active:scale-95 transition-all text-lg">+</button>
