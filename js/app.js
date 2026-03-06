@@ -288,7 +288,7 @@ function updateCurrentDance(key) {
     currentDanceKey = key;
     localStorage.setItem('danceTrack_currentDance', key);
 
-    currentDisplay.textContent = '#' + key;
+    currentDisplay.textContent = key;
 
     const data = getDance(key);
     if (data) {
