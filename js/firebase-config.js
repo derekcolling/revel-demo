@@ -4,13 +4,13 @@ import { getDatabase, ref, onValue, set, get } from "https://www.gstatic.com/fir
 
 // TODO: Replace with your app's Firebase project configuration
 const firebaseConfig = {
-    // apiKey: "YOUR_API_KEY",
-    // authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    // databaseURL: "https://YOUR_PROJECT_ID-default-rtdb.firebaseio.com",
-    // projectId: "YOUR_PROJECT_ID",
-    // storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    // messagingSenderId: "123456789",
-    // appId: "1:123456789:web:abcdef123456"
+    apiKey: "AIzaSyDFkit8svOP5PVoMBwqCGmI0qLQK7BOZKU",
+    authDomain: "revel-ec770.firebaseapp.com",
+    databaseURL: "https://revel-ec770-default-rtdb.firebaseio.com",
+    projectId: "revel-ec770",
+    storageBucket: "revel-ec770.firebasestorage.app",
+    messagingSenderId: "206922392146",
+    appId: "1:206922392146:web:4b531dfd4c06107575758b"
 };
 
 let app, database;

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Stream Watcher — Revel Dance Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Manrope', 'sans-serif'] },
+                    colors: {
+                        dark: '#121212',
+                        surface: '#1E1E1E',
+                        neonGreen: '#39FF14',
+                        electricBlue: '#00E5FF',
+                        glowOrange: '#FF4D00'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .pulse-ring {
+            animation: pulseRing 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseRing {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 0 12px rgba(0, 229, 255, 0);
+            }
+        }
+
+        .scan-line {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00E5FF, transparent);
+            animation: scan 2s ease-in-out infinite;
+        }
+
+        @keyframes scan {
+            0% {
+                top: 0;
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+
+        #log::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        #log::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen max-w-3xl mx-auto bg-dark text-white antialiased w-full p-6">
+
+    <!-- Header -->
+    <header class="mb-6">
+        <div class="flex items-center justify-between">
+            <div>
+                <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Admin Tool</span>
+                <h1 class="text-xl font-bold">🎥 Stream Watcher</h1>
+            </div>
+            <a href="index.html" class="text-xs text-gray-500 hover:text-electricBlue transition-colors">← Back to
+                Tracker</a>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">Share your live stream tab → OCR reads the dance number → Firebase updates
+            all parents.</p>
+    </header>
+
+    <main class="space-y-6 flex-grow">
+
+        <!-- Controls -->
+        <section class="bg-surface rounded-2xl p-5 border border-white/5">
+            <div class="flex items-center gap-3 flex-wrap">
+                <button id="startBtn"
+                    class="bg-electricBlue text-dark font-bold px-6 py-2.5 rounded-xl hover:bg-cyan-300 active:scale-95 transition-all text-sm">
+                    ▶ Start Watching
+                </button>
+                <button id="stopBtn"
+                    class="bg-surface text-gray-400 font-bold px-6 py-2.5 rounded-xl border border-gray-700 hover:text-white hover:border-gray-500 active:scale-95 transition-all text-sm hidden">
+                    ⏹ Stop
+                </button>
+                <div class="flex items-center gap-2 ml-auto">
+                    <label for="intervalInput" class="text-xs text-gray-500">Scan every</label>
+                    <input id="intervalInput" type="number" value="5" min="2" max="30" step="1"
+                        class="w-14 bg-dark border border-gray-700 rounded-lg px-2 py-1 text-sm text-center focus:outline-none focus:border-electricBlue">
+                    <span class="text-xs text-gray-500">sec</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Status Panel -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Detected Number -->
+            <div class="bg-surface rounded-2xl p-5 border border-white/5 text-center">
+                <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-2">Detected Number</p>
+                <div id="detectedNumber" class="text-5xl font-black text-gray-700 leading-none">---</div>
+                <p id="detectedRoutine" class="text-xs text-gray-500 mt-2 truncate">&nbsp;</p>
+            </div>
+            <!-- Status -->
+            <div class="bg-surface rounded-2xl p-5 border border-white/5 text-center">
+                <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-2">Status</p>
+                <div id="statusIndicator" class="inline-flex items-center gap-2 mt-2">
+                    <span id="statusDot" class="w-3 h-3 rounded-full bg-gray-700"></span>
+                    <span id="statusText" class="text-sm font-bold text-gray-500">Idle</span>
+                </div>
+                <p id="lastUpdate" class="text-[10px] text-gray-600 mt-3">&nbsp;</p>
+            </div>
+            <!-- Manual Override -->
+            <div class="bg-surface rounded-2xl p-5 border border-white/5 text-center">
+                <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-2">Manual Override</p>
+                <div class="flex gap-2 mt-2">
+                    <input id="manualInput" type="text" placeholder="#" maxlength="5"
+                        class="bg-dark border border-gray-700 rounded-xl px-3 py-2 flex-1 min-w-0 text-sm text-center focus:outline-none focus:border-electricBlue transition-colors"
+                        inputmode="text">
+                    <button id="manualBtn"
+                        class="bg-glowOrange text-white font-bold px-4 rounded-xl hover:bg-orange-600 active:scale-95 transition-all text-sm">Set</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Preview + OCR Region -->
+        <section class="bg-surface rounded-2xl p-5 border border-white/5">
+            <div class="flex items-center justify-between mb-3">
+                <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Stream Preview</p>
+                <p id="ocrConfidence" class="text-[10px] text-gray-600">&nbsp;</p>
+            </div>
+            <div
+                class="relative rounded-xl overflow-hidden bg-dark border border-gray-800 aspect-video flex items-center justify-center">
+                <video id="preview" autoplay playsinline muted class="w-full h-full object-contain hidden"></video>
+                <div id="previewPlaceholder" class="text-gray-700 text-sm text-center px-8">
+                    Click <strong class="text-gray-500">Start Watching</strong> and share the tab with the live stream
+                </div>
+                <div id="scanOverlay" class="absolute inset-0 pointer-events-none hidden">
+                    <div class="scan-line"></div>
+                </div>
+            </div>
+            <!-- Hidden canvas for frame capture -->
+            <canvas id="captureCanvas" class="hidden"></canvas>
+            <canvas id="cropCanvas" class="hidden"></canvas>
+        </section>
+
+        <!-- Activity Log -->
+        <section class="bg-surface rounded-2xl p-5 border border-white/5">
+            <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-3">Activity Log</p>
+            <div id="log" class="h-32 overflow-y-auto text-xs text-gray-500 space-y-1 font-mono"></div>
+        </section>
+
+    </main>
+
+    <p class="text-gray-700 text-xs text-center py-4 mt-4">Stream Watcher — Admin only. Parents use the main tracker
+        app.</p>
+
+    <!-- Tesseract.js -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+    <!-- Firebase -->
+    <script type="module">
+        import { database, ref, set, get } from './js/firebase-config.js';
+        import { loadSchedule, getDance, getPosition } from './js/schedule.js';
+
+        // --- DOM refs ---
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const intervalInput = document.getElementById('intervalInput');
+        const preview = document.getElementById('preview');
+        const previewPlaceholder = document.getElementById('previewPlaceholder');
+        const scanOverlay = document.getElementById('scanOverlay');
+        const captureCanvas = document.getElementById('captureCanvas');
+        const cropCanvas = document.getElementById('cropCanvas');
+        const detectedNumber = document.getElementById('detectedNumber');
+        const detectedRoutine = document.getElementById('detectedRoutine');
+        const statusDot = document.getElementById('statusDot');
+        const statusText = document.getElementById('statusText');
+        const lastUpdate = document.getElementById('lastUpdate');
+        const ocrConfidence = document.getElementById('ocrConfidence');
+        const logEl = document.getElementById('log');
+        const manualInput = document.getElementById('manualInput');
+        const manualBtn = document.getElementById('manualBtn');
+
+        let stream = null;
+        let scanTimer = null;
+        let currentDetected = null;
+        let worker = null;
+        let pendingCandidate = null;
+        let pendingCount = 0;
+        const CONFIRM_THRESHOLD = 3;  // require 3 consecutive reads for big jumps
+        const NEARBY_RANGE = 15;      // positions within ±15 are accepted immediately
+
+        // --- Logging ---
+        function log(msg, type = 'info') {
+            const time = new Date().toLocaleTimeString();
+            const colors = { info: 'text-gray-500', success: 'text-neonGreen', warn: 'text-yellow-400', error: 'text-red-400' };
+            const line = document.createElement('div');
+            line.className = colors[type] || colors.info;
+            line.textContent = `[${time}] ${msg}`;
+            logEl.prepend(line);
+            // Keep log trimmed
+            while (logEl.children.length > 50) logEl.removeChild(logEl.lastChild);
+        }
+
+        // --- Status helpers ---
+        function setStatus(text, color) {
+            statusText.textContent = text;
+            statusDot.className = `w-3 h-3 rounded-full bg-${color}`;
+            if (color === 'electricBlue') statusDot.classList.add('pulse-ring');
+            else statusDot.classList.remove('pulse-ring');
+        }
+
+        // --- Push to Firebase ---
+        function pushToFirebase(danceKey) {
+            if (database) {
+                const danceRef = ref(database, 'competitions/revel2026/currentDance');
+                set(danceRef, danceKey)
+                    .then(() => log(`Pushed #${danceKey} to Firebase`, 'success'))
+                    .catch(err => log(`Firebase push failed: ${err.message}`, 'error'));
+            } else {
+                log('Firebase not configured — saving locally only', 'warn');
+                localStorage.setItem('danceTrack_currentDance', danceKey);
+            }
+        }
+
+        // --- Sequence-aware validation ---
+        function isNearby(newKey) {
+            if (!currentDetected) return true; // no previous, accept anything
+            const curPos = getPosition(currentDetected);
+            const newPos = getPosition(newKey);
+            if (curPos === -1 || newPos === -1) return false;
+            return Math.abs(newPos - curPos) <= NEARBY_RANGE;
+        }
+
+        function validateAndUpdate(danceKey) {
+            if (danceKey === currentDetected) {
+                // Same as current — reset any pending candidate
+                pendingCandidate = null;
+                pendingCount = 0;
+                return;
+            }
+
+            if (isNearby(danceKey)) {
+                // Close to current position — accept immediately
+                log(`#${danceKey} is nearby, accepting immediately`, 'success');
+                pendingCandidate = null;
+                pendingCount = 0;
+                commitDetected(danceKey);
+            } else {
+                // Big jump — require multiple consecutive reads
+                if (pendingCandidate === danceKey) {
+                    pendingCount++;
+                    log(`#${danceKey} seen ${pendingCount}/${CONFIRM_THRESHOLD} times (big jump from #${currentDetected})`, 'warn');
+                    if (pendingCount >= CONFIRM_THRESHOLD) {
+                        log(`Confirmed #${danceKey} after ${CONFIRM_THRESHOLD} reads`, 'success');
+                        pendingCandidate = null;
+                        pendingCount = 0;
+                        commitDetected(danceKey);
+                    }
+                } else {
+                    // New candidate, start counting
+                    pendingCandidate = danceKey;
+                    pendingCount = 1;
+                    log(`#${danceKey} is far from #${currentDetected} — need ${CONFIRM_THRESHOLD} reads to confirm (1/${CONFIRM_THRESHOLD})`, 'warn');
+                }
+            }
+        }
+
+        // --- Update detected display ---
+        function commitDetected(danceKey) {
+            currentDetected = danceKey;
+            detectedNumber.textContent = danceKey;
+            detectedNumber.className = 'text-5xl font-black text-electricBlue leading-none';
+
+            const data = getDance(danceKey);
+            detectedRoutine.textContent = data ? `${data.routine_title} — ${data.studio}` : 'Not in schedule';
+
+            lastUpdate.textContent = `Last update: ${new Date().toLocaleTimeString()}`;
+            pushToFirebase(danceKey);
+        }
+
+        // --- OCR Processing ---
+        async function initWorker() {
+            if (worker) return;
+            log('Loading Tesseract OCR engine...');
+            setStatus('Loading OCR...', 'yellow-400');
+
+            worker = await Tesseract.createWorker('eng', 1, {
+                logger: () => { } // suppress verbose logging
+            });
+
+            // Optimize for this specific use case: single line of text with numbers
+            await worker.setParameters({
+                tessedit_char_whitelist: '#0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz -',
+                tessedit_pageseg_mode: Tesseract.PSM.SINGLE_BLOCK,
+            });
+
+            log('OCR engine ready', 'success');
+        }
+
+        async function captureAndOCR() {
+            if (!stream || !stream.active) {
+                stopWatching();
+                return;
+            }
+
+            const video = preview;
+            if (video.readyState < 2) return; // not ready yet
+
+            // Capture full frame
+            const vw = video.videoWidth;
+            const vh = video.videoHeight;
+            captureCanvas.width = vw;
+            captureCanvas.height = vh;
+            const ctx = captureCanvas.getContext('2d');
+            ctx.drawImage(video, 0, 0, vw, vh);
+
+            // Crop the bottom 15% where the overlay banner is
+            // and only the left 60% where the number appears (avoids right-side noise)
+            const cropTop = Math.floor(vh * 0.85);
+            const cropHeight = vh - cropTop;
+            const cropWidth = Math.floor(vw * 0.60);
+            cropCanvas.width = cropWidth;
+            cropCanvas.height = cropHeight;
+            const cropCtx = cropCanvas.getContext('2d');
+            cropCtx.drawImage(captureCanvas, 0, cropTop, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
+
+            // Pre-process: isolate white/light text on dark overlay background
+            const imageData = cropCtx.getImageData(0, 0, cropWidth, cropHeight);
+            const data = imageData.data;
+            for (let i = 0; i < data.length; i += 4) {
+                const r = data[i], g = data[i + 1], b = data[i + 2];
+                // Convert to grayscale
+                const gray = r * 0.299 + g * 0.587 + b * 0.114;
+                // Filter: keep only bright white/light text, reject colored stage lights
+                // White text has high brightness AND low color saturation
+                const maxC = Math.max(r, g, b);
+                const minC = Math.min(r, g, b);
+                const saturation = maxC > 0 ? (maxC - minC) / maxC : 0;
+                // Accept: high brightness + low saturation (white/gray text)
+                // Reject: colored light (high saturation) or dark background
+                const isText = gray > 120 && saturation < 0.4;
+                const val = isText ? 255 : 0;
+                data[i] = val;
+                data[i + 1] = val;
+                data[i + 2] = val;
+            }
+            cropCtx.putImageData(imageData, 0, 0);
+
+            // Scale up 2x for better OCR accuracy on small text
+            const scaledCanvas = document.createElement('canvas');
+            scaledCanvas.width = cropWidth * 2;
+            scaledCanvas.height = cropHeight * 2;
+            const scaledCtx = scaledCanvas.getContext('2d');
+            scaledCtx.imageSmoothingEnabled = false;
+            scaledCtx.drawImage(cropCanvas, 0, 0, cropWidth * 2, cropHeight * 2);
+
+            // Show scan animation
+            scanOverlay.classList.remove('hidden');
+            setStatus('Scanning...', 'electricBlue');
+
+            try {
+                const result = await worker.recognize(scaledCanvas);
+                const text = result.data.text;
+                const confidence = result.data.confidence;
+
+                ocrConfidence.textContent = `Confidence: ${Math.round(confidence)}%`;
+                log(`OCR raw: "${text.trim().substring(0, 80)}" (${Math.round(confidence)}%)`);
+
+                // Extract dance number: look for #NNN pattern
+                const hashMatch = text.match(/#\s*(\d+[A-Za-z]?)/);
+                if (hashMatch) {
+                    const num = hashMatch[1].toUpperCase();
+                    log(`Detected: #${num}`, 'success');
+                    validateAndUpdate(num);
+                    setStatus('Watching', 'neonGreen');
+                } else {
+                    // Fallback: look for any 2-3 digit number near the start
+                    const numMatch = text.match(/\b(\d{2,3}[A-Za-z]?)\b/);
+                    if (numMatch) {
+                        const num = numMatch[1].toUpperCase();
+                        // Verify it's a valid dance in the schedule
+                        if (getPosition(num) !== -1) {
+                            log(`Fallback detected: #${num}`, 'success');
+                            validateAndUpdate(num);
+                            setStatus('Watching', 'neonGreen');
+                        } else {
+                            log(`Found number ${num} but not in schedule`, 'warn');
+                            setStatus('Watching (no match)', 'yellow-400');
+                        }
+                    } else {
+                        log('No dance number found in frame');
+                        setStatus('Watching (scanning)', 'electricBlue');
+                    }
+                }
+            } catch (err) {
+                log(`OCR error: ${err.message}`, 'error');
+                setStatus('OCR Error', 'red-400');
+            }
+
+            scanOverlay.classList.add('hidden');
+        }
+
+        // --- Start/Stop ---
+        async function startWatching() {
+            try {
+                stream = await navigator.mediaDevices.getDisplayMedia({
+                    video: { cursor: 'never' },
+                    audio: false
+                });
+
+                preview.srcObject = stream;
+                preview.classList.remove('hidden');
+                previewPlaceholder.classList.add('hidden');
+
+                startBtn.classList.add('hidden');
+                stopBtn.classList.remove('hidden');
+
+                log('Screen sharing started', 'success');
+                setStatus('Initializing...', 'yellow-400');
+
+                await initWorker();
+
+                const interval = Math.max(2, parseInt(intervalInput.value) || 5) * 1000;
+                log(`Scanning every ${interval / 1000}s`);
+                setStatus('Watching', 'neonGreen');
+
+                // Initial scan after a short delay for video to load
+                setTimeout(() => captureAndOCR(), 1500);
+                scanTimer = setInterval(captureAndOCR, interval);
+
+                // Handle user stopping share via browser UI
+                stream.getVideoTracks()[0].addEventListener('ended', stopWatching);
+
+            } catch (err) {
+                if (err.name === 'NotAllowedError') {
+                    log('Screen share cancelled by user', 'warn');
+                } else {
+                    log(`Error: ${err.message}`, 'error');
+                }
+            }
+        }
+
+        function stopWatching() {
+            if (scanTimer) { clearInterval(scanTimer); scanTimer = null; }
+            if (stream) {
+                stream.getTracks().forEach(t => t.stop());
+                stream = null;
+            }
+            preview.classList.add('hidden');
+            previewPlaceholder.classList.remove('hidden');
+            scanOverlay.classList.add('hidden');
+            startBtn.classList.remove('hidden');
+            stopBtn.classList.add('hidden');
+            setStatus('Stopped', 'gray-500');
+            log('Stopped watching');
+        }
+
+        // --- Manual override ---
+        manualBtn.addEventListener('click', () => {
+            const val = manualInput.value.trim().replace('#', '').toUpperCase();
+            if (val && getPosition(val) !== -1) {
+                log(`Manual override: #${val}`, 'warn');
+                commitDetected(val);
+                manualInput.value = '';
+            } else if (val) {
+                log(`Manual override #${val} not found in schedule`, 'error');
+            }
+        });
+        manualInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') manualBtn.click();
+        });
+
+        // --- Init ---
+        async function init() {
+            await loadSchedule();
+            log('Schedule loaded');
+
+            startBtn.addEventListener('click', startWatching);
+            stopBtn.addEventListener('click', stopWatching);
+
+            // Restore last detected from localStorage
+            const saved = localStorage.getItem('danceTrack_currentDance');
+            if (saved) {
+                currentDetected = saved;
+                detectedNumber.textContent = saved;
+                detectedNumber.className = 'text-5xl font-black text-gray-400 leading-none';
+                const data = getDance(saved);
+                detectedRoutine.textContent = data ? `${data.routine_title} — ${data.studio}` : '';
+            }
+
+            log('Stream Watcher ready. Click Start to begin.', 'success');
+        }
+
+        init();
+    </script>
+</body>
+
+</html>
