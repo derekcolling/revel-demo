@@ -183,47 +183,54 @@ function renderTrackedList() {
 
         let cardBorder = 'border-white/5';
         let cardBg = 'bg-surface/50';
-        let statusText = '';
-        let statusColor = 'text-gray-500';
+        let badgeText = '';
+        let badgeLabel = '';
+        let badgeColor = 'text-gray-500';
+        let badgeBg = 'bg-dark';
+        let badgeBorder = 'border-gray-800';
         let pulseHtml = '';
-        let numberBg = 'bg-dark';
-        let numberBorder = 'border-gray-800';
         let numberColor = 'text-white';
 
         if (away === null) {
-            statusText = 'WAITING...';
+            badgeText = '?';
+            badgeLabel = 'WAITING';
         } else if (away < 0) {
-            statusText = 'COMPLETED';
-            statusColor = 'text-gray-600';
+            badgeText = '✓';
+            badgeLabel = 'DONE';
+            badgeColor = 'text-gray-600';
             numberColor = 'text-gray-600';
         } else if (away === 0) {
             cardBorder = 'border-electricBlue/30';
             cardBg = 'card-glow-blue';
-            statusText = 'ON STAGE NOW';
-            statusColor = 'text-electricBlue';
-            pulseHtml = '<div class="w-2 h-2 rounded-full animate-pulse bg-electricBlue"></div>';
-            numberBg = 'bg-electricBlue/20';
-            numberBorder = 'border-electricBlue/30';
+            badgeText = 'NOW';
+            badgeLabel = 'ON STAGE';
+            badgeColor = 'text-electricBlue';
+            badgeBg = 'bg-electricBlue/20';
+            badgeBorder = 'border-electricBlue/30';
+            pulseHtml = '<div class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full animate-pulse bg-electricBlue"></div>';
             numberColor = 'text-electricBlue';
         } else if (away <= 2) {
             cardBorder = 'border-glowOrange/30';
             cardBg = 'card-glow-orange';
-            statusText = away === 1 ? 'UP NEXT!' : '2 AWAY';
-            statusColor = 'text-glowOrange';
-            pulseHtml = '<div class="w-2 h-2 rounded-full animate-pulse bg-glowOrange"></div>';
-            numberBg = 'bg-glowOrange/20';
-            numberBorder = 'border-glowOrange/30';
+            badgeText = String(away);
+            badgeLabel = away === 1 ? 'NEXT' : 'AWAY';
+            badgeColor = 'text-glowOrange';
+            badgeBg = 'bg-glowOrange/20';
+            badgeBorder = 'border-glowOrange/30';
+            pulseHtml = '<div class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full animate-pulse bg-glowOrange"></div>';
             numberColor = 'text-glowOrange';
         } else if (away <= 5) {
             cardBorder = 'border-neonGreen/20';
             cardBg = 'card-glow-green';
-            statusText = `${away} AWAY`;
-            statusColor = 'text-neonGreen';
-            numberBg = 'bg-neonGreen/10';
-            numberBorder = 'border-neonGreen/20';
+            badgeText = String(away);
+            badgeLabel = 'AWAY';
+            badgeColor = 'text-neonGreen';
+            badgeBg = 'bg-neonGreen/10';
+            badgeBorder = 'border-neonGreen/20';
             numberColor = 'text-neonGreen';
         } else {
-            statusText = `${away} AWAY`;
+            badgeText = String(away);
+            badgeLabel = 'AWAY';
         }
 
         const title = data ? data.routine_title : 'Unknown Routine';
@@ -232,18 +239,19 @@ function renderTrackedList() {
         const card = document.createElement('div');
         card.className = `rounded-2xl p-4 flex items-center gap-3 border ${cardBorder} ${cardBg} transition-all`;
         card.innerHTML = `
-            <div class="w-12 h-12 rounded-xl ${numberBg} flex items-center justify-center border ${numberBorder} shrink-0">
-                <span class="text-sm font-black ${numberColor}">${key}</span>
-            </div>
             <div class="flex-1 min-w-0">
-                <h4 class="font-bold text-sm truncate text-white">${title}</h4>
-                <p class="text-xs text-gray-500 truncate">${subtitle}</p>
-                <div class="flex items-center gap-2 mt-1">
-                    ${pulseHtml}
-                    <span class="text-[10px] uppercase font-black tracking-wider ${statusColor}">${statusText}</span>
+                <div class="flex items-center gap-2 mb-0.5">
+                    <span class="text-xs font-black ${numberColor}">${key}</span>
+                    <h4 class="font-bold text-sm truncate text-white">${title}</h4>
                 </div>
+                <p class="text-xs text-gray-500 truncate">${subtitle}</p>
             </div>
-            <button onclick="removeTracked('${key}')" class="w-8 h-8 rounded-full bg-dark/50 text-gray-600 hover:text-red-400 flex items-center justify-center active:scale-90 transition-all text-lg shrink-0">&times;</button>
+            <div class="relative shrink-0 w-14 h-14 rounded-xl ${badgeBg} border ${badgeBorder} flex flex-col items-center justify-center">
+                ${pulseHtml}
+                <span class="text-2xl font-black leading-none ${badgeColor}">${badgeText}</span>
+                <span class="text-[8px] font-bold uppercase tracking-wider ${badgeColor} mt-0.5">${badgeLabel}</span>
+            </div>
+            <button onclick="removeTracked('${key}')" class="w-7 h-7 rounded-full text-gray-700 hover:text-red-400 flex items-center justify-center active:scale-90 transition-all text-sm shrink-0">&times;</button>
         `;
         trackedContainer.appendChild(card);
     });
