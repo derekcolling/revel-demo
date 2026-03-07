@@ -345,14 +345,16 @@
             cursor: pointer;
             flex-shrink: 0;
             -webkit-tap-highlight-color: transparent;
-            transition: all 0.2s;
             align-self: center;
         }
 
         .track-btn.tracked {
-            background: #254EF0;
-            color: #fff;
-            border-color: #254EF0;
+            padding: 4px 8px;
+            border: none;
+            background: none;
+            color: #555;
+            font-size: 18px;
+            font-weight: 400;
         }
 
         .pre-start-msg {
@@ -709,7 +711,7 @@
 
             const trackBtn = document.createElement('button');
             trackBtn.className = 'track-btn' + (isHighlighted ? ' tracked' : '');
-            trackBtn.textContent = isHighlighted ? 'Tracking' : 'Track';
+            trackBtn.textContent = isHighlighted ? '✕' : 'Track';
 
             danceEl.appendChild(num);
             danceEl.appendChild(info);
@@ -727,7 +729,7 @@
                     highlightedDances = highlightedDances.filter(id => id !== key);
                 }
                 localStorage.setItem('highlightedDances', JSON.stringify(highlightedDances));
-                trackBtn.textContent = isNowHighlighted ? 'Tracking' : 'Track';
+                trackBtn.textContent = isNowHighlighted ? '✕' : 'Track';
                 trackBtn.classList.toggle('tracked', isNowHighlighted);
 
                 // Update count and badges
