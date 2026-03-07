@@ -605,7 +605,7 @@
         const adminBar = document.getElementById('adminBar');
         const adminDanceInput = document.getElementById('adminDanceInput');
         const adminSetBtn = document.getElementById('adminSetBtn');
-        const logo = document.querySelector('.logo');
+        const eventInfo = document.querySelector('.event-info');
         const dayTabs = document.querySelectorAll('.day-tab');
 
         // --- Init ---
@@ -983,21 +983,21 @@
         // --- Admin override (long-press logo to toggle) ---
         function setupAdmin() {
             let pressTimer = null;
-            logo.addEventListener('touchstart', () => {
+            eventInfo.addEventListener('touchstart', () => {
                 pressTimer = setTimeout(() => {
                     adminBar.classList.toggle('visible');
                 }, 1000);
             }, { passive: true });
-            logo.addEventListener('touchend', () => clearTimeout(pressTimer), { passive: true });
-            logo.addEventListener('touchcancel', () => clearTimeout(pressTimer), { passive: true });
+            eventInfo.addEventListener('touchend', () => clearTimeout(pressTimer), { passive: true });
+            eventInfo.addEventListener('touchcancel', () => clearTimeout(pressTimer), { passive: true });
             // Desktop: long click
-            logo.addEventListener('mousedown', () => {
+            eventInfo.addEventListener('mousedown', () => {
                 pressTimer = setTimeout(() => {
                     adminBar.classList.toggle('visible');
                 }, 1000);
             });
-            logo.addEventListener('mouseup', () => clearTimeout(pressTimer));
-            logo.addEventListener('mouseleave', () => clearTimeout(pressTimer));
+            eventInfo.addEventListener('mouseup', () => clearTimeout(pressTimer));
+            eventInfo.addEventListener('mouseleave', () => clearTimeout(pressTimer));
 
             adminSetBtn.addEventListener('click', () => {
                 const val = adminDanceInput.value.trim();
