@@ -692,7 +692,7 @@
 
             const meta = document.createElement('div');
             meta.className = 'meta';
-            meta.textContent = dance.studio;
+            meta.textContent = dance.studio + (dance.time ? ` · ${dance.time}` : '');
 
             const cat = dance.category || '';
             const categoryInfo = document.createElement('div');
