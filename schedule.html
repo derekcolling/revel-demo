@@ -387,6 +387,43 @@
             color: #e5e5e5;
         }
 
+        .swipe-hint {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 16px;
+            margin: 8px 16px;
+            background: rgba(37, 78, 240, 0.08);
+            border: 1px solid rgba(37, 78, 240, 0.2);
+            border-radius: 10px;
+            color: #888;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .swipe-hint .arrow {
+            font-size: 16px;
+            color: #254EF0;
+            animation: swipe-anim 2s ease-in-out infinite;
+        }
+
+        @keyframes swipe-anim {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(-6px); }
+        }
+
+        .swipe-hint .dismiss {
+            margin-left: 8px;
+            background: none;
+            border: none;
+            color: #555;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 0 4px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         .current-label {
             display: none;
             font-size: 8px;
@@ -666,6 +703,16 @@
                     msg.className = 'pre-start-msg';
                     msg.innerHTML = 'Competition starts at <strong>2:30 PM</strong>';
                     listEl.appendChild(msg);
+                }
+                if (!localStorage.getItem('swipeHintDismissed')) {
+                    const hint = document.createElement('div');
+                    hint.className = 'swipe-hint';
+                    hint.innerHTML = '<span class="arrow">←</span> Swipe any dance left to save it & track how close it is <button class="dismiss">✕</button>';
+                    hint.querySelector('.dismiss').addEventListener('click', () => {
+                        localStorage.setItem('swipeHintDismissed', '1');
+                        hint.remove();
+                    });
+                    listEl.appendChild(hint);
                 }
                 listEl.appendChild(fragment);
             }
