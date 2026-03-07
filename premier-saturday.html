@@ -920,24 +920,23 @@
 
                 if (away < 0) return; // past dances are hidden from the list
 
+                const badge = document.createElement('span');
                 if (away === 0) {
-                    const badge = document.createElement('span');
                     badge.className = 'proximity-badge now';
                     badge.textContent = 'Now';
-                    danceEl.appendChild(badge);
                 } else if (away <= 2) {
                     danceEl.classList.add('soon-1-2');
-                    const badge = document.createElement('span');
                     badge.className = 'proximity-badge urgent';
                     badge.textContent = away === 1 ? 'Next' : '2 away';
-                    danceEl.appendChild(badge);
                 } else if (away <= 5) {
                     danceEl.classList.add('soon-3-5');
-                    const badge = document.createElement('span');
                     badge.className = 'proximity-badge soon';
                     badge.textContent = `${away} away`;
-                    danceEl.appendChild(badge);
+                } else {
+                    badge.className = 'proximity-badge';
+                    badge.textContent = `${away} away`;
                 }
+                danceEl.appendChild(badge);
             });
         }
 
