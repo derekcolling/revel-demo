@@ -157,6 +157,57 @@
             border-color: rgba(37, 78, 240, 0.4);
         }
 
+        /* Search */
+        .search-wrap {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .search-wrap input {
+            width: 100%;
+            padding: 8px 14px 8px 34px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: #e5e5e5;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 500;
+            outline: none;
+        }
+
+        .search-wrap input::placeholder {
+            color: #555;
+        }
+
+        .search-wrap input:focus {
+            border-color: rgba(37, 78, 240, 0.5);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 11px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #555;
+            pointer-events: none;
+        }
+
+        .search-clear {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #555;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 4px 6px;
+            display: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         .dance-count {
             font-size: 11px;
             color: #555;
@@ -446,6 +497,16 @@
             <button class="day-tab" data-day="Sunday">Sunday</button>
             <button class="premier-toggle" id="premierToggle">Premier</button>
         </nav>
+
+        <!-- Search -->
+        <div class="search-wrap">
+            <svg class="search-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="8" stroke-width="2"/>
+                <path d="M21 21l-4.35-4.35" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <input type="text" id="searchInput" placeholder="Search dances, studios..." autocomplete="off">
+            <button class="search-clear" id="searchClear">✕</button>
+        </div>
     </header>
 
     <div class="dance-count" id="danceCount" style="padding: 8px 20px 4px"></div>
@@ -466,6 +527,7 @@
         let highlightedDances = JSON.parse(localStorage.getItem('highlightedDances') || '[]');
         let activeDay = 'Saturday';
         let premierOnly = false;
+        let searchQuery = '';
         let currentSwipedRow = null;
         let currentRowObserver = null;
 
@@ -478,6 +540,8 @@
         const liveStreamFrame = document.getElementById('liveStreamFrame');
         const liveChevron = document.getElementById('liveChevron');
         const premierToggle = document.getElementById('premierToggle');
+        const searchInput = document.getElementById('searchInput');
+        const searchClear = document.getElementById('searchClear');
         const dayTabs = document.querySelectorAll('.day-tab');
 
         // --- Init ---
@@ -496,6 +560,7 @@
             setupLiveStream();
             setupDayTabs();
             setupPremierToggle();
+            setupSearch();
             setupJumpButton();
         }
 
@@ -510,6 +575,11 @@
                 const dance = getDance(key);
                 if (!dance || dance.day !== activeDay) continue;
                 if (premierOnly && !dance.studio.toLowerCase().includes('premier dance')) continue;
+                if (searchQuery) {
+                    const q = searchQuery;
+                    const haystack = `${key} ${dance.routine_title} ${dance.studio} ${dance.category || ''}`.toLowerCase();
+                    if (!haystack.includes(q)) continue;
+                }
 
                 // Hide dances that have already performed
                 if (currentDanceKey) {
@@ -821,6 +891,21 @@
             premierToggle.addEventListener('click', () => {
                 premierOnly = !premierOnly;
                 premierToggle.classList.toggle('active', premierOnly);
+                renderList();
+            });
+        }
+
+        // --- Search ---
+        function setupSearch() {
+            searchInput.addEventListener('input', () => {
+                searchQuery = searchInput.value.trim().toLowerCase();
+                searchClear.style.display = searchQuery ? 'block' : 'none';
+                renderList();
+            });
+            searchClear.addEventListener('click', () => {
+                searchInput.value = '';
+                searchQuery = '';
+                searchClear.style.display = 'none';
                 renderList();
             });
         }
