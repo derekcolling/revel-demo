@@ -1,0 +1,4237 @@
+{
+  "competitionInfo": {
+    "name": "Revel Dance Competition",
+    "status": "running",
+    "currentDance": "1"
+  },
+  "dances": {
+    "1": {
+      "day": "Thursday",
+      "time": "4:00 PM",
+      "category": "Teen Contemporary Duo/Trio",
+      "routine_title": "Madness",
+      "studio": "K & Co. Dance Studio"
+    },
+    "2": {
+      "day": "Thursday",
+      "time": "4:04 PM",
+      "category": "Teen Ballet Duo/Trio",
+      "routine_title": "Uncovered",
+      "studio": "Premier Dance"
+    },
+    "3": {
+      "day": "Thursday",
+      "time": "4:06 PM",
+      "category": "Teen Jazz Duo/Trio",
+      "routine_title": "Struttin",
+      "studio": "DANCE est Joie"
+    },
+    "4": {
+      "day": "Thursday",
+      "time": "4:09 PM",
+      "category": "Teen Jazz Duo/Trio",
+      "routine_title": "Not About You",
+      "studio": "Premier Dance"
+    },
+    "5": {
+      "day": "Thursday",
+      "time": "4:12 PM",
+      "category": "Teen Jazz Duo/Trio",
+      "routine_title": "My Egyptian",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "6": {
+      "day": "Thursday",
+      "time": "4:15 PM",
+      "category": "Teen Tap Duo/Trio",
+      "routine_title": "Great Balls of Fire",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "7": {
+      "day": "Thursday",
+      "time": "4:17 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Windmills of your Mind",
+      "studio": "Radiant Dance Studio"
+    },
+    "8": {
+      "day": "Thursday",
+      "time": "4:20 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "You're the Only One",
+      "studio": "Radiant Dance Studio"
+    },
+    "9": {
+      "day": "Thursday",
+      "time": "4:23 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Keep Breathing",
+      "studio": "Radiant Dance Studio"
+    },
+    "10": {
+      "day": "Thursday",
+      "time": "4:26 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Backing Down",
+      "studio": "Radiant Dance Studio"
+    },
+    "11": {
+      "day": "Thursday",
+      "time": "4:29 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "For Keeps",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "12": {
+      "day": "Thursday",
+      "time": "4:31 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Icarian",
+      "studio": "Premier Dance"
+    },
+    "13": {
+      "day": "Thursday",
+      "time": "4:34 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Don't Let Me Be Misunderstood",
+      "studio": "DANCE est Joie"
+    },
+    "14": {
+      "day": "Thursday",
+      "time": "4:37 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "Under Pressure",
+      "studio": "DANCE est Joie"
+    },
+    "15": {
+      "day": "Thursday",
+      "time": "4:40 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "Let Me Think About It",
+      "studio": "Radiant Dance Studio"
+    },
+    "16": {
+      "day": "Thursday",
+      "time": "4:43 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "Work",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "17": {
+      "day": "Thursday",
+      "time": "4:45 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "SCRATCH",
+      "studio": "Premier Dance"
+    },
+    "18": {
+      "day": "Thursday",
+      "time": "4:47 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "SCRATCH",
+      "studio": "Premier Dance"
+    },
+    "19": {
+      "day": "Thursday",
+      "time": "4:50 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Anchor",
+      "studio": "Premier Dance"
+    },
+    "20": {
+      "day": "Thursday",
+      "time": "4:53 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Keep the Rain",
+      "studio": "Premier Dance"
+    },
+    "21": {
+      "day": "Thursday",
+      "time": "4:56 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "I'm Lonely",
+      "studio": "Premier Dance"
+    },
+    "22": {
+      "day": "Thursday",
+      "time": "4:58 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Apologize",
+      "studio": "Premier Dance"
+    },
+    "23": {
+      "day": "Thursday",
+      "time": "9:58 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Cellophane",
+      "studio": "Premier Dance"
+    },
+    "24": {
+      "day": "Thursday",
+      "time": "5:01 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "SCRATCH",
+      "studio": "Premier Dance"
+    },
+    "25": {
+      "day": "Thursday",
+      "time": "5:03 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "SCRATCH",
+      "studio": "Premier Dance"
+    },
+    "26": {
+      "day": "Thursday",
+      "time": "5:06 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "Take Your Vibes and Go",
+      "studio": "Premier Dance"
+    },
+    "27": {
+      "day": "Thursday",
+      "time": "5:08 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "Work",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "28": {
+      "day": "Thursday",
+      "time": "5:11 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "Killer Queen",
+      "studio": "The Vault Dance Space"
+    },
+    "29": {
+      "day": "Thursday",
+      "time": "5:13 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "You Stole The Show",
+      "studio": "River Valley Classical Ballet And Acrobatics"
+    },
+    "30": {
+      "day": "Thursday",
+      "time": "5:16 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Hanging High",
+      "studio": "K & Co. Dance Studio"
+    },
+    "31": {
+      "day": "Thursday",
+      "time": "5:19 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Bellyache",
+      "studio": "K & Co. Dance Studio"
+    },
+    "32": {
+      "day": "Thursday",
+      "time": "5:22 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "SCRATCH",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "33": {
+      "day": "Thursday",
+      "time": "5:24 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "I am the Whisperer",
+      "studio": "Radiant Dance Studio"
+    },
+    "34": {
+      "day": "Thursday",
+      "time": "5:27 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "SCRATCH",
+      "studio": "Premier Dance"
+    },
+    "35": {
+      "day": "Thursday",
+      "time": "5:29 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "Black Velvet",
+      "studio": "Premier Dance"
+    },
+    "36": {
+      "day": "Thursday",
+      "time": "5:32 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "El Galatzo",
+      "studio": "The Pointe PAC"
+    },
+    "37": {
+      "day": "Thursday",
+      "time": "5:34 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Till I see You Again",
+      "studio": "EnLair Dance Company LLC"
+    },
+    "38": {
+      "day": "Thursday",
+      "time": "5:37 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "If You Were In Love",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "39": {
+      "day": "Thursday",
+      "time": "5:39 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "The Golden Age",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "40": {
+      "day": "Thursday",
+      "time": "5:42 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Everybody Wants To Rule The World",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "41": {
+      "day": "Thursday",
+      "time": "5:45 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "Need You Tonight",
+      "studio": "DANCE est Joie"
+    },
+    "42": {
+      "day": "Thursday",
+      "time": "5:48 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "Wasabi",
+      "studio": "Radiant Dance Studio"
+    },
+    "43": {
+      "day": "Thursday",
+      "time": "5:50 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "Presto ChangeO",
+      "studio": "Premier Dance"
+    },
+    "44": {
+      "day": "Thursday",
+      "time": "5:52 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "SCRATCH",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "45": {
+      "day": "Thursday",
+      "time": "5:54 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Bella Ciao",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "46": {
+      "day": "Thursday",
+      "time": "5:57 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Sealed With A Kiss",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "47": {
+      "day": "Thursday",
+      "time": "5:59 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Always You",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "48": {
+      "day": "Thursday",
+      "time": "6:02 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Angel X",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "49": {
+      "day": "Thursday",
+      "time": "6:04 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "It's A Classic",
+      "studio": "DANCE est Joie"
+    },
+    "50": {
+      "day": "Thursday",
+      "time": "6:07 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "I'm a Showstopper",
+      "studio": "Radiant Dance Studio"
+    },
+    "51": {
+      "day": "Thursday",
+      "time": "6:09 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "Super Model",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "52": {
+      "day": "Thursday",
+      "time": "6:12 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "Own It",
+      "studio": "Premier Dance"
+    },
+    "53": {
+      "day": "Thursday",
+      "time": "6:14 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "If Pain Could Speak",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "54": {
+      "day": "Thursday",
+      "time": "6:17 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Need You",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "55": {
+      "day": "Thursday",
+      "time": "6:19 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "I've Never Had This Before",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "56": {
+      "day": "Thursday",
+      "time": "6:24 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Fear Of The Water",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "57": {
+      "day": "Thursday",
+      "time": "6:27 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "What If",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "58": {
+      "day": "Thursday",
+      "time": "6:30 PM",
+      "category": "Teen Contemporary Duo/Trio",
+      "routine_title": "Save Me",
+      "studio": "K & Co. Dance Studio"
+    },
+    "59": {
+      "day": "Thursday",
+      "time": "6:33 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "Don't Let the Sun Go Down On Me",
+      "studio": "DANCE est Joie"
+    },
+    "60": {
+      "day": "Thursday",
+      "time": "6:36 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "Piano Man",
+      "studio": "DANCE est Joie"
+    },
+    "61": {
+      "day": "Thursday",
+      "time": "6:39 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "Come Home To Me",
+      "studio": "DANCE est Joie"
+    },
+    "62": {
+      "day": "Thursday",
+      "time": "6:41 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "Love in the Dark",
+      "studio": "Radiant Dance Studio"
+    },
+    "63": {
+      "day": "Thursday",
+      "time": "6:44 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "In the Kitchen",
+      "studio": "Radiant Dance Studio"
+    },
+    "64": {
+      "day": "Thursday",
+      "time": "6:47 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "SCRATCH",
+      "studio": "Premier Dance"
+    },
+    "65": {
+      "day": "Thursday",
+      "time": "6:49 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "Vibology",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "66": {
+      "day": "Thursday",
+      "time": "6:52 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Epiphany",
+      "studio": "Thriller Dance Studio"
+    },
+    "67": {
+      "day": "Thursday",
+      "time": "6:54 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "Elephants",
+      "studio": "Radiant Dance Studio"
+    },
+    "68": {
+      "day": "Thursday",
+      "time": "6:57 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "My Wish",
+      "studio": "Radiant Dance Studio"
+    },
+    "69": {
+      "day": "Thursday",
+      "time": "7:00 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "Used to be Mine",
+      "studio": "Radiant Dance Studio"
+    },
+    "70": {
+      "day": "Thursday",
+      "time": "7:20 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "I Didn't Know My Own Strength",
+      "studio": "Radiant Dance Studio"
+    },
+    "71": {
+      "day": "Thursday",
+      "time": "7:22 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "I Believe",
+      "studio": "Radiant Dance Studio"
+    },
+    "72": {
+      "day": "Thursday",
+      "time": "7:25 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "Scream",
+      "studio": "Premier Dance"
+    },
+    "73": {
+      "day": "Thursday",
+      "time": "7:27 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "SCRATCH",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "74": {
+      "day": "Thursday",
+      "time": "7:30 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "I'll Never Love Again",
+      "studio": "Radiant Dance Studio"
+    },
+    "75": {
+      "day": "Thursday",
+      "time": "7:33 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "Is That Alright",
+      "studio": "Radiant Dance Studio"
+    },
+    "76": {
+      "day": "Thursday",
+      "time": "7:36 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "I'll Never Constellations",
+      "studio": "Radiant Dance Studio"
+    },
+    "77": {
+      "day": "Thursday",
+      "time": "7:38 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "Muddy Love Again",
+      "studio": "Premier Dance"
+    },
+    "78": {
+      "day": "Thursday",
+      "time": "7:41 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "Waters",
+      "studio": "Premier Dance"
+    },
+    "79": {
+      "day": "Thursday",
+      "time": "7:44 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "Well Hello",
+      "studio": "Radiant Dance Studio"
+    },
+    "80": {
+      "day": "Thursday",
+      "time": "7:46 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "SCRATCH",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "81": {
+      "day": "Thursday",
+      "time": "7:49 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "You Say",
+      "studio": "Premier Dance"
+    },
+    "82": {
+      "day": "Thursday",
+      "time": "7:51 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "Scared of my Guitar",
+      "studio": "Premier Dance"
+    },
+    "83": {
+      "day": "Thursday",
+      "time": "7:53 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "The Winner Takes It All",
+      "studio": "Premier Dance"
+    },
+    "84": {
+      "day": "Thursday",
+      "time": "7:56 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "SCRATCH",
+      "studio": "Premier Dance"
+    },
+    "85": {
+      "day": "Thursday",
+      "time": "7:59 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "Fall In Time",
+      "studio": "Premier Dance"
+    },
+    "86": {
+      "day": "Thursday",
+      "time": "8:02 PM",
+      "category": "Teen Tap Solo",
+      "routine_title": "Puttin' On the Ritz",
+      "studio": "DANCE est Joie"
+    },
+    "87": {
+      "day": "Thursday",
+      "time": "8:04 PM",
+      "category": "Teen Tap Solo",
+      "routine_title": "I Will Wait",
+      "studio": "Premier Dance"
+    },
+    "88": {
+      "day": "Thursday",
+      "time": "8:07 PM",
+      "category": "Teen Tap Solo",
+      "routine_title": "Bad",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "89": {
+      "day": "Thursday",
+      "time": "9:50 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "My All",
+      "studio": "Premier Dance"
+    },
+    "90": {
+      "day": "Thursday",
+      "time": "8:09 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "Remember",
+      "studio": "Premier Dance"
+    },
+    "91": {
+      "day": "Thursday",
+      "time": "8:12 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "SCRATCH",
+      "studio": "Premier Dance"
+    },
+    "92": {
+      "day": "Thursday",
+      "time": "8:14 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "Can't Help Falling in Love",
+      "studio": "Premier Dance"
+    },
+    "93": {
+      "day": "Thursday",
+      "time": "8:17 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "Pose",
+      "studio": "Premier Dance"
+    },
+    "94": {
+      "day": "Thursday",
+      "time": "8:19 PM",
+      "category": "Teen Jazz Solo",
+      "routine_title": "Gimmie Gimmie",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "95": {
+      "day": "Thursday",
+      "time": "8:22 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "Wherever You Will Go",
+      "studio": "Premier Dance"
+    },
+    "96": {
+      "day": "Thursday",
+      "time": "8:25 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "Don't Watch Me Cry",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "97": {
+      "day": "Thursday",
+      "time": "8:27 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "I Follow",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "98": {
+      "day": "Thursday",
+      "time": "8:30 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "Father",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "99": {
+      "day": "Thursday",
+      "time": "8:32 PM",
+      "category": "Teen Tap Solo",
+      "routine_title": "Ain't Nobody's Business",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "100": {
+      "day": "Thursday",
+      "time": "8:34 PM",
+      "category": "Teen Tap Solo",
+      "routine_title": "RATATA",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "101": {
+      "day": "Thursday",
+      "time": "8:37 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "Make You Feel",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "102": {
+      "day": "Thursday",
+      "time": "8:40 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "Adam's Rib",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "103": {
+      "day": "Thursday",
+      "time": "8:42 PM",
+      "category": "Teen Lyrical Duo/Trio",
+      "routine_title": "When You Believe",
+      "studio": "DANCE est Joie"
+    },
+    "104": {
+      "day": "Thursday",
+      "time": "8:45 PM",
+      "category": "Teen Lyrical Duo/Trio",
+      "routine_title": "Your Song",
+      "studio": "Premier Dance"
+    },
+    "105": {
+      "day": "Thursday",
+      "time": "8:47 PM",
+      "category": "Teen Lyrical Duo/Trio",
+      "routine_title": "I Lived",
+      "studio": "Premier Dance"
+    },
+    "106": {
+      "day": "Thursday",
+      "time": "8:50 PM",
+      "category": "Teen Broadway Solo",
+      "routine_title": "SCRATCH",
+      "studio": "Premier Dance"
+    },
+    "107": {
+      "day": "Thursday",
+      "time": "8:53 PM",
+      "category": "Teen Broadway Solo",
+      "routine_title": "Mein Herr",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "108": {
+      "day": "Thursday",
+      "time": "8:55 PM",
+      "category": "Teen Broadway Solo",
+      "routine_title": "All For You",
+      "studio": "Premier Dance"
+    },
+    "109": {
+      "day": "Thursday",
+      "time": "8:58 PM",
+      "category": "Teen Broadway Solo",
+      "routine_title": "Land Of Yesterday",
+      "studio": "Premier Dance"
+    },
+    "110": {
+      "day": "Thursday",
+      "time": "9:01 PM",
+      "category": "Teen Hip Hop Solo",
+      "routine_title": "It's Ok I'm Ok",
+      "studio": "Radiant Dance Studio"
+    },
+    "111": {
+      "day": "Thursday",
+      "time": "9:03 PM",
+      "category": "Teen Hip Hop Duo/Trio",
+      "routine_title": "Don't Cha",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "112": {
+      "day": "Thursday",
+      "time": "9:06 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Let There Be Love",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "113": {
+      "day": "Thursday",
+      "time": "9:08 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Let Me In",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "114": {
+      "day": "Thursday",
+      "time": "9:11 PM",
+      "category": "Teen Open Solo",
+      "routine_title": "We Need To Go",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "115": {
+      "day": "Thursday",
+      "time": "9:13 PM",
+      "category": "Teen Broadway Solo",
+      "routine_title": "I Won't Say I'm in Love",
+      "studio": "Premier Dance"
+    },
+    "116": {
+      "day": "Thursday",
+      "time": "9:16 PM",
+      "category": "Teen Broadway Duo/Trio",
+      "routine_title": "SCRATCH",
+      "studio": "Premier Dance"
+    },
+    "117": {
+      "day": "Thursday",
+      "time": "9:18 PM",
+      "category": "Teen Broadway Duo/Trio",
+      "routine_title": "Peas In A Pod",
+      "studio": "Premier Dance"
+    },
+    "118": {
+      "day": "Thursday",
+      "time": "9:21 PM",
+      "category": "Teen Tap Solo",
+      "routine_title": "Walking in Memphis",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "119": {
+      "day": "Thursday",
+      "time": "9:24 PM",
+      "category": "Teen Tap Solo",
+      "routine_title": "A Thousand Miles",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "120": {
+      "day": "Thursday",
+      "time": "9:26 PM",
+      "category": "Teen Open Solo",
+      "routine_title": "Creep",
+      "studio": "Premier Dance"
+    },
+    "121": {
+      "day": "Thursday",
+      "time": "9:29 PM",
+      "category": "Teen Open Solo",
+      "routine_title": "SCRATCH",
+      "studio": "Premier Dance"
+    },
+    "122": {
+      "day": "Thursday",
+      "time": "9:31 PM",
+      "category": "Teen Open Solo",
+      "routine_title": "Voila",
+      "studio": "River Valley Classical Ballet And Acrobatics"
+    },
+    "123": {
+      "day": "Thursday",
+      "time": "9:34 PM",
+      "category": "Teen Open Solo",
+      "routine_title": "Killa Funk",
+      "studio": "Premier Dance"
+    },
+    "124": {
+      "day": "Thursday",
+      "time": "9:37 PM",
+      "category": "Teen Contemporary Duo/Trio",
+      "routine_title": "Your Fire",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "125": {
+      "day": "Thursday",
+      "time": "9:39 PM",
+      "category": "Teen Contemporary Duo/Trio",
+      "routine_title": "The Grudge",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "126": {
+      "day": "Thursday",
+      "time": "9:42 PM",
+      "category": "Teen Contemporary Duo/Trio",
+      "routine_title": "Standing On The Horizon",
+      "studio": "Radiant Dance Studio"
+    },
+    "127": {
+      "day": "Thursday",
+      "time": "9:45 PM",
+      "category": "Teen Contemporary Duo/Trio",
+      "routine_title": "Light A Fire",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "128": {
+      "day": "Thursday",
+      "time": "9:48 PM",
+      "category": "Teen Lyrical Duo/Trio",
+      "routine_title": "SCRATCH",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "129": {
+      "day": "Thursday",
+      "time": "9:53 PM",
+      "category": "Teen Open Solo",
+      "routine_title": "Goldwing",
+      "studio": "Premier Dance"
+    },
+    "130": {
+      "day": "Thursday",
+      "time": "9:55 PM",
+      "category": "Teen Open Solo",
+      "routine_title": "Ero Cras",
+      "studio": "River Valley Classical Ballet And Acrobatics"
+    },
+    "131": {
+      "day": "Thursday",
+      "time": "10:01 PM",
+      "category": "Teen Open Solo",
+      "routine_title": "Me and the Devil",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "132": {
+      "day": "Thursday",
+      "time": "10:04 PM",
+      "category": "Teen Open Solo",
+      "routine_title": "Course of Action",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "133": {
+      "day": "Thursday",
+      "time": "10:06 PM",
+      "category": "Teen Contemporary Solo",
+      "routine_title": "Le Secret",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "134": {
+      "day": "Thursday",
+      "time": "10:09 PM",
+      "category": "Teen Open Solo",
+      "routine_title": "Interrogation",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "135": {
+      "day": "Thursday",
+      "time": "10:11 PM",
+      "category": "Teen Broadway Solo",
+      "routine_title": "Welcome To My Party",
+      "studio": "Premier Dance"
+    },
+    "136": {
+      "day": "Thursday",
+      "time": "10:13 PM",
+      "category": "Teen Broadway Solo",
+      "routine_title": "Alto's Lament",
+      "studio": "Premier Dance"
+    },
+    "137": {
+      "day": "Thursday",
+      "time": "10:16 PM",
+      "category": "Teen Broadway Solo",
+      "routine_title": "Morning Person",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "138": {
+      "day": "Friday",
+      "time": "7:00 AM",
+      "category": "Mini Jazz Solo",
+      "routine_title": "You Already Know",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "139": {
+      "day": "Friday",
+      "time": "7:02 AM",
+      "category": "Mini Jazz Solo",
+      "routine_title": "Sushi",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "140": {
+      "day": "Friday",
+      "time": "7:04 AM",
+      "category": "Mini Jazz Solo",
+      "routine_title": "Bad",
+      "studio": "DANCE est Joie"
+    },
+    "141": {
+      "day": "Friday",
+      "time": "7:06 AM",
+      "category": "Mini Jazz Solo",
+      "routine_title": "Soda Pop",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "142": {
+      "day": "Friday",
+      "time": "7:09 AM",
+      "category": "Mini Jazz Solo",
+      "routine_title": "Billie Jean",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "143": {
+      "day": "Friday",
+      "time": "7:11 AM",
+      "category": "Mini Contemporary Solo",
+      "routine_title": "Strong",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "144": {
+      "day": "Friday",
+      "time": "7:13 AM",
+      "category": "Mini Contemporary Solo",
+      "routine_title": "Turn To Stone",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "145": {
+      "day": "Friday",
+      "time": "7:16 AM",
+      "category": "Mini Jazz Solo",
+      "routine_title": "River Deep",
+      "studio": "Premier Dance"
+    },
+    "146": {
+      "day": "Friday",
+      "time": "7:18 AM",
+      "category": "Mini Jazz Solo",
+      "routine_title": "Mink Schmink",
+      "studio": "Premier Dance"
+    },
+    "147": {
+      "day": "Friday",
+      "time": "7:21 AM",
+      "category": "Mini Open Solo",
+      "routine_title": "Ice Cream Freeze",
+      "studio": "Premier Dance"
+    },
+    "148": {
+      "day": "Friday",
+      "time": "7:23 AM",
+      "category": "Mini Hip Hop Solo",
+      "routine_title": "One Time",
+      "studio": "Premier Dance"
+    },
+    "149": {
+      "day": "Friday",
+      "time": "7:26 AM",
+      "category": "Mini Acro Solo",
+      "routine_title": "Rewrite the Stars",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "150": {
+      "day": "Friday",
+      "time": "7:28 AM",
+      "category": "Mini Jazz Solo",
+      "routine_title": "Wind it up",
+      "studio": "Premier Dance"
+    },
+    "151": {
+      "day": "Friday",
+      "time": "7:30 AM",
+      "category": "Mini Jazz Solo",
+      "routine_title": "BEAT",
+      "studio": "Premier Dance"
+    },
+    "152": {
+      "day": "Friday",
+      "time": "7:33 AM",
+      "category": "Mini Jazz Solo",
+      "routine_title": "Look",
+      "studio": "Premier Dance"
+    },
+    "153": {
+      "day": "Friday",
+      "time": "7:35 AM",
+      "category": "Mini Jazz Solo",
+      "routine_title": "Golden",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "154": {
+      "day": "Friday",
+      "time": "7:37 AM",
+      "category": "Mini Contemporary Solo",
+      "routine_title": "People Help The People",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "155": {
+      "day": "Friday",
+      "time": "7:40 AM",
+      "category": "Mini Contemporary Solo",
+      "routine_title": "Awakening",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "156": {
+      "day": "Friday",
+      "time": "7:42 AM",
+      "category": "Mini Jazz Solo",
+      "routine_title": "Shake A Tail Feather",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "157": {
+      "day": "Friday",
+      "time": "7:45 AM",
+      "category": "Mini Jazz Solo",
+      "routine_title": "Bom Bom",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "158": {
+      "day": "Friday",
+      "time": "7:47 AM",
+      "category": "Mini Jazz Solo",
+      "routine_title": "I Slay",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "159": {
+      "day": "Friday",
+      "time": "7:49 AM",
+      "category": "Mini Lyrical Solo",
+      "routine_title": "Fast Car",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "160": {
+      "day": "Friday",
+      "time": "7:51 AM",
+      "category": "Mini Contemporary Solo",
+      "routine_title": "Color Me",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "161": {
+      "day": "Friday",
+      "time": "7:54 AM",
+      "category": "Mini Jazz Solo",
+      "routine_title": "Just A Girl",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "162": {
+      "day": "Friday",
+      "time": "7:56 AM",
+      "category": "Mini Jazz Solo",
+      "routine_title": "Forever Young",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "163": {
+      "day": "Friday",
+      "time": "7:58 AM",
+      "category": "Mini Jazz Solo",
+      "routine_title": "Zoo Girl",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "164": {
+      "day": "Friday",
+      "time": "8:01 AM",
+      "category": "Mini Tap Solo",
+      "routine_title": "No Bad News",
+      "studio": "Premier Dance"
+    },
+    "165": {
+      "day": "Friday",
+      "time": "8:03 AM",
+      "category": "Mini Tap Solo",
+      "routine_title": "End of Time",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "166": {
+      "day": "Friday",
+      "time": "8:05 AM",
+      "category": "Mini Contemporary Solo",
+      "routine_title": "Fix You",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "167": {
+      "day": "Friday",
+      "time": "8:07 AM",
+      "category": "Mini Broadway Solo",
+      "routine_title": "Little Me",
+      "studio": "Premier Dance"
+    },
+    "168": {
+      "day": "Friday",
+      "time": "8:09 AM",
+      "category": "Mini Broadway Solo",
+      "routine_title": "I Want It Now",
+      "studio": "Premier Dance"
+    },
+    "169": {
+      "day": "Friday",
+      "time": "8:11 AM",
+      "category": "Mini Open Solo",
+      "routine_title": "Doll of The Dusk",
+      "studio": "Premier Dance"
+    },
+    "170": {
+      "day": "Friday",
+      "time": "8:14 AM",
+      "category": "Mini Open Solo",
+      "routine_title": "Better",
+      "studio": "Premier Dance"
+    },
+    "171": {
+      "day": "Friday",
+      "time": "8:17 AM",
+      "category": "Mini Contemporary Solo",
+      "routine_title": "Foolish Games",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "172": {
+      "day": "Friday",
+      "time": "8:19 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "Bark Load",
+      "studio": "DANCE est Joie"
+    },
+    "173": {
+      "day": "Friday",
+      "time": "8:22 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "Just Fine",
+      "studio": "DANCE est Joie"
+    },
+    "174": {
+      "day": "Friday",
+      "time": "8:24 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "Can't Pin Me Down",
+      "studio": "Radiant Dance Studio"
+    },
+    "175": {
+      "day": "Friday",
+      "time": "8:27 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "Shake the Room",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "176": {
+      "day": "Friday",
+      "time": "8:29 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "Vroom Vroom",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "177": {
+      "day": "Friday",
+      "time": "8:31 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "Cold Hearted",
+      "studio": "Premier Dance"
+    },
+    "178": {
+      "day": "Friday",
+      "time": "8:34 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "Charleston Boogie",
+      "studio": "Premier Dance"
+    },
+    "179": {
+      "day": "Friday",
+      "time": "8:36 AM",
+      "category": "Mini Jazz Large Group",
+      "routine_title": "Let's Party",
+      "studio": "Premier Dance"
+    },
+    "180": {
+      "day": "Friday",
+      "time": "8:39 AM",
+      "category": "Mini Open Large Group",
+      "routine_title": "Bad Guy",
+      "studio": "Premier Dance"
+    },
+    "181": {
+      "day": "Friday",
+      "time": "8:42 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "SCRATCH",
+      "studio": "Premier Dance"
+    },
+    "182": {
+      "day": "Friday",
+      "time": "8:44 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "When I Rule The World",
+      "studio": "Premier Dance"
+    },
+    "183": {
+      "day": "Friday",
+      "time": "8:46 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "For The Girls",
+      "studio": "Premier Dance"
+    },
+    "184": {
+      "day": "Friday",
+      "time": "8:49 AM",
+      "category": "Junior Open Solo",
+      "routine_title": "That's Life",
+      "studio": "Premier Dance"
+    },
+    "185": {
+      "day": "Friday",
+      "time": "8:51 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "Fabulous",
+      "studio": "Premier Dance"
+    },
+    "186": {
+      "day": "Friday",
+      "time": "8:53 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "Hit the Road Jack",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "187": {
+      "day": "Friday",
+      "time": "8:56 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "Rio",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "188": {
+      "day": "Friday",
+      "time": "8:58 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "When It's Cold",
+      "studio": "The Pointe PAC"
+    },
+    "189": {
+      "day": "Friday",
+      "time": "9:01 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "For Myself",
+      "studio": "Fayetteville Dance Company"
+    },
+    "190": {
+      "day": "Friday",
+      "time": "9:03 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "Shake the Room",
+      "studio": "Premier Dance"
+    },
+    "191": {
+      "day": "Friday",
+      "time": "9:05 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "Throwback Love",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "192": {
+      "day": "Friday",
+      "time": "9:07 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "Let You Go",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "193": {
+      "day": "Friday",
+      "time": "9:10 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "You're So Vain",
+      "studio": "Fayetteville Dance Company"
+    },
+    "194": {
+      "day": "Friday",
+      "time": "9:12 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "Praying",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "195": {
+      "day": "Friday",
+      "time": "9:15 AM",
+      "category": "Mini Jazz Large Group",
+      "routine_title": "Tea Party",
+      "studio": "Premier Dance"
+    },
+    "196": {
+      "day": "Friday",
+      "time": "9:18 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "Meadow Song",
+      "studio": "Premier Dance"
+    },
+    "197": {
+      "day": "Friday",
+      "time": "9:21 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "Follow The Sun",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "198": {
+      "day": "Friday",
+      "time": "9:23 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "I'm Through",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "199": {
+      "day": "Friday",
+      "time": "9:26 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "Strange",
+      "studio": "Premier Dance"
+    },
+    "200": {
+      "day": "Friday",
+      "time": "9:28 AM",
+      "category": "Mini Lyrical Large Group",
+      "routine_title": "Landslide",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "201": {
+      "day": "Friday",
+      "time": "9:31 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "Yes I Can",
+      "studio": "Premier Dance"
+    },
+    "202": {
+      "day": "Friday",
+      "time": "9:33 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "Sun",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "203": {
+      "day": "Friday",
+      "time": "9:35 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "Fancy",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "204": {
+      "day": "Friday",
+      "time": "9:37 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "Sirens",
+      "studio": "Premier Dance"
+    },
+    "205": {
+      "day": "Friday",
+      "time": "9:40 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "Nature of Daylight",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "206": {
+      "day": "Friday",
+      "time": "9:42 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "Overflow",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "207": {
+      "day": "Friday",
+      "time": "9:45 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "90 Days",
+      "studio": "Premier Dance"
+    },
+    "208": {
+      "day": "Friday",
+      "time": "9:48 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "Pure Love",
+      "studio": "Premier Dance"
+    },
+    "209": {
+      "day": "Friday",
+      "time": "9:50 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "Debut",
+      "studio": "Premier Dance"
+    },
+    "210": {
+      "day": "Friday",
+      "time": "9:52 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "Glam",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "211": {
+      "day": "Friday",
+      "time": "9:55 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "Rival",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "212": {
+      "day": "Friday",
+      "time": "9:57 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "Fading Light",
+      "studio": "Premier Dance"
+    },
+    "213": {
+      "day": "Friday",
+      "time": "10:00 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "Engraved Herein",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "214": {
+      "day": "Friday",
+      "time": "10:02 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "Hello",
+      "studio": "Premier Dance"
+    },
+    "215": {
+      "day": "Friday",
+      "time": "10:05 AM",
+      "category": "Junior Lyrical Solo",
+      "routine_title": "The Grudge",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "216": {
+      "day": "Friday",
+      "time": "10:08 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "Written On The Sky",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "217": {
+      "day": "Friday",
+      "time": "10:10 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "Dissolving",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "218": {
+      "day": "Friday",
+      "time": "10:13 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "The Seconds Between",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "219": {
+      "day": "Friday",
+      "time": "10:15 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "Scheibe",
+      "studio": "Premier Dance"
+    },
+    "220": {
+      "day": "Friday",
+      "time": "10:18 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "Everlasting Love",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "221": {
+      "day": "Friday",
+      "time": "10:20 AM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "Din Daa Daa",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "222": {
+      "day": "Friday",
+      "time": "10:23 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "SCRATCH",
+      "studio": "Premier Dance"
+    },
+    "223": {
+      "day": "Friday",
+      "time": "10:25 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "Thinking Of You",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "224": {
+      "day": "Friday",
+      "time": "10:28 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "Black Clouds",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "225": {
+      "day": "Friday",
+      "time": "10:30 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "How Will I Know",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "226": {
+      "day": "Friday",
+      "time": "10:33 AM",
+      "category": "Mini Hip Hop Large Group",
+      "routine_title": "Divas",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "227": {
+      "day": "Friday",
+      "time": "10:36 AM",
+      "category": "Mini Hip Hop Large Group",
+      "routine_title": "Let's Work",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "228": {
+      "day": "Friday",
+      "time": "10:39 AM",
+      "category": "Mini Open Large Group",
+      "routine_title": "Big Bad Wolf",
+      "studio": "Premier Dance"
+    },
+    "229": {
+      "day": "Friday",
+      "time": "10:42 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "Dawning Of Spring",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "230": {
+      "day": "Friday",
+      "time": "10:44 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "Left Out In The Open",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "231": {
+      "day": "Friday",
+      "time": "10:46 AM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "Cells",
+      "studio": "The Pointe PAC"
+    },
+    "232": {
+      "day": "Friday",
+      "time": "10:49 AM",
+      "category": "Pro Reveler Contemporary Solo",
+      "routine_title": "The Colors Around Me",
+      "studio": "Theatre Arts"
+    },
+    "233": {
+      "day": "Friday",
+      "time": "10:51 AM",
+      "category": "Junior Broadway Solo",
+      "routine_title": "Evil Like Me",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "234": {
+      "day": "Friday",
+      "time": "10:53 AM",
+      "category": "Junior Broadway Solo",
+      "routine_title": "I'm a Woman",
+      "studio": "Premier Dance"
+    },
+    "235": {
+      "day": "Friday",
+      "time": "10:56 AM",
+      "category": "Junior Broadway Solo",
+      "routine_title": "Take it On the Chin",
+      "studio": "Premier Dance"
+    },
+    "236": {
+      "day": "Friday",
+      "time": "10:58 AM",
+      "category": "Junior Broadway Solo",
+      "routine_title": "If My Friends Could See Me Now",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "237": {
+      "day": "Friday",
+      "time": "11:00 AM",
+      "category": "Junior Broadway Solo",
+      "routine_title": "Big Time",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "238": {
+      "day": "Friday",
+      "time": "11:03 AM",
+      "category": "Junior Open Solo",
+      "routine_title": "Inside the Dollhouse",
+      "studio": "Premier Dance"
+    },
+    "239": {
+      "day": "Friday",
+      "time": "11:25 AM",
+      "category": "Mini Jazz Solo",
+      "routine_title": "Let's Work",
+      "studio": "Premier Dance"
+    },
+    "240": {
+      "day": "Friday",
+      "time": "11:27 AM",
+      "category": "Mini Jazz Solo",
+      "routine_title": "Trouble",
+      "studio": "Premier Dance"
+    },
+    "241": {
+      "day": "Friday",
+      "time": "11:29 AM",
+      "category": "Mini Jazz Small Group",
+      "routine_title": "It's Tricky",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "242": {
+      "day": "Friday",
+      "time": "11:32 AM",
+      "category": "Mini Tap Small Group",
+      "routine_title": "Happy Feet",
+      "studio": "Premier Dance"
+    },
+    "243": {
+      "day": "Friday",
+      "time": "11:35 AM",
+      "category": "Mini Tap Small Group",
+      "routine_title": "Get On Your Feet",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "244": {
+      "day": "Friday",
+      "time": "11:37 AM",
+      "category": "Mini Contemporary Small Group",
+      "routine_title": "Cosmic Love",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "245": {
+      "day": "Friday",
+      "time": "11:40 AM",
+      "category": "Mini Contemporary Large Group",
+      "routine_title": "Girls",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "246": {
+      "day": "Friday",
+      "time": "11:43 AM",
+      "category": "Mini Lyrical Solo",
+      "routine_title": "Rise Up",
+      "studio": "Fayetteville Dance Company"
+    },
+    "247": {
+      "day": "Friday",
+      "time": "11:45 AM",
+      "category": "Mini Lyrical Solo",
+      "routine_title": "Welcome To Wonderland",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "248": {
+      "day": "Friday",
+      "time": "11:48 AM",
+      "category": "Mini Lyrical Solo",
+      "routine_title": "Where I Stand",
+      "studio": "Thriller Dance Studio"
+    },
+    "249": {
+      "day": "Friday",
+      "time": "11:50 AM",
+      "category": "Mini Lyrical Small Group",
+      "routine_title": "You Raise Me Up",
+      "studio": "Premier Dance"
+    },
+    "250": {
+      "day": "Friday",
+      "time": "11:53 AM",
+      "category": "Mini Lyrical Small Group",
+      "routine_title": "Coat of Many Colors",
+      "studio": "DANCE est Joie"
+    },
+    "251": {
+      "day": "Friday",
+      "time": "11:57 AM",
+      "category": "Mini Lyrical Small Group",
+      "routine_title": "Your Song",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "252": {
+      "day": "Friday",
+      "time": "12:00 PM",
+      "category": "Mini Lyrical Small Group",
+      "routine_title": "By My Side",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "253": {
+      "day": "Friday",
+      "time": "12:02 PM",
+      "category": "Mini Lyrical Small Group",
+      "routine_title": "Over the Rainbow",
+      "studio": "River Valley Classical Ballet And Acrobatics"
+    },
+    "254": {
+      "day": "Friday",
+      "time": "12:05 PM",
+      "category": "RevKids Open Small Group",
+      "routine_title": "Paw Patrol",
+      "studio": "Premier Dance"
+    },
+    "255": {
+      "day": "Friday",
+      "time": "12:08 PM",
+      "category": "Mini Hip Hop Small Group",
+      "routine_title": "Girls in Pink",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "256": {
+      "day": "Friday",
+      "time": "12:10 PM",
+      "category": "Junior Jazz Solo",
+      "routine_title": "You Don't Own Me",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "257": {
+      "day": "Friday",
+      "time": "12:13 PM",
+      "category": "Junior Tap Solo",
+      "routine_title": "9 to 5",
+      "studio": "Premier Dance"
+    },
+    "258": {
+      "day": "Friday",
+      "time": "12:15 PM",
+      "category": "Junior Tap Solo",
+      "routine_title": "Break My Soul",
+      "studio": "Premier Dance"
+    },
+    "259": {
+      "day": "Friday",
+      "time": "12:18 PM",
+      "category": "Junior Tap Solo",
+      "routine_title": "Photograph",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "260": {
+      "day": "Friday",
+      "time": "12:20 PM",
+      "category": "Mini Open Small Group",
+      "routine_title": "You Took My Look",
+      "studio": "Premier Dance"
+    },
+    "261": {
+      "day": "Friday",
+      "time": "12:23 PM",
+      "category": "Mini Hip Hop Small Group",
+      "routine_title": "Stayin' Alive",
+      "studio": "DANCE est Joie"
+    },
+    "262": {
+      "day": "Friday",
+      "time": "12:26 PM",
+      "category": "Mini Open Small Group",
+      "routine_title": "Species",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "263": {
+      "day": "Friday",
+      "time": "12:28 PM",
+      "category": "Junior Tap Solo",
+      "routine_title": "Absolutely Smitten",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "264": {
+      "day": "Friday",
+      "time": "12:31 PM",
+      "category": "Junior Tap Solo",
+      "routine_title": "Firework",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "265": {
+      "day": "Friday",
+      "time": "12:33 PM",
+      "category": "Junior Tap Solo",
+      "routine_title": "I Lived",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "266": {
+      "day": "Friday",
+      "time": "12:36 PM",
+      "category": "Junior Tap Solo",
+      "routine_title": "Everything Goes With Blue",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "267": {
+      "day": "Friday",
+      "time": "12:38 PM",
+      "category": "Mini Jazz Small Group",
+      "routine_title": "Funkytown",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "268": {
+      "day": "Friday",
+      "time": "12:40 PM",
+      "category": "Junior Lyrical Solo",
+      "routine_title": "Concrete Angel",
+      "studio": "DANCE est Joie"
+    },
+    "269": {
+      "day": "Friday",
+      "time": "12:43 PM",
+      "category": "Junior Lyrical Solo",
+      "routine_title": "Million to One",
+      "studio": "Radiant Dance Studio"
+    },
+    "270": {
+      "day": "Friday",
+      "time": "12:46 PM",
+      "category": "Mini Jazz Small Group",
+      "routine_title": "Crush On You",
+      "studio": "Premier Dance"
+    },
+    "271": {
+      "day": "Friday",
+      "time": "12:48 PM",
+      "category": "Mini Jazz Small Group",
+      "routine_title": "Pink Cadillac",
+      "studio": "Premier Dance"
+    },
+    "272": {
+      "day": "Friday",
+      "time": "12:51 PM",
+      "category": "Mini Jazz Small Group",
+      "routine_title": "Never Looked So Good",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "273": {
+      "day": "Friday",
+      "time": "12:54 PM",
+      "category": "Mini Jazz Small Group",
+      "routine_title": "Splash N Go",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "274": {
+      "day": "Friday",
+      "time": "12:56 PM",
+      "category": "Mini Jazz Small Group",
+      "routine_title": "Lip Gloss",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "275": {
+      "day": "Friday",
+      "time": "12:59 PM",
+      "category": "Mini Contemporary Small Group",
+      "routine_title": "West End Girls",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "276": {
+      "day": "Friday",
+      "time": "1:01 PM",
+      "category": "Junior Lyrical Solo",
+      "routine_title": "Ashes",
+      "studio": "Premier Dance"
+    },
+    "277": {
+      "day": "Friday",
+      "time": "1:03 PM",
+      "category": "Junior Lyrical Solo",
+      "routine_title": "Both Sides Now",
+      "studio": "Premier Dance"
+    },
+    "278": {
+      "day": "Friday",
+      "time": "1:06 PM",
+      "category": "Junior Lyrical Solo",
+      "routine_title": "Light A Fire",
+      "studio": "Radiant Dance Studio"
+    },
+    "279": {
+      "day": "Friday",
+      "time": "1:08 PM",
+      "category": "Junior Lyrical Solo",
+      "routine_title": "Songbird",
+      "studio": "Premier Dance"
+    },
+    "280": {
+      "day": "Friday",
+      "time": "1:11 PM",
+      "category": "Junior Lyrical Solo",
+      "routine_title": "This Girl",
+      "studio": "Premier Dance"
+    },
+    "281": {
+      "day": "Friday",
+      "time": "1:13 PM",
+      "category": "Junior Lyrical Solo",
+      "routine_title": "This",
+      "studio": "Premier Dance"
+    },
+    "282": {
+      "day": "Friday",
+      "time": "1:16 PM",
+      "category": "Mini Open Small Group",
+      "routine_title": "Telephone",
+      "studio": "Premier Dance"
+    },
+    "283": {
+      "day": "Friday",
+      "time": "1:19 PM",
+      "category": "Mini Open Small Group",
+      "routine_title": "Shades",
+      "studio": "River Valley Classical Ballet And Acrobatics"
+    },
+    "284": {
+      "day": "Friday",
+      "time": "1:21 PM",
+      "category": "Mini Open Small Group",
+      "routine_title": "American Pie",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "285": {
+      "day": "Friday",
+      "time": "1:24 PM",
+      "category": "Mini Hip Hop Small Group",
+      "routine_title": "DJ Play That Song",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "286": {
+      "day": "Friday",
+      "time": "1:28 PM",
+      "category": "Junior Lyrical Solo",
+      "routine_title": "Who You Are",
+      "studio": "Premier Dance"
+    },
+    "287": {
+      "day": "Friday",
+      "time": "1:30 PM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "Hit Me With Your Best Shot",
+      "studio": "DANCE est Joie"
+    },
+    "288": {
+      "day": "Friday",
+      "time": "1:33 PM",
+      "category": "Junior Lyrical Solo",
+      "routine_title": "Praying",
+      "studio": "Radiant Dance Studio"
+    },
+    "289": {
+      "day": "Friday",
+      "time": "1:35 PM",
+      "category": "Junior Lyrical Solo",
+      "routine_title": "I Don't Wanna Miss A Thing",
+      "studio": "Premier Dance"
+    },
+    "290": {
+      "day": "Friday",
+      "time": "1:37 PM",
+      "category": "Junior Lyrical Solo",
+      "routine_title": "The Truth",
+      "studio": "Premier Dance"
+    },
+    "291": {
+      "day": "Friday",
+      "time": "1:40 PM",
+      "category": "Junior Lyrical Solo",
+      "routine_title": "Fields of Gold",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "292": {
+      "day": "Friday",
+      "time": "1:42 PM",
+      "category": "Junior Lyrical Solo",
+      "routine_title": "Dream",
+      "studio": "Premier Dance"
+    },
+    "293": {
+      "day": "Friday",
+      "time": "1:45 PM",
+      "category": "RevKids Open Large Group",
+      "routine_title": "Funky Monkey",
+      "studio": "Premier Dance"
+    },
+    "294": {
+      "day": "Friday",
+      "time": "1:48 PM",
+      "category": "Mini Jazz Small Group",
+      "routine_title": "Runaway Baby",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "295": {
+      "day": "Friday",
+      "time": "1:50 PM",
+      "category": "Mini Jazz Small Group",
+      "routine_title": "You Should Be Dancin'",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "296": {
+      "day": "Friday",
+      "time": "1:52 PM",
+      "category": "Junior Open Solo",
+      "routine_title": "Human",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "297": {
+      "day": "Friday",
+      "time": "1:55 PM",
+      "category": "Junior Open Solo",
+      "routine_title": "Hit Me With Your Best Shot",
+      "studio": "Premier Dance"
+    },
+    "298": {
+      "day": "Friday",
+      "time": "1:57 PM",
+      "category": "Junior Open Solo",
+      "routine_title": "Lovely",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "299": {
+      "day": "Friday",
+      "time": "2:00 PM",
+      "category": "Junior Hip Hop Solo",
+      "routine_title": "Lane in the Rain",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "300": {
+      "day": "Friday",
+      "time": "2:03 PM",
+      "category": "Junior Lyrical Solo",
+      "routine_title": "Believe",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "301": {
+      "day": "Friday",
+      "time": "2:05 PM",
+      "category": "Junior Lyrical Solo",
+      "routine_title": "Somewhere Only We Know",
+      "studio": "Premier Dance"
+    },
+    "302": {
+      "day": "Friday",
+      "time": "2:07 PM",
+      "category": "Junior Lyrical Solo",
+      "routine_title": "Beautiful Ghost",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "303": {
+      "day": "Friday",
+      "time": "2:10 PM",
+      "category": "RevKids Broadway Small Group",
+      "routine_title": "Rio",
+      "studio": "Premier Dance"
+    },
+    "304": {
+      "day": "Friday",
+      "time": "2:12 PM",
+      "category": "Junior Lyrical Solo",
+      "routine_title": "Never Grow Up",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "305": {
+      "day": "Friday",
+      "time": "2:15 PM",
+      "category": "Junior Lyrical Solo",
+      "routine_title": "Wonderful World",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "306": {
+      "day": "Friday",
+      "time": "2:17 PM",
+      "category": "Junior Lyrical Solo",
+      "routine_title": "Ring Of Fire",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "307": {
+      "day": "Friday",
+      "time": "2:20 PM",
+      "category": "Junior Hip Hop Solo",
+      "routine_title": "Its Nicki",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "308": {
+      "day": "Friday",
+      "time": "2:22 PM",
+      "category": "Junior Hip Hop Solo",
+      "routine_title": "TKO",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "309": {
+      "day": "Friday",
+      "time": "2:25 PM",
+      "category": "Mini Lyrical Small Group",
+      "routine_title": "Learning To Fly",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "310": {
+      "day": "Friday",
+      "time": "2:27 PM",
+      "category": "Mini Broadway Small Group",
+      "routine_title": "Hot Lunch Jam",
+      "studio": "DANCE est Joie"
+    },
+    "311": {
+      "day": "Friday",
+      "time": "2:31 PM",
+      "category": "Mini Broadway Small Group",
+      "routine_title": "Two Of A Kind",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "312": {
+      "day": "Friday",
+      "time": "2:34 PM",
+      "category": "Mini Jazz Production",
+      "routine_title": "Out of This World",
+      "studio": "Premier Dance"
+    },
+    "313": {
+      "day": "Friday",
+      "time": "2:40 PM",
+      "category": "Junior Open Solo",
+      "routine_title": "Upon Our Shoulder",
+      "studio": "Premier Dance"
+    },
+    "314": {
+      "day": "Friday",
+      "time": "2:43 PM",
+      "category": "Junior Contemporary Solo",
+      "routine_title": "The Reason",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "315": {
+      "day": "Friday",
+      "time": "2:45 PM",
+      "category": "Junior Open Solo",
+      "routine_title": "Dreamweaver",
+      "studio": "Premier Dance"
+    },
+    "316": {
+      "day": "Friday",
+      "time": "2:48 PM",
+      "category": "Junior Open Solo",
+      "routine_title": "I Remember",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "317": {
+      "day": "Friday",
+      "time": "2:50 PM",
+      "category": "Junior Open Solo",
+      "routine_title": "Fractured Lines",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "318": {
+      "day": "Friday",
+      "time": "2:52 PM",
+      "category": "Junior Open Solo",
+      "routine_title": "Paper Boat",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "319": {
+      "day": "Friday",
+      "time": "3:50 PM",
+      "category": "Junior Lyrical Large Group",
+      "routine_title": "Daisies",
+      "studio": "Radiant Dance Studio"
+    },
+    "320": {
+      "day": "Friday",
+      "time": "3:54 PM",
+      "category": "Junior Jazz Duo/Trio",
+      "routine_title": "Le Freak",
+      "studio": "DANCE est Joie"
+    },
+    "321": {
+      "day": "Friday",
+      "time": "3:57 PM",
+      "category": "Junior Jazz Duo/Trio",
+      "routine_title": "Bite Your Tongue",
+      "studio": "Premier Dance"
+    },
+    "322": {
+      "day": "Friday",
+      "time": "4:00 PM",
+      "category": "Junior Jazz Duo/Trio",
+      "routine_title": "Bang Bang",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "323": {
+      "day": "Friday",
+      "time": "4:02 PM",
+      "category": "Senior Jazz Solo",
+      "routine_title": "Shut It Down",
+      "studio": "Premier Dance"
+    },
+    "324": {
+      "day": "Friday",
+      "time": "4:05 PM",
+      "category": "Senior Jazz Solo",
+      "routine_title": "Juke Box",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "325": {
+      "day": "Friday",
+      "time": "4:07 PM",
+      "category": "Senior Jazz Solo",
+      "routine_title": "I Can't Get You Off My Mind",
+      "studio": "Premier Dance"
+    },
+    "326": {
+      "day": "Friday",
+      "time": "4:10 PM",
+      "category": "Senior Jazz Solo",
+      "routine_title": "Fallin",
+      "studio": "Radiant Dance Studio"
+    },
+    "327": {
+      "day": "Friday",
+      "time": "4:13 PM",
+      "category": "Junior Jazz Large Group",
+      "routine_title": "Somebody's Watching Me",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "328": {
+      "day": "Friday",
+      "time": "4:15 PM",
+      "category": "Junior Jazz Large Group",
+      "routine_title": "Disco Snails",
+      "studio": "DANCE est Joie"
+    },
+    "329": {
+      "day": "Friday",
+      "time": "4:19 PM",
+      "category": "Junior Jazz Large Group",
+      "routine_title": "YaYa",
+      "studio": "Premier Dance"
+    },
+    "330": {
+      "day": "Friday",
+      "time": "4:21 PM",
+      "category": "Junior Jazz Production",
+      "routine_title": "Free Woman",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "331": {
+      "day": "Friday",
+      "time": "4:26 PM",
+      "category": "Junior Tap Duo/Trio",
+      "routine_title": "Good Morning",
+      "studio": "Premier Dance"
+    },
+    "332": {
+      "day": "Friday",
+      "time": "4:28 PM",
+      "category": "Junior Tap Duo/Trio",
+      "routine_title": "Butter",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "333": {
+      "day": "Friday",
+      "time": "4:31 PM",
+      "category": "Junior Tap Duo/Trio",
+      "routine_title": "Runaway Baby",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "334": {
+      "day": "Friday",
+      "time": "4:33 PM",
+      "category": "Junior Contemporary Duo/Trio",
+      "routine_title": "Speyside",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "335": {
+      "day": "Friday",
+      "time": "4:35 PM",
+      "category": "Junior Contemporary Duo/Trio",
+      "routine_title": "Father Said",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "336": {
+      "day": "Friday",
+      "time": "4:38 PM",
+      "category": "Junior Contemporary Duo/Trio",
+      "routine_title": "The Woods",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "337": {
+      "day": "Friday",
+      "time": "4:41 PM",
+      "category": "Junior Contemporary Duo/Trio",
+      "routine_title": "Seen Unsent",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "338": {
+      "day": "Friday",
+      "time": "4:44 PM",
+      "category": "Junior Jazz Large Group",
+      "routine_title": "Red Light Green Light",
+      "studio": "Premier Dance"
+    },
+    "339": {
+      "day": "Friday",
+      "time": "4:48 PM",
+      "category": "Junior Broadway Duo/Trio",
+      "routine_title": "Kansas City",
+      "studio": "DANCE est Joie"
+    },
+    "340": {
+      "day": "Friday",
+      "time": "4:51 PM",
+      "category": "Pro Reveler Contemporary Solo",
+      "routine_title": "I'm Worried It Will Always Be You",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "341": {
+      "day": "Friday",
+      "time": "4:54 PM",
+      "category": "Pro Reveler Contemporary Solo",
+      "routine_title": "Born To Die",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "342": {
+      "day": "Friday",
+      "time": "4:58 PM",
+      "category": "Pro Reveler Contemporary Solo",
+      "routine_title": "Resolve",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "343": {
+      "day": "Friday",
+      "time": "5:00 PM",
+      "category": "Senior Jazz Solo",
+      "routine_title": "My Prerogative",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "344": {
+      "day": "Friday",
+      "time": "5:03 PM",
+      "category": "Senior Jazz Solo",
+      "routine_title": "Harlem Nocturne",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "345": {
+      "day": "Friday",
+      "time": "5:05 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "You're Gonna Go Far",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "346": {
+      "day": "Friday",
+      "time": "5:08 PM",
+      "category": "Senior Jazz Solo",
+      "routine_title": "End of Time",
+      "studio": "Premier Dance"
+    },
+    "347": {
+      "day": "Friday",
+      "time": "5:11 PM",
+      "category": "Junior Broadway Large Group",
+      "routine_title": "I Gotcha",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "348": {
+      "day": "Friday",
+      "time": "5:13 PM",
+      "category": "Junior Contemporary Duo/Trio",
+      "routine_title": "Shout",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "349": {
+      "day": "Friday",
+      "time": "5:16 PM",
+      "category": "Junior Contemporary Duo/Trio",
+      "routine_title": "Seasons",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "350": {
+      "day": "Friday",
+      "time": "5:18 PM",
+      "category": "Junior Contemporary Duo/Trio",
+      "routine_title": "Somebody That I Used To Know",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "351": {
+      "day": "Friday",
+      "time": "5:21 PM",
+      "category": "Junior Jazz Duo/Trio",
+      "routine_title": "Long Cool Woman In A Black Dress",
+      "studio": "DANCE est Joie"
+    },
+    "352": {
+      "day": "Friday",
+      "time": "5:24 PM",
+      "category": "Junior Contemporary Large Group",
+      "routine_title": "Ode To The Stars",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "353": {
+      "day": "Friday",
+      "time": "5:27 PM",
+      "category": "Junior Lyrical Duo/Trio",
+      "routine_title": "Rescue",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "354": {
+      "day": "Friday",
+      "time": "5:30 PM",
+      "category": "Junior Lyrical Duo/Trio",
+      "routine_title": "Fighting For You",
+      "studio": "Radiant Dance Studio"
+    },
+    "355": {
+      "day": "Friday",
+      "time": "5:33 PM",
+      "category": "Junior Broadway Duo/Trio",
+      "routine_title": "We Share Everything",
+      "studio": "K & Co. Dance Studio"
+    },
+    "356": {
+      "day": "Friday",
+      "time": "5:36 PM",
+      "category": "Junior Broadway Large Group",
+      "routine_title": "Troop Beverly Hills",
+      "studio": "Premier Dance"
+    },
+    "357": {
+      "day": "Friday",
+      "time": "5:39 PM",
+      "category": "Junior Broadway Large Group",
+      "routine_title": "C'mon Everybody",
+      "studio": "DANCE est Joie"
+    },
+    "358": {
+      "day": "Friday",
+      "time": "5:42 PM",
+      "category": "Junior Hip Hop Large Group",
+      "routine_title": "Special Delivery",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "359": {
+      "day": "Friday",
+      "time": "5:44 PM",
+      "category": "Junior Specialty Line",
+      "routine_title": "Ciao Bella",
+      "studio": "River Valley Classical Ballet And Acrobatics"
+    },
+    "360": {
+      "day": "Friday",
+      "time": "5:49 PM",
+      "category": "Junior Specialty Line",
+      "routine_title": "Greedy",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "361": {
+      "day": "Friday",
+      "time": "5:52 PM",
+      "category": "Junior Jazz Duo/Trio",
+      "routine_title": "Think",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "362": {
+      "day": "Friday",
+      "time": "5:55 PM",
+      "category": "Junior Jazz Duo/Trio",
+      "routine_title": "Hit Me With a Hot Note",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "363": {
+      "day": "Friday",
+      "time": "5:57 PM",
+      "category": "Junior Lyrical Duo/Trio",
+      "routine_title": "Gravity",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "364": {
+      "day": "Friday",
+      "time": "6:00 PM",
+      "category": "Junior Open Duo/Trio",
+      "routine_title": "The Hollow Sound",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "365": {
+      "day": "Friday",
+      "time": "6:02 PM",
+      "category": "Junior Lyrical Duo/Trio",
+      "routine_title": "I'm in Here",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "366": {
+      "day": "Friday",
+      "time": "6:05 PM",
+      "category": "Junior Open Duo/Trio",
+      "routine_title": "Groove Thing",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "367": {
+      "day": "Friday",
+      "time": "6:07 PM",
+      "category": "Junior Open Large Group",
+      "routine_title": "Vogue",
+      "studio": "Premier Dance"
+    },
+    "368": {
+      "day": "Friday",
+      "time": "6:10 PM",
+      "category": "Senior Jazz Solo",
+      "routine_title": "Fever",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "369": {
+      "day": "Friday",
+      "time": "6:12 PM",
+      "category": "Senior Jazz Solo",
+      "routine_title": "Dangerous",
+      "studio": "Premier Dance"
+    },
+    "370": {
+      "day": "Friday",
+      "time": "6:15 PM",
+      "category": "Senior Jazz Solo",
+      "routine_title": "Feeling Good",
+      "studio": "K & Co. Dance Studio"
+    },
+    "371": {
+      "day": "Friday",
+      "time": "6:19 PM",
+      "category": "Senior Jazz Solo",
+      "routine_title": "TBD Bryndal",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "372": {
+      "day": "Friday",
+      "time": "6:21 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Blame",
+      "studio": "Premier Dance"
+    },
+    "373": {
+      "day": "Friday",
+      "time": "6:24 PM",
+      "category": "Senior Broadway Solo",
+      "routine_title": "Li'l Lamb",
+      "studio": "DANCE est Joie"
+    },
+    "374": {
+      "day": "Friday",
+      "time": "6:26 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "The World We Knew",
+      "studio": "DANCE est Joie"
+    },
+    "375": {
+      "day": "Friday",
+      "time": "6:29 PM",
+      "category": "Senior Open Solo",
+      "routine_title": "Wriggle",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "376": {
+      "day": "Friday",
+      "time": "6:32 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Liar",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "377": {
+      "day": "Friday",
+      "time": "6:34 PM",
+      "category": "Junior Hip Hop Large Group",
+      "routine_title": "Shake",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "378": {
+      "day": "Friday",
+      "time": "6:37 PM",
+      "category": "Junior Lyrical Large Group",
+      "routine_title": "Snow Angels",
+      "studio": "Premier Dance"
+    },
+    "379": {
+      "day": "Friday",
+      "time": "6:40 PM",
+      "category": "Senior Open Solo",
+      "routine_title": "Game On",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "380": {
+      "day": "Friday",
+      "time": "6:43 PM",
+      "category": "Senior Open Solo",
+      "routine_title": "I Care",
+      "studio": "Premier Dance"
+    },
+    "381": {
+      "day": "Friday",
+      "time": "6:45 PM",
+      "category": "Senior Open Solo",
+      "routine_title": "Landcaster Court",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "382": {
+      "day": "Friday",
+      "time": "7:10 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "SCRATCH",
+      "studio": "Premier Dance"
+    },
+    "383": {
+      "day": "Friday",
+      "time": "7:12 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Need Me",
+      "studio": "Radiant Dance Studio"
+    },
+    "384": {
+      "day": "Friday",
+      "time": "7:15 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "No Hard Feelings",
+      "studio": "Premier Dance"
+    },
+    "385": {
+      "day": "Friday",
+      "time": "7:18 PM",
+      "category": "Senior Jazz Solo",
+      "routine_title": "Is It A Crime",
+      "studio": "DANCE est Joie"
+    },
+    "386": {
+      "day": "Friday",
+      "time": "7:20 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Ephemera",
+      "studio": "Radiant Dance Studio"
+    },
+    "387": {
+      "day": "Friday",
+      "time": "7:23 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Before Our Very Eyes",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "388": {
+      "day": "Friday",
+      "time": "7:26 PM",
+      "category": "Senior Jazz Duo/Trio",
+      "routine_title": "Kill The Lights",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "389": {
+      "day": "Friday",
+      "time": "7:29 PM",
+      "category": "Senior Contemporary Duo/Trio",
+      "routine_title": "Precious Things",
+      "studio": "DANCE est Joie"
+    },
+    "390": {
+      "day": "Friday",
+      "time": "7:32 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Savage",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "391": {
+      "day": "Friday",
+      "time": "7:34 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Outside",
+      "studio": "Premier Dance"
+    },
+    "392": {
+      "day": "Friday",
+      "time": "7:37 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Half",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "393": {
+      "day": "Friday",
+      "time": "7:40 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Esotro",
+      "studio": "Radiant Dance Studio"
+    },
+    "394": {
+      "day": "Friday",
+      "time": "7:42 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Hope",
+      "studio": "Radiant Dance Studio"
+    },
+    "395": {
+      "day": "Friday",
+      "time": "7:45 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "SCRATCH",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "396": {
+      "day": "Friday",
+      "time": "7:48 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Snowing",
+      "studio": "DANCE est Joie"
+    },
+    "397": {
+      "day": "Friday",
+      "time": "7:51 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Daughter of Love Light",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "398": {
+      "day": "Friday",
+      "time": "7:53 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Destinations",
+      "studio": "DANCE est Joie"
+    },
+    "399": {
+      "day": "Friday",
+      "time": "7:57 PM",
+      "category": "Senior Jazz Duo/Trio",
+      "routine_title": "Tango de Roxanne",
+      "studio": "DANCE est Joie"
+    },
+    "400": {
+      "day": "Friday",
+      "time": "8:00 PM",
+      "category": "Senior Contemporary Duo/Trio",
+      "routine_title": "Against The Music",
+      "studio": "Premier Dance"
+    },
+    "401": {
+      "day": "Friday",
+      "time": "8:05 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Soon We'll Wake Up",
+      "studio": "Radiant Dance Studio"
+    },
+    "402": {
+      "day": "Friday",
+      "time": "8:08 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "The Other Side",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "403": {
+      "day": "Friday",
+      "time": "8:11 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "SCRATCH",
+      "studio": "Premier Dance"
+    },
+    "404": {
+      "day": "Friday",
+      "time": "8:13 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Finding A Way Out",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "405": {
+      "day": "Friday",
+      "time": "8:16 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Million Reasons",
+      "studio": "Radiant Dance Studio"
+    },
+    "406": {
+      "day": "Friday",
+      "time": "8:21 PM",
+      "category": "Senior Tap Solo",
+      "routine_title": "You Belong With Me",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "407": {
+      "day": "Friday",
+      "time": "8:23 PM",
+      "category": "Senior Tap Solo",
+      "routine_title": "Ain't It Fun",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "408": {
+      "day": "Friday",
+      "time": "8:26 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Fade Into You",
+      "studio": "Thriller Dance Studio"
+    },
+    "409": {
+      "day": "Friday",
+      "time": "8:28 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "A Poem about Death",
+      "studio": "Radiant Dance Studio"
+    },
+    "410": {
+      "day": "Friday",
+      "time": "8:30 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Liars Like You",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "411": {
+      "day": "Friday",
+      "time": "8:33 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Drowning In Your Sadness",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "412": {
+      "day": "Friday",
+      "time": "8:35 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Gasp",
+      "studio": "Premier Dance"
+    },
+    "413": {
+      "day": "Friday",
+      "time": "8:38 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Doomed",
+      "studio": "Jody Phillips Dance Company"
+    },
+    "414": {
+      "day": "Friday",
+      "time": "8:41 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Do U Know Me",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "415": {
+      "day": "Friday",
+      "time": "8:44 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Dynamite",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "416": {
+      "day": "Friday",
+      "time": "8:47 PM",
+      "category": "Senior Contemporary Duo/Trio",
+      "routine_title": "A Memory",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "417": {
+      "day": "Friday",
+      "time": "8:49 PM",
+      "category": "Senior Contemporary Duo/Trio",
+      "routine_title": "Rescue",
+      "studio": "Radiant Dance Studio"
+    },
+    "418": {
+      "day": "Friday",
+      "time": "8:52 PM",
+      "category": "Senior Contemporary Duo/Trio",
+      "routine_title": "Eternal Love",
+      "studio": "DANCE est Joie"
+    },
+    "419": {
+      "day": "Friday",
+      "time": "8:55 PM",
+      "category": "Senior Contemporary Duo/Trio",
+      "routine_title": "Maybe If You Say It Again",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "420": {
+      "day": "Friday",
+      "time": "8:58 PM",
+      "category": "Senior Lyrical Solo",
+      "routine_title": "Song To The Siren",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "421": {
+      "day": "Friday",
+      "time": "9:01 PM",
+      "category": "Senior Lyrical Solo",
+      "routine_title": "All Through the Night",
+      "studio": "Premier Dance"
+    },
+    "422": {
+      "day": "Friday",
+      "time": "9:03 PM",
+      "category": "Senior Lyrical Solo",
+      "routine_title": "Space and Time",
+      "studio": "DANCE est Joie"
+    },
+    "423": {
+      "day": "Friday",
+      "time": "9:06 PM",
+      "category": "Senior Lyrical Solo",
+      "routine_title": "I Wonder If You're Happy",
+      "studio": "Radiant Dance Studio"
+    },
+    "424": {
+      "day": "Friday",
+      "time": "9:09 PM",
+      "category": "Senior Lyrical Solo",
+      "routine_title": "Landslide",
+      "studio": "DANCE est Joie"
+    },
+    "425": {
+      "day": "Friday",
+      "time": "9:12 PM",
+      "category": "Senior Lyrical Solo",
+      "routine_title": "All Again",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "426": {
+      "day": "Friday",
+      "time": "9:14 PM",
+      "category": "Senior Lyrical Solo",
+      "routine_title": "Ode to a Love Lost",
+      "studio": "Premier Dance"
+    },
+    "427": {
+      "day": "Friday",
+      "time": "9:17 PM",
+      "category": "Senior Tap Duo/Trio",
+      "routine_title": "Symphony",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "428": {
+      "day": "Friday",
+      "time": "9:19 PM",
+      "category": "Senior Lyrical Solo",
+      "routine_title": "Winner Takes It All",
+      "studio": "Thriller Dance Studio"
+    },
+    "429": {
+      "day": "Friday",
+      "time": "9:22 PM",
+      "category": "Senior Lyrical Solo",
+      "routine_title": "To Be Loved",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "430": {
+      "day": "Friday",
+      "time": "9:24 PM",
+      "category": "Senior Lyrical Solo",
+      "routine_title": "Goodbye Yellow Brick Road",
+      "studio": "Premier Dance"
+    },
+    "431": {
+      "day": "Friday",
+      "time": "9:27 PM",
+      "category": "Senior Lyrical Solo",
+      "routine_title": "Death Wish",
+      "studio": "Premier Dance"
+    },
+    "432": {
+      "day": "Friday",
+      "time": "9:29 PM",
+      "category": "Senior Lyrical Solo",
+      "routine_title": "Oceans",
+      "studio": "River Valley Classical Ballet And Acrobatics"
+    },
+    "433": {
+      "day": "Friday",
+      "time": "9:32 PM",
+      "category": "Senior Lyrical Solo",
+      "routine_title": "I'll Get By",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "434": {
+      "day": "Friday",
+      "time": "9:34 PM",
+      "category": "Senior Lyrical Solo",
+      "routine_title": "Hero",
+      "studio": "Premier Dance"
+    },
+    "435": {
+      "day": "Friday",
+      "time": "9:37 PM",
+      "category": "Senior Lyrical Solo",
+      "routine_title": "Always Remember Us This Way",
+      "studio": "Premier Dance"
+    },
+    "436": {
+      "day": "Friday",
+      "time": "9:40 PM",
+      "category": "Senior Lyrical Solo",
+      "routine_title": "Sweetest Devotion",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "437": {
+      "day": "Friday",
+      "time": "9:42 PM",
+      "category": "Senior Acro Solo",
+      "routine_title": "Time Traveler",
+      "studio": "River Valley Classical Ballet And Acrobatics"
+    },
+    "438": {
+      "day": "Friday",
+      "time": "9:45 PM",
+      "category": "Senior Specialty Solo",
+      "routine_title": "Hemolele",
+      "studio": "River Valley Classical Ballet And Acrobatics"
+    },
+    "439": {
+      "day": "Friday",
+      "time": "9:47 PM",
+      "category": "Senior Contemporary Duo/Trio",
+      "routine_title": "Twice",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "440": {
+      "day": "Saturday",
+      "time": "2:30 PM",
+      "category": "Teen Open Production",
+      "routine_title": "Untamed",
+      "studio": "Premier Dance"
+    },
+    "441": {
+      "day": "Saturday",
+      "time": "2:36 PM",
+      "category": "Teen Tap Large Group",
+      "routine_title": "Splish Splash",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "442": {
+      "day": "Saturday",
+      "time": "2:39 PM",
+      "category": "Junior Open Small Group",
+      "routine_title": "Under Control",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "443": {
+      "day": "Saturday",
+      "time": "2:42 PM",
+      "category": "Teen Lyrical Production",
+      "routine_title": "Rollin in the Deep",
+      "studio": "Radiant Dance Studio"
+    },
+    "444": {
+      "day": "Saturday",
+      "time": "2:49 PM",
+      "category": "Junior Jazz Small Group",
+      "routine_title": "Do Your Thing",
+      "studio": "Premier Dance"
+    },
+    "445": {
+      "day": "Saturday",
+      "time": "2:52 PM",
+      "category": "Teen Jazz Small Group",
+      "routine_title": "AM to PM",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "446": {
+      "day": "Saturday",
+      "time": "2:55 PM",
+      "category": "Junior Contemporary Small Group",
+      "routine_title": "Shout",
+      "studio": "Premier Dance"
+    },
+    "447": {
+      "day": "Saturday",
+      "time": "2:57 PM",
+      "category": "Teen Jazz Large Group",
+      "routine_title": "Zoo Girls",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "448": {
+      "day": "Saturday",
+      "time": "3:01 PM",
+      "category": "Teen Open Large Group",
+      "routine_title": "Canned Heat",
+      "studio": "Premier Dance"
+    },
+    "449": {
+      "day": "Saturday",
+      "time": "3:03 PM",
+      "category": "Teen Contemporary Small Group",
+      "routine_title": "I Shall Be Fee",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "450": {
+      "day": "Saturday",
+      "time": "3:06 PM",
+      "category": "Teen Open Large Group",
+      "routine_title": "Quake",
+      "studio": "Premier Dance"
+    },
+    "451": {
+      "day": "Saturday",
+      "time": "3:09 PM",
+      "category": "Teen Contemporary Small Group",
+      "routine_title": "Maybe This Time",
+      "studio": "Radiant Dance Studio"
+    },
+    "452": {
+      "day": "Saturday",
+      "time": "3:12 PM",
+      "category": "Teen Contemporary Small Group",
+      "routine_title": "Everywhere",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "453": {
+      "day": "Saturday",
+      "time": "3:15 PM",
+      "category": "Junior Open Small Group",
+      "routine_title": "One",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "454": {
+      "day": "Saturday",
+      "time": "3:18 PM",
+      "category": "Teen Open Large Group",
+      "routine_title": "Samba",
+      "studio": "Premier Dance"
+    },
+    "455": {
+      "day": "Saturday",
+      "time": "3:20 PM",
+      "category": "Junior Contemporary Small Group",
+      "routine_title": "Walking & Falling",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "456": {
+      "day": "Saturday",
+      "time": "3:23 PM",
+      "category": "Junior Contemporary Small Group",
+      "routine_title": "Slow Me Down",
+      "studio": "Premier Dance"
+    },
+    "457": {
+      "day": "Saturday",
+      "time": "3:26 PM",
+      "category": "Senior Specialty Small Group",
+      "routine_title": "Like Jennie",
+      "studio": "Premier Dance"
+    },
+    "458": {
+      "day": "Saturday",
+      "time": "3:29 PM",
+      "category": "Senior Tap Small Group",
+      "routine_title": "Fishin in the Dark",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "459": {
+      "day": "Saturday",
+      "time": "3:31 PM",
+      "category": "Teen Jazz Large Group",
+      "routine_title": "Ya Ya",
+      "studio": "Radiant Dance Studio"
+    },
+    "460": {
+      "day": "Saturday",
+      "time": "3:35 PM",
+      "category": "Junior Contemporary Small Group",
+      "routine_title": "Tred Softly",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "461": {
+      "day": "Saturday",
+      "time": "3:38 PM",
+      "category": "Teen Jazz Small Group",
+      "routine_title": "Cliq",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "462": {
+      "day": "Saturday",
+      "time": "3:40 PM",
+      "category": "Junior Open Small Group",
+      "routine_title": "I Don't Remember",
+      "studio": "Premier Dance"
+    },
+    "463": {
+      "day": "Saturday",
+      "time": "3:43 PM",
+      "category": "Teen Jazz Large Group",
+      "routine_title": "Right About Now",
+      "studio": "Premier Dance"
+    },
+    "464": {
+      "day": "Saturday",
+      "time": "3:46 PM",
+      "category": "Junior Contemporary Small Group",
+      "routine_title": "You Look So Blue",
+      "studio": "Radiant Dance Studio"
+    },
+    "465": {
+      "day": "Saturday",
+      "time": "3:49 PM",
+      "category": "Teen Contemporary Small Group",
+      "routine_title": "Hello",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "466": {
+      "day": "Saturday",
+      "time": "3:52 PM",
+      "category": "Senior Jazz Small Group",
+      "routine_title": "Candy Man",
+      "studio": "Premier Dance"
+    },
+    "467": {
+      "day": "Saturday",
+      "time": "3:55 PM",
+      "category": "Teen Contemporary Small Group",
+      "routine_title": "One Beautiful Evening",
+      "studio": "Radiant Dance Studio"
+    },
+    "468": {
+      "day": "Saturday",
+      "time": "3:58 PM",
+      "category": "Teen Broadway Large Group",
+      "routine_title": "Moulin Rouge",
+      "studio": "Premier Dance"
+    },
+    "469": {
+      "day": "Saturday",
+      "time": "4:01 PM",
+      "category": "Junior Contemporary Small Group",
+      "routine_title": "Stay Alive",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "470": {
+      "day": "Saturday",
+      "time": "4:04 PM",
+      "category": "Teen Jazz Large Group",
+      "routine_title": "Mama Knows Best",
+      "studio": "Premier Dance"
+    },
+    "471": {
+      "day": "Saturday",
+      "time": "4:06 PM",
+      "category": "Junior Jazz Small Group",
+      "routine_title": "Outta My Hair",
+      "studio": "Premier Dance"
+    },
+    "472": {
+      "day": "Saturday",
+      "time": "4:09 PM",
+      "category": "Junior Jazz Small Group",
+      "routine_title": "Take It",
+      "studio": "Premier Dance"
+    },
+    "473": {
+      "day": "Saturday",
+      "time": "4:12 PM",
+      "category": "Teen Jazz Line",
+      "routine_title": "What Else is There",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "474": {
+      "day": "Saturday",
+      "time": "4:15 PM",
+      "category": "Teen Open Large Group",
+      "routine_title": "Oh Yeah",
+      "studio": "Premier Dance"
+    },
+    "475": {
+      "day": "Saturday",
+      "time": "4:18 PM",
+      "category": "Teen Contemporary Small Group",
+      "routine_title": "I'd Rather Go Blind",
+      "studio": "Premier Dance"
+    },
+    "476": {
+      "day": "Saturday",
+      "time": "4:21 PM",
+      "category": "Teen Jazz Small Group",
+      "routine_title": "Eye of the Storm",
+      "studio": "Radiant Dance Studio"
+    },
+    "477": {
+      "day": "Saturday",
+      "time": "4:23 PM",
+      "category": "Teen Jazz Small Group",
+      "routine_title": "Run Boy",
+      "studio": "Radiant Dance Studio"
+    },
+    "478": {
+      "day": "Saturday",
+      "time": "4:26 PM",
+      "category": "Junior Jazz Small Group",
+      "routine_title": "Low Rider",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "479": {
+      "day": "Saturday",
+      "time": "4:29 PM",
+      "category": "Junior Jazz Small Group",
+      "routine_title": "Teach Me How to Shimmy",
+      "studio": "Premier Dance"
+    },
+    "480": {
+      "day": "Saturday",
+      "time": "4:32 PM",
+      "category": "Junior Jazz Small Group",
+      "routine_title": "You Ain't No Celebrity",
+      "studio": "Premier Dance"
+    },
+    "481": {
+      "day": "Saturday",
+      "time": "4:34 PM",
+      "category": "Junior Contemporary Small Group",
+      "routine_title": "The Journey",
+      "studio": "Premier Dance"
+    },
+    "482": {
+      "day": "Saturday",
+      "time": "4:37 PM",
+      "category": "Teen Jazz Small Group",
+      "routine_title": "Let's Groove",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "483": {
+      "day": "Saturday",
+      "time": "4:40 PM",
+      "category": "Teen Contemporary Small Group",
+      "routine_title": "Stop In Nevada",
+      "studio": "Premier Dance"
+    },
+    "484": {
+      "day": "Saturday",
+      "time": "4:43 PM",
+      "category": "Teen Jazz Small Group",
+      "routine_title": "Gossip",
+      "studio": "Premier Dance"
+    },
+    "485": {
+      "day": "Saturday",
+      "time": "4:46 PM",
+      "category": "Teen Contemporary Small Group",
+      "routine_title": "Disease",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "486": {
+      "day": "Saturday",
+      "time": "4:49 PM",
+      "category": "Teen Jazz Small Group",
+      "routine_title": "Pulse",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "487": {
+      "day": "Saturday",
+      "time": "4:51 PM",
+      "category": "Junior Jazz Small Group",
+      "routine_title": "It Girl",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "488": {
+      "day": "Saturday",
+      "time": "4:54 PM",
+      "category": "Teen Open Large Group",
+      "routine_title": "Andy Griffith",
+      "studio": "Premier Dance"
+    },
+    "489": {
+      "day": "Saturday",
+      "time": "4:56 PM",
+      "category": "Teen Contemporary Small Group",
+      "routine_title": "Teach You How to Love Me",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "490": {
+      "day": "Saturday",
+      "time": "4:59 PM",
+      "category": "Junior Jazz Small Group",
+      "routine_title": "Attitude",
+      "studio": "Radiant Dance Studio"
+    },
+    "491": {
+      "day": "Saturday",
+      "time": "5:02 PM",
+      "category": "Junior Jazz Small Group",
+      "routine_title": "Watch This",
+      "studio": "Premier Dance"
+    },
+    "492": {
+      "day": "Saturday",
+      "time": "5:04 PM",
+      "category": "Junior Jazz Small Group",
+      "routine_title": "One Night Only",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "493": {
+      "day": "Saturday",
+      "time": "5:07 PM",
+      "category": "Teen Contemporary Small Group",
+      "routine_title": "By My Side",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "494": {
+      "day": "Saturday",
+      "time": "5:10 PM",
+      "category": "Teen Contemporary Small Group",
+      "routine_title": "Muddy Water",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "495": {
+      "day": "Saturday",
+      "time": "5:13 PM",
+      "category": "Junior Contemporary Small Group",
+      "routine_title": "Winter Song",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "496": {
+      "day": "Saturday",
+      "time": "5:15 PM",
+      "category": "Junior Contemporary Small Group",
+      "routine_title": "Say A Little Prayer",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "497": {
+      "day": "Saturday",
+      "time": "5:18 PM",
+      "category": "Junior Open Small Group",
+      "routine_title": "Sometimes I Sit and Think",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "498": {
+      "day": "Saturday",
+      "time": "5:21 PM",
+      "category": "Senior Broadway Large Group",
+      "routine_title": "Steam Heat",
+      "studio": "DANCE est Joie"
+    },
+    "499": {
+      "day": "Saturday",
+      "time": "5:24 PM",
+      "category": "Junior Open Small Group",
+      "routine_title": "Frozen Heart",
+      "studio": "Premier Dance"
+    },
+    "500": {
+      "day": "Saturday",
+      "time": "5:27 PM",
+      "category": "Teen Contemporary Small Group",
+      "routine_title": "The Hearse",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "501": {
+      "day": "Saturday",
+      "time": "5:30 PM",
+      "category": "Teen Contemporary Small Group",
+      "routine_title": "Which Witch",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "502": {
+      "day": "Saturday",
+      "time": "5:33 PM",
+      "category": "Teen Jazz Small Group",
+      "routine_title": "Deva Ju",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "503": {
+      "day": "Saturday",
+      "time": "5:36 PM",
+      "category": "Junior Open Small Group",
+      "routine_title": "The Figures Unknown",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "504": {
+      "day": "Saturday",
+      "time": "5:38 PM",
+      "category": "Junior Contemporary Small Group",
+      "routine_title": "Soul Cage",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "505": {
+      "day": "Saturday",
+      "time": "5:41 PM",
+      "category": "Junior Jazz Small Group",
+      "routine_title": "7 Rings",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "506": {
+      "day": "Saturday",
+      "time": "5:44 PM",
+      "category": "Teen Jazz Small Group",
+      "routine_title": "Rainy Day Dream Away",
+      "studio": "DANCE est Joie"
+    },
+    "507": {
+      "day": "Saturday",
+      "time": "5:47 PM",
+      "category": "Senior Jazz Small Group",
+      "routine_title": "Rumour Has It",
+      "studio": "DANCE est Joie"
+    },
+    "508": {
+      "day": "Saturday",
+      "time": "5:50 PM",
+      "category": "Teen Jazz Small Group",
+      "routine_title": "Bam Bam",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "509": {
+      "day": "Saturday",
+      "time": "5:53 PM",
+      "category": "Teen Jazz Small Group",
+      "routine_title": "Money Money Money",
+      "studio": "K & Co. Dance Studio"
+    },
+    "510": {
+      "day": "Saturday",
+      "time": "5:56 PM",
+      "category": "Junior Jazz Small Group",
+      "routine_title": "Eyes on the Back of My Head",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "511": {
+      "day": "Saturday",
+      "time": "5:59 PM",
+      "category": "Junior Jazz Small Group",
+      "routine_title": "Yeah Yeah Yeah",
+      "studio": "K & Co. Dance Studio"
+    },
+    "512": {
+      "day": "Saturday",
+      "time": "6:02 PM",
+      "category": "Teen Open Large Group",
+      "routine_title": "Don't Tread On Me",
+      "studio": "River Valley Classical Ballet And Acrobatics"
+    },
+    "513": {
+      "day": "Saturday",
+      "time": "6:06 PM",
+      "category": "Junior Jazz Small Group",
+      "routine_title": "Feel So Good",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "514": {
+      "day": "Saturday",
+      "time": "6:30 PM",
+      "category": "Teen Jazz Line",
+      "routine_title": "Purple Hat",
+      "studio": "Premier Dance"
+    },
+    "515": {
+      "day": "Saturday",
+      "time": "6:33 PM",
+      "category": "Teen Contemporary Large Group",
+      "routine_title": "Change is Everything",
+      "studio": "Premier Dance"
+    },
+    "516": {
+      "day": "Saturday",
+      "time": "6:35 PM",
+      "category": "Teen Hip Hop Line",
+      "routine_title": "Party",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "517": {
+      "day": "Saturday",
+      "time": "6:38 PM",
+      "category": "Teen Jazz Large Group",
+      "routine_title": "BITM",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "518": {
+      "day": "Saturday",
+      "time": "6:42 PM",
+      "category": "Teen Jazz Line",
+      "routine_title": "Selfish",
+      "studio": "Radiant Dance Studio"
+    },
+    "519": {
+      "day": "Saturday",
+      "time": "6:46 PM",
+      "category": "Teen Hip Hop Line",
+      "routine_title": "JT",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "520": {
+      "day": "Saturday",
+      "time": "6:50 PM",
+      "category": "Junior Lyrical Small Group",
+      "routine_title": "Amen",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "521": {
+      "day": "Saturday",
+      "time": "6:52 PM",
+      "category": "Teen Tap Small Group",
+      "routine_title": "I Feel Like Dancing",
+      "studio": "Premier Dance"
+    },
+    "522": {
+      "day": "Saturday",
+      "time": "6:55 PM",
+      "category": "Junior Broadway Small Group",
+      "routine_title": "Jail House Rock",
+      "studio": "Premier Dance"
+    },
+    "523": {
+      "day": "Saturday",
+      "time": "6:58 PM",
+      "category": "Teen Broadway Small Group",
+      "routine_title": "Loathing",
+      "studio": "Premier Dance"
+    },
+    "524": {
+      "day": "Saturday",
+      "time": "7:01 PM",
+      "category": "Teen Hip Hop Large Group",
+      "routine_title": "We Will Never Know",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "525": {
+      "day": "Saturday",
+      "time": "7:05 PM",
+      "category": "Teen Lyrical Small Group",
+      "routine_title": "Clean",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "526": {
+      "day": "Saturday",
+      "time": "7:07 PM",
+      "category": "Senior Lyrical Small Group",
+      "routine_title": "Hopelessly Devoted",
+      "studio": "Radiant Dance Studio"
+    },
+    "527": {
+      "day": "Saturday",
+      "time": "7:10 PM",
+      "category": "Teen Open Small Group",
+      "routine_title": "Dang",
+      "studio": "Premier Dance"
+    },
+    "528": {
+      "day": "Saturday",
+      "time": "7:13 PM",
+      "category": "Junior Tap Small Group",
+      "routine_title": "Livin in New York City",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "529": {
+      "day": "Saturday",
+      "time": "7:16 PM",
+      "category": "Teen Lyrical Small Group",
+      "routine_title": "Sunday Kind of Love",
+      "studio": "Premier Dance"
+    },
+    "530": {
+      "day": "Saturday",
+      "time": "7:19 PM",
+      "category": "Teen Lyrical Large Group",
+      "routine_title": "Warrior",
+      "studio": "Premier Dance"
+    },
+    "531": {
+      "day": "Saturday",
+      "time": "7:22 PM",
+      "category": "Junior Hip Hop Small Group",
+      "routine_title": "Schoolin Life",
+      "studio": "Premier Dance"
+    },
+    "532": {
+      "day": "Saturday",
+      "time": "7:26 PM",
+      "category": "Teen Contemporary Small Group",
+      "routine_title": "Even If It's A Lie",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "533": {
+      "day": "Saturday",
+      "time": "7:29 PM",
+      "category": "Teen Lyrical Large Group",
+      "routine_title": "Run",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "534": {
+      "day": "Saturday",
+      "time": "7:32 PM",
+      "category": "Senior Contemporary Small Group",
+      "routine_title": "What Remains",
+      "studio": "Radiant Dance Studio"
+    },
+    "535": {
+      "day": "Saturday",
+      "time": "7:35 PM",
+      "category": "Teen Contemporary Large Group",
+      "routine_title": "She Gets The Flowers",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "536": {
+      "day": "Saturday",
+      "time": "7:38 PM",
+      "category": "Junior Lyrical Small Group",
+      "routine_title": "Ocean",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "537": {
+      "day": "Saturday",
+      "time": "7:41 PM",
+      "category": "Senior Open Small Group",
+      "routine_title": "The Chain",
+      "studio": "Premier Dance"
+    },
+    "538": {
+      "day": "Saturday",
+      "time": "7:44 PM",
+      "category": "Teen Broadway Small Group",
+      "routine_title": "Call Me Back",
+      "studio": "Premier Dance"
+    },
+    "539": {
+      "day": "Saturday",
+      "time": "7:46 PM",
+      "category": "Teen Lyrical Small Group",
+      "routine_title": "See You Again",
+      "studio": "Premier Dance"
+    },
+    "540": {
+      "day": "Saturday",
+      "time": "7:49 PM",
+      "category": "Senior Open Small Group",
+      "routine_title": "Wide Awake",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "541": {
+      "day": "Saturday",
+      "time": "7:52 PM",
+      "category": "Teen Open Small Group",
+      "routine_title": "Twisting and Untangling",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "542": {
+      "day": "Saturday",
+      "time": "7:56 PM",
+      "category": "Senior Hip Hop Large Group",
+      "routine_title": "Banji",
+      "studio": "Radiant Dance Studio"
+    },
+    "543": {
+      "day": "Saturday",
+      "time": "7:58 PM",
+      "category": "Junior Lyrical Small Group",
+      "routine_title": "Thursday",
+      "studio": "Premier Dance"
+    },
+    "544": {
+      "day": "Saturday",
+      "time": "8:02 PM",
+      "category": "Teen Open Small Group",
+      "routine_title": "4 Passengers",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "545": {
+      "day": "Saturday",
+      "time": "8:05 PM",
+      "category": "Teen Lyrical Large Group",
+      "routine_title": "Water From the Moon",
+      "studio": "Premier Dance"
+    },
+    "546": {
+      "day": "Saturday",
+      "time": "8:08 PM",
+      "category": "Junior Tap Small Group",
+      "routine_title": "Fireflies",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "547": {
+      "day": "Saturday",
+      "time": "8:11 PM",
+      "category": "Junior Broadway Small Group",
+      "routine_title": "Money",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "548": {
+      "day": "Saturday",
+      "time": "8:15 PM",
+      "category": "Senior Contemporary Small Group",
+      "routine_title": "I Am The Host",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "549": {
+      "day": "Saturday",
+      "time": "8:18 PM",
+      "category": "Junior Lyrical Small Group",
+      "routine_title": "Red Ribbon",
+      "studio": "Premier Dance"
+    },
+    "550": {
+      "day": "Saturday",
+      "time": "8:21 PM",
+      "category": "Senior Contemporary Small Group",
+      "routine_title": "Domino Effect",
+      "studio": "Radiant Dance Studio"
+    },
+    "551": {
+      "day": "Saturday",
+      "time": "8:24 PM",
+      "category": "Teen Lyrical Small Group",
+      "routine_title": "I Surrender",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "552": {
+      "day": "Saturday",
+      "time": "8:28 PM",
+      "category": "Junior Lyrical Small Group",
+      "routine_title": "Heaven",
+      "studio": "Premier Dance"
+    },
+    "553": {
+      "day": "Saturday",
+      "time": "8:31 PM",
+      "category": "Teen Open Line",
+      "routine_title": "Up All Night",
+      "studio": "Premier Dance"
+    },
+    "554": {
+      "day": "Saturday",
+      "time": "8:34 PM",
+      "category": "Junior Lyrical Small Group",
+      "routine_title": "Woodland",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "555": {
+      "day": "Saturday",
+      "time": "8:36 PM",
+      "category": "Junior Tap Small Group",
+      "routine_title": "Never Get Used to This",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "556": {
+      "day": "Saturday",
+      "time": "8:39 PM",
+      "category": "Senior Contemporary Small Group",
+      "routine_title": "Release",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "557": {
+      "day": "Saturday",
+      "time": "8:42 PM",
+      "category": "Teen Lyrical Small Group",
+      "routine_title": "If You Wanted To You Would",
+      "studio": "Radiant Dance Studio"
+    },
+    "558": {
+      "day": "Saturday",
+      "time": "8:46 PM",
+      "category": "Teen Broadway Small Group",
+      "routine_title": "All That Jazz",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "559": {
+      "day": "Saturday",
+      "time": "8:50 PM",
+      "category": "Junior Broadway Small Group",
+      "routine_title": "She's In Love",
+      "studio": "Premier Dance"
+    },
+    "560": {
+      "day": "Saturday",
+      "time": "8:53 PM",
+      "category": "Teen Lyrical Small Group",
+      "routine_title": "Iris",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "561": {
+      "day": "Saturday",
+      "time": "8:56 PM",
+      "category": "Teen Contemporary Large Group",
+      "routine_title": "Ballad Of A Thin Man",
+      "studio": "Premier Dance"
+    },
+    "562": {
+      "day": "Saturday",
+      "time": "8:59 PM",
+      "category": "Teen Hip Hop Large Group",
+      "routine_title": "Like Jennie",
+      "studio": "Radiant Dance Studio"
+    },
+    "563": {
+      "day": "Saturday",
+      "time": "9:02 PM",
+      "category": "Teen Broadway Small Group",
+      "routine_title": "Last Dance",
+      "studio": "DANCE est Joie"
+    },
+    "564": {
+      "day": "Saturday",
+      "time": "9:05 PM",
+      "category": "Senior Contemporary Small Group",
+      "routine_title": "Bloodbag",
+      "studio": "Premier Dance"
+    },
+    "565": {
+      "day": "Saturday",
+      "time": "9:08 PM",
+      "category": "Senior Contemporary Small Group",
+      "routine_title": "Bloodbag",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "566": {
+      "day": "Saturday",
+      "time": "9:10 PM",
+      "category": "Junior Lyrical Small Group",
+      "routine_title": "Remember Me",
+      "studio": "DV8 Dance Complex - DV8 The Company"
+    },
+    "567": {
+      "day": "Saturday",
+      "time": "9:13 PM",
+      "category": "Junior Lyrical Small Group",
+      "routine_title": "Two Steps Away",
+      "studio": "Premier Dance"
+    },
+    "568": {
+      "day": "Saturday",
+      "time": "9:16 PM",
+      "category": "Junior Lyrical Small Group",
+      "routine_title": "Islands",
+      "studio": "DANCE est Joie"
+    },
+    "569": {
+      "day": "Saturday",
+      "time": "9:19 PM",
+      "category": "Teen Hip Hop Small Group",
+      "routine_title": "Boots",
+      "studio": "Premier Dance"
+    },
+    "570": {
+      "day": "Saturday",
+      "time": "9:22 PM",
+      "category": "Senior Open Small Group",
+      "routine_title": "Bad Thing",
+      "studio": "DANCE est Joie"
+    },
+    "571": {
+      "day": "Saturday",
+      "time": "9:25 PM",
+      "category": "Senior Contemporary Small Group",
+      "routine_title": "Gold Dust Woman",
+      "studio": "DANCE est Joie"
+    },
+    "572": {
+      "day": "Saturday",
+      "time": "9:29 PM",
+      "category": "Teen Contemporary Large Group",
+      "routine_title": "Jolene",
+      "studio": "Radiant Dance Studio"
+    },
+    "573": {
+      "day": "Saturday",
+      "time": "9:31 PM",
+      "category": "Junior Broadway Small Group",
+      "routine_title": "Bad Romance",
+      "studio": "Radiant Dance Studio"
+    },
+    "574": {
+      "day": "Saturday",
+      "time": "9:34 PM",
+      "category": "Junior Broadway Small Group",
+      "routine_title": "Puttin on the Ritz",
+      "studio": "K & Co. Dance Studio"
+    },
+    "575": {
+      "day": "Saturday",
+      "time": "9:37 PM",
+      "category": "Junior Lyrical Small Group",
+      "routine_title": "For Good",
+      "studio": "River Valley Classical Ballet And Acrobatics"
+    },
+    "576": {
+      "day": "Saturday",
+      "time": "9:40 PM",
+      "category": "Teen Open Small Group",
+      "routine_title": "Because You Loved Me",
+      "studio": "DANCE est Joie"
+    },
+    "577": {
+      "day": "Saturday",
+      "time": "9:43 PM",
+      "category": "Junior Hip Hop Small Group",
+      "routine_title": "Fight Night",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "578": {
+      "day": "Saturday",
+      "time": "9:46 PM",
+      "category": "Senior Lyrical Small Group",
+      "routine_title": "Dancing",
+      "studio": "DANCE est Joie"
+    },
+    "579": {
+      "day": "Saturday",
+      "time": "9:49 PM",
+      "category": "Teen Lyrical Large Group",
+      "routine_title": "I Just Died In Your Arms",
+      "studio": "DANCE est Joie"
+    },
+    "580": {
+      "day": "Saturday",
+      "time": "9:52 PM",
+      "category": "Junior Hip Hop Small Group",
+      "routine_title": "Telephone",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "581": {
+      "day": "Sunday",
+      "time": "7:00 AM",
+      "category": "RevKids Ballet Solo",
+      "routine_title": "Rainbow Connection",
+      "studio": "Premier Dance"
+    },
+    "582": {
+      "day": "Sunday",
+      "time": "7:02 AM",
+      "category": "RevKids Jazz Solo",
+      "routine_title": "Took the Night",
+      "studio": "Premier Dance"
+    },
+    "583": {
+      "day": "Sunday",
+      "time": "7:05 AM",
+      "category": "RevKids Jazz Solo",
+      "routine_title": "Born This Way",
+      "studio": "Premier Dance"
+    },
+    "584": {
+      "day": "Sunday",
+      "time": "7:07 AM",
+      "category": "RevKids Broadway Solo",
+      "routine_title": "Dimples",
+      "studio": "Premier Dance"
+    },
+    "585": {
+      "day": "Sunday",
+      "time": "7:09 AM",
+      "category": "Mini Jazz Duo/Trio",
+      "routine_title": "Girls Just Want To Have Fun",
+      "studio": "Premier Dance"
+    },
+    "586": {
+      "day": "Sunday",
+      "time": "7:11 AM",
+      "category": "Mini Jazz Duo/Trio",
+      "routine_title": "Girls Night Out",
+      "studio": "Premier Dance"
+    },
+    "587": {
+      "day": "Sunday",
+      "time": "7:16 AM",
+      "category": "RevKids Jazz Solo",
+      "routine_title": "Soda Pop",
+      "studio": "Premier Dance"
+    },
+    "588": {
+      "day": "Sunday",
+      "time": "7:18 AM",
+      "category": "RevKids Lyrical Solo",
+      "routine_title": "Somewhere Out There",
+      "studio": "Premier Dance"
+    },
+    "589": {
+      "day": "Sunday",
+      "time": "7:21 AM",
+      "category": "Mini Jazz Duo/Trio",
+      "routine_title": "The Land of Oz",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "590": {
+      "day": "Sunday",
+      "time": "7:23 AM",
+      "category": "Mini Jazz Duo/Trio",
+      "routine_title": "No Boys Allowed",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "591": {
+      "day": "Sunday",
+      "time": "7:26 AM",
+      "category": "RevKids Specialty Duo/Trio",
+      "routine_title": "The Mouse House",
+      "studio": "Premier Dance"
+    },
+    "592": {
+      "day": "Sunday",
+      "time": "7:28 AM",
+      "category": "RevKids Open Solo",
+      "routine_title": "Yellow Polka Dot Bikini",
+      "studio": "Premier Dance"
+    },
+    "593": {
+      "day": "Sunday",
+      "time": "7:30 AM",
+      "category": "Mini Jazz Duo/Trio",
+      "routine_title": "Jet Setter",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "594": {
+      "day": "Sunday",
+      "time": "7:32 AM",
+      "category": "Mini Jazz Duo/Trio",
+      "routine_title": "I'm A Showstopper",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "595": {
+      "day": "Sunday",
+      "time": "7:35 AM",
+      "category": "Mini Jazz Duo/Trio",
+      "routine_title": "I Hate Boys",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "596": {
+      "day": "Sunday",
+      "time": "7:37 AM",
+      "category": "Mini Contemporary Duo/Trio",
+      "routine_title": "Turn to Stone",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "597": {
+      "day": "Sunday",
+      "time": "7:40 AM",
+      "category": "Mini Contemporary Duo/Trio",
+      "routine_title": "Rescue",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "598": {
+      "day": "Sunday",
+      "time": "7:42 AM",
+      "category": "RevKids Jazz Duo/Trio",
+      "routine_title": "We Feel Cute",
+      "studio": "Premier Dance"
+    },
+    "599": {
+      "day": "Sunday",
+      "time": "7:45 AM",
+      "category": "Mini Broadway Duo/Trio",
+      "routine_title": "Easy Street",
+      "studio": "DANCE est Joie"
+    },
+    "600": {
+      "day": "Sunday",
+      "time": "7:47 AM",
+      "category": "Mini Jazz Duo/Trio",
+      "routine_title": "Hung Up",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "55A": {
+      "day": "Thursday",
+      "time": "6:22 PM",
+      "category": "Teen Lyrical Solo",
+      "routine_title": "Closure",
+      "studio": "High Pointe Performing Arts Studio"
+    },
+    "400A": {
+      "day": "Friday",
+      "time": "8:02 PM",
+      "category": "Senior Contemporary Solo",
+      "routine_title": "Hope There's Someone",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "405A": {
+      "day": "Friday",
+      "time": "8:19 PM",
+      "category": "Senior Lyrical Solo",
+      "routine_title": "Gravity",
+      "studio": "Elite Dance of Tulsa"
+    },
+    "586A": {
+      "day": "Sunday",
+      "time": "7:14 AM",
+      "category": "RevKids Lyrical Solo",
+      "routine_title": "Fly Me to the Moon",
+      "studio": "Premier Dance"
+    }
+  }
+}

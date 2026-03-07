@@ -1,0 +1,21 @@
+{
+  "name": "Dance Competition PWA",
+  "short_name": "DanceComp",
+  "description": "Live dance competition schedule and performance tracker.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0a0a0b",
+  "theme_color": "#00f2ff",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
