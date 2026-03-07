@@ -23,6 +23,8 @@ const scheduleChangeText = document.getElementById('scheduleChangeText');
 const dismissBanner = document.getElementById('dismissBanner');
 const premierDanceBtn = document.getElementById('premierDanceBtn');
 const premierDayLabel = document.getElementById('premierDayLabel');
+const premierTomorrowBtn = document.getElementById('premierTomorrowBtn');
+const premierTomorrowLabel = document.getElementById('premierTomorrowLabel');
 const liveToggleBtn = document.getElementById('liveToggleBtn');
 const liveStreamContainer = document.getElementById('liveStreamContainer');
 const liveStreamFrame = document.getElementById('liveStreamFrame');
@@ -399,9 +401,12 @@ async function init() {
     // Premier Dance quick-add
     const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const today = dayNames[new Date().getDay()];
+    const tomorrow = dayNames[(new Date().getDay() + 1) % 7];
     premierDayLabel.textContent = today;
-    premierDanceBtn.addEventListener('click', () => {
-        const dances = getDancesByStudioAndDay('Premier Dance', today);
+    premierTomorrowLabel.textContent = tomorrow;
+
+    function addPremierDances(day, btn) {
+        const dances = getDancesByStudioAndDay('Premier Dance', day);
         let added = 0;
         dances.forEach(key => {
             if (!trackedDances.includes(key)) {
@@ -413,14 +418,18 @@ async function init() {
             sortTracked();
             saveTracked();
         }
-        // Visual feedback
-        premierDanceBtn.textContent = added > 0 ? `✓ Added ${added} dances` : `All ${dances.length} already tracked`;
-        premierDanceBtn.classList.add('bg-electricBlue/20');
+        btn.textContent = added > 0 ? `✓ Added ${added} dances` : `All ${dances.length} already tracked`;
+        btn.classList.add('bg-electricBlue/20');
         setTimeout(() => {
-            premierDanceBtn.innerHTML = `<span>💃</span> Premier Dance — <span>${today}</span>`;
-            premierDanceBtn.classList.remove('bg-electricBlue/20');
+            btn.innerHTML = btn === premierDanceBtn
+                ? `<span>💃</span> Premier — <span>${day}</span>`
+                : `<span>📅</span> Premier — <span>${day}</span>`;
+            btn.classList.remove('bg-electricBlue/20');
         }, 2000);
-    });
+    }
+
+    premierDanceBtn.addEventListener('click', () => addPremierDances(today, premierDanceBtn));
+    premierTomorrowBtn.addEventListener('click', () => addPremierDances(tomorrow, premierTomorrowBtn));
 
     // Connect to Firebase or demo mode
     if (database) {
