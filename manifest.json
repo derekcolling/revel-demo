@@ -2,7 +2,7 @@
   "name": "Dance Competition PWA",
   "short_name": "DanceComp",
   "description": "Live dance competition schedule and performance tracker.",
-  "start_url": "/live_dashboard_refined.html",
+  "start_url": "/schedule.html",
   "display": "standalone",
   "background_color": "#0a0a0b",
   "theme_color": "#00f2ff",
