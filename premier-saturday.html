@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Premier Dance — Saturday</title>
+    <title>Revel 2026 — Dance Schedule</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,99 +15,317 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            font-family: 'Manrope', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
             background: #0a0a0a;
             color: #e5e5e5;
             min-height: 100vh;
             -webkit-font-smoothing: antialiased;
             padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+            max-width: 480px;
+            margin: 0 auto;
         }
 
+        /* Header */
         header {
             position: sticky;
             top: 0;
             background: rgba(10, 10, 10, 0.92);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            padding: 12px 20px 12px;
+            padding: 12px 20px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             z-index: 10;
-            text-align: center;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
         }
 
         .logo {
-            height: 32px;
-            margin-bottom: 8px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+            height: 28px;
         }
 
-        header h1 {
-            font-size: 15px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        header h1 span {
-            color: #254EF0;
-        }
-
-        header p {
-            font-size: 11px;
-            color: #666;
-            margin-top: 2px;
-        }
-
-        .filters {
+        /* On Stage Banner */
+        .on-stage {
             display: flex;
-            gap: 6px;
-            margin-top: 10px;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            background: rgba(37, 78, 240, 0.08);
+            border: 1px solid rgba(37, 78, 240, 0.2);
+            border-radius: 12px;
+            margin-bottom: 10px;
         }
 
-        .pill {
+        .on-stage-label {
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #254EF0;
+            white-space: nowrap;
+        }
+
+        .on-stage-number {
+            font-size: 28px;
+            font-weight: 800;
+            color: #254EF0;
+            line-height: 1;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .on-stage-info {
             flex: 1;
-            padding: 6px 0;
+            min-width: 0;
+        }
+
+        .on-stage-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #f0f0f0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .on-stage-studio {
+            font-size: 11px;
+            color: #888;
+        }
+
+        .on-stage-waiting {
+            font-size: 13px;
+            color: #555;
+        }
+
+        /* Live Stream Toggle */
+        .live-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            padding: 10px 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            color: #e5e5e5;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .live-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #ef4444;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .live-chevron {
+            margin-left: auto;
+            transition: transform 0.3s;
+            color: #555;
+        }
+
+        .live-container {
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+            max-height: 0;
+            margin-bottom: 10px;
+        }
+
+        .live-container iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: none;
+            border-radius: 12px;
+            background: #000;
+        }
+
+        /* Nav / Filters */
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0 0 10px;
+        }
+
+        .day-tab {
+            padding: 6px 16px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             background: transparent;
             color: #888;
-            font-size: 14px;
-            font-weight: 600;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.2s;
             -webkit-tap-highlight-color: transparent;
         }
 
-        .pill.active {
+        .day-tab.active {
             background: #254EF0;
-            color: #ffffff;
+            color: #fff;
             border-color: #254EF0;
         }
 
+        .premier-toggle {
+            margin-left: auto;
+            padding: 6px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            background: transparent;
+            color: #888;
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .premier-toggle.active {
+            background: rgba(37, 78, 240, 0.15);
+            color: #254EF0;
+            border-color: rgba(37, 78, 240, 0.4);
+        }
+
+        .dance-count {
+            font-size: 11px;
+            color: #555;
+            padding: 0 0 0 4px;
+        }
+
+        .dance-count span {
+            color: #254EF0;
+        }
+
+        /* Dance List */
         .list {
-            padding: 8px 16px 40px;
+            padding: 0 0 100px;
         }
 
-        .dance {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding: 14px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        .dance-row {
+            position: relative;
+            overflow: hidden;
+            background: #0a0a0a;
+            user-select: none;
+            touch-action: pan-y;
         }
 
-        .dance.hidden {
+        .dance-row.hidden {
             display: none;
         }
 
+        .dance-actions {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1a1a1a;
+            z-index: 1;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+        }
+
+        .dance-row.swiped-open .dance-actions {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .highlight-btn {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: #254EF0;
+            color: white;
+            font-family: inherit;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .dance {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: #0a0a0a;
+            z-index: 2;
+            transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+            border-left: 3px solid transparent;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .dance.swiped {
+            transform: translateX(-80px);
+        }
+
+        /* Highlighted states */
+        .dance.highlighted {
+            border-left-color: #254EF0;
+            background: rgba(37, 78, 240, 0.04);
+        }
+
+        .dance.highlighted.soon-1-2 {
+            border-left-color: #FF4D00;
+            background: rgba(255, 77, 0, 0.06);
+        }
+
+        .dance.highlighted.soon-3-5 {
+            border-left-color: #39FF14;
+            background: rgba(57, 255, 20, 0.04);
+        }
+
+        .dance.highlighted.done {
+            border-left-color: transparent;
+            background: transparent;
+            opacity: 0.4;
+        }
+
+        /* On-stage row in the list */
+        .dance.current-dance {
+            background: rgba(37, 78, 240, 0.12);
+            border-left-color: #254EF0;
+        }
+
+        .dance.current-dance .num {
+            color: #fff;
+        }
+
+        .dance.current-dance .current-label {
+            display: inline-block;
+        }
+
         .num {
-            font-size: 26px;
+            font-size: 22px;
             font-weight: 800;
             color: #254EF0;
-            min-width: 42px;
+            min-width: 38px;
             text-align: right;
             font-variant-numeric: tabular-nums;
+            line-height: 1;
         }
 
         .info {
@@ -114,7 +334,7 @@
         }
 
         .title {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 600;
             color: #f0f0f0;
             white-space: nowrap;
@@ -122,341 +342,511 @@
             text-overflow: ellipsis;
         }
 
-        .category {
-            font-size: 13px;
+        .meta {
+            font-size: 11px;
             color: #666;
-            margin-top: 2px;
+            margin-top: 1px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        .time {
-            font-size: 14px;
+        .time-col {
+            font-size: 12px;
             color: #555;
             font-variant-numeric: tabular-nums;
             white-space: nowrap;
+            text-align: right;
+        }
+
+        .current-label {
+            display: none;
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #254EF0;
+            background: rgba(37, 78, 240, 0.15);
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-top: 2px;
+        }
+
+        /* Proximity badge */
+        .proximity-badge {
+            font-size: 10px;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 10px;
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
+        }
+
+        .proximity-badge.now {
+            background: #254EF0;
+            color: #fff;
+            animation: pulse-badge 2s ease-in-out infinite;
+        }
+
+        .proximity-badge.urgent {
+            background: rgba(255, 77, 0, 0.2);
+            color: #FF4D00;
+        }
+
+        .proximity-badge.soon {
+            background: rgba(57, 255, 20, 0.15);
+            color: #39FF14;
+        }
+
+        @keyframes pulse-badge {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Jump to Current FAB */
+        #jumpToCurrent {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(80px);
+            padding: 10px 20px;
+            background: #254EF0;
+            color: #fff;
+            border: none;
+            border-radius: 24px;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            z-index: 20;
+            box-shadow: 0 4px 20px rgba(37, 78, 240, 0.4);
+            transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        #jumpToCurrent.visible {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: #555;
+            font-size: 14px;
         }
     </style>
 </head>
 
 <body>
     <header>
-        <img src="logo.png" alt="Revel" class="logo">
-        <h1><span>Premier Dance</span> — Saturday</h1>
-        <p id="count">48 dances · Revel 2026</p>
-        <div class="filters">
-            <button class="pill active" data-filter="all">All</button>
-            <button class="pill" data-filter="junior">Junior</button>
-            <button class="pill" data-filter="teen">Teen</button>
-            <button class="pill" data-filter="senior">Senior</button>
+        <div class="header-top">
+            <img src="./62ace49c152a984444341217_Rev Nav Logo.svg" alt="Revel" class="logo">
         </div>
+
+        <!-- On Stage Display -->
+        <div class="on-stage" id="onStage">
+            <div>
+                <div class="on-stage-label">On Stage</div>
+                <div class="on-stage-number" id="onStageNumber">...</div>
+            </div>
+            <div class="on-stage-info">
+                <div class="on-stage-waiting" id="onStageWaiting">Waiting for update</div>
+                <div class="on-stage-title" id="onStageTitle" style="display:none"></div>
+                <div class="on-stage-studio" id="onStageStudio" style="display:none"></div>
+            </div>
+        </div>
+
+        <!-- Live Stream -->
+        <button class="live-btn" id="liveToggleBtn">
+            <span class="live-dot"></span>
+            Watch Live
+            <svg class="live-chevron" id="liveChevron" width="16" height="16" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+            </svg>
+        </button>
+        <div class="live-container" id="liveStreamContainer">
+            <iframe id="liveStreamFrame" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+
+        <!-- Day Tabs + Premier Filter -->
+        <nav>
+            <button class="day-tab active" data-day="Saturday">Saturday</button>
+            <button class="day-tab" data-day="Sunday">Sunday</button>
+            <button class="premier-toggle" id="premierToggle">Premier</button>
+        </nav>
     </header>
+
+    <div class="dance-count" id="danceCount" style="padding: 8px 20px 4px"></div>
     <div class="list" id="list">
-        <div class="dance" data-age="teen"><span class="num">440</span>
-            <div class="info">
-                <div class="title">Untamed</div>
-                <div class="category">Teen Open Production</div>
-            </div><span class="time">2:30 PM</span>
-        </div>
-        <div class="dance" data-age="junior"><span class="num">444</span>
-            <div class="info">
-                <div class="title">Do Your Thing</div>
-                <div class="category">Junior Jazz Small Group</div>
-            </div><span class="time">2:49 PM</span>
-        </div>
-        <div class="dance" data-age="junior"><span class="num">446</span>
-            <div class="info">
-                <div class="title">Shout</div>
-                <div class="category">Junior Contemporary Small Group</div>
-            </div><span class="time">2:55 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">448</span>
-            <div class="info">
-                <div class="title">Canned Heat</div>
-                <div class="category">Teen Open Large Group</div>
-            </div><span class="time">3:01 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">450</span>
-            <div class="info">
-                <div class="title">Quake</div>
-                <div class="category">Teen Open Large Group</div>
-            </div><span class="time">3:06 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">454</span>
-            <div class="info">
-                <div class="title">Samba</div>
-                <div class="category">Teen Open Large Group</div>
-            </div><span class="time">3:18 PM</span>
-        </div>
-        <div class="dance" data-age="junior"><span class="num">456</span>
-            <div class="info">
-                <div class="title">Slow Me Down</div>
-                <div class="category">Junior Contemporary Small Group</div>
-            </div><span class="time">3:23 PM</span>
-        </div>
-        <div class="dance" data-age="senior"><span class="num">457</span>
-            <div class="info">
-                <div class="title">Like Jennie</div>
-                <div class="category">Senior Specialty Small Group</div>
-            </div><span class="time">3:26 PM</span>
-        </div>
-        <div class="dance" data-age="junior"><span class="num">462</span>
-            <div class="info">
-                <div class="title">I Don't Remember</div>
-                <div class="category">Junior Open Small Group</div>
-            </div><span class="time">3:40 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">463</span>
-            <div class="info">
-                <div class="title">Right About Now</div>
-                <div class="category">Teen Jazz Large Group</div>
-            </div><span class="time">3:43 PM</span>
-        </div>
-        <div class="dance" data-age="senior"><span class="num">466</span>
-            <div class="info">
-                <div class="title">Candy Man</div>
-                <div class="category">Senior Jazz Small Group</div>
-            </div><span class="time">3:52 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">468</span>
-            <div class="info">
-                <div class="title">Moulin Rouge</div>
-                <div class="category">Teen Broadway Large Group</div>
-            </div><span class="time">3:58 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">470</span>
-            <div class="info">
-                <div class="title">Mama Knows Best</div>
-                <div class="category">Teen Jazz Large Group</div>
-            </div><span class="time">4:03 PM</span>
-        </div>
-        <div class="dance" data-age="junior"><span class="num">471</span>
-            <div class="info">
-                <div class="title">Outta My Hair</div>
-                <div class="category">Junior Jazz Small Group</div>
-            </div><span class="time">4:06 PM</span>
-        </div>
-        <div class="dance" data-age="junior"><span class="num">472</span>
-            <div class="info">
-                <div class="title">Take It</div>
-                <div class="category">Junior Jazz Small Group</div>
-            </div><span class="time">4:09 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">474</span>
-            <div class="info">
-                <div class="title">Oh Yeah</div>
-                <div class="category">Teen Open Large Group</div>
-            </div><span class="time">4:14 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">475</span>
-            <div class="info">
-                <div class="title">I'd Rather Go Blind</div>
-                <div class="category">Teen Contemporary Small Group</div>
-            </div><span class="time">4:17 PM</span>
-        </div>
-        <div class="dance" data-age="junior"><span class="num">479</span>
-            <div class="info">
-                <div class="title">Teach Me How to Shimmy</div>
-                <div class="category">Junior Jazz Small Group</div>
-            </div><span class="time">4:29 PM</span>
-        </div>
-        <div class="dance" data-age="junior"><span class="num">480</span>
-            <div class="info">
-                <div class="title">You Ain't No Celebrity</div>
-                <div class="category">Junior Jazz Small Group</div>
-            </div><span class="time">4:31 PM</span>
-        </div>
-        <div class="dance" data-age="junior"><span class="num">481</span>
-            <div class="info">
-                <div class="title">The Journey</div>
-                <div class="category">Junior Contemporary Small Group</div>
-            </div><span class="time">4:34 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">483</span>
-            <div class="info">
-                <div class="title">Stop In Nevada</div>
-                <div class="category">Teen Contemporary Small Group</div>
-            </div><span class="time">4:40 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">484</span>
-            <div class="info">
-                <div class="title">Gossip</div>
-                <div class="category">Teen Jazz Small Group</div>
-            </div><span class="time">4:42 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">488</span>
-            <div class="info">
-                <div class="title">Andy Griffith</div>
-                <div class="category">Teen Open Large Group</div>
-            </div><span class="time">4:53 PM</span>
-        </div>
-        <div class="dance" data-age="junior"><span class="num">491</span>
-            <div class="info">
-                <div class="title">Watch This</div>
-                <div class="category">Junior Jazz Small Group</div>
-            </div><span class="time">5:01 PM</span>
-        </div>
-        <div class="dance" data-age="junior"><span class="num">499</span>
-            <div class="info">
-                <div class="title">Frozen Heart</div>
-                <div class="category">Junior Open Small Group</div>
-            </div><span class="time">5:23 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">514</span>
-            <div class="info">
-                <div class="title">Purple Hat</div>
-                <div class="category">Teen Jazz Line</div>
-            </div><span class="time">6:25 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">515</span>
-            <div class="info">
-                <div class="title">Change is Everything</div>
-                <div class="category">Teen Contemporary Large Group</div>
-            </div><span class="time">6:28 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">521</span>
-            <div class="info">
-                <div class="title">I Feel Like Dancing</div>
-                <div class="category">Teen Tap Small Group</div>
-            </div><span class="time">6:47 PM</span>
-        </div>
-        <div class="dance" data-age="junior"><span class="num">522</span>
-            <div class="info">
-                <div class="title">Jail House Rock</div>
-                <div class="category">Junior Broadway Small Group</div>
-            </div><span class="time">6:50 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">523</span>
-            <div class="info">
-                <div class="title">Loathing</div>
-                <div class="category">Teen Broadway Small Group</div>
-            </div><span class="time">6:53 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">527</span>
-            <div class="info">
-                <div class="title">Dang</div>
-                <div class="category">Teen Open Small Group</div>
-            </div><span class="time">7:05 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">529</span>
-            <div class="info">
-                <div class="title">Sunday Kind of Love</div>
-                <div class="category">Teen Lyrical Small Group</div>
-            </div><span class="time">7:10 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">530</span>
-            <div class="info">
-                <div class="title">Warrior</div>
-                <div class="category">Teen Lyrical Large Group</div>
-            </div><span class="time">7:14 PM</span>
-        </div>
-        <div class="dance" data-age="junior"><span class="num">531</span>
-            <div class="info">
-                <div class="title">Schoolin Life</div>
-                <div class="category">Junior Hip Hop Small Group</div>
-            </div><span class="time">7:16 PM</span>
-        </div>
-        <div class="dance" data-age="senior"><span class="num">537</span>
-            <div class="info">
-                <div class="title">The Chain</div>
-                <div class="category">Senior Open Small Group</div>
-            </div><span class="time">7:35 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">538</span>
-            <div class="info">
-                <div class="title">Call Me Back</div>
-                <div class="category">Teen Broadway Small Group</div>
-            </div><span class="time">7:38 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">539</span>
-            <div class="info">
-                <div class="title">See You Again</div>
-                <div class="category">Teen Lyrical Small Group</div>
-            </div><span class="time">7:41 PM</span>
-        </div>
-        <div class="dance" data-age="junior"><span class="num">543</span>
-            <div class="info">
-                <div class="title">Thursday</div>
-                <div class="category">Junior Lyrical Small Group</div>
-            </div><span class="time">7:53 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">545</span>
-            <div class="info">
-                <div class="title">Water From the Moon</div>
-                <div class="category">Teen Lyrical Large Group</div>
-            </div><span class="time">8:00 PM</span>
-        </div>
-        <div class="dance" data-age="junior"><span class="num">549</span>
-            <div class="info">
-                <div class="title">Red Ribbon</div>
-                <div class="category">Junior Lyrical Small Group</div>
-            </div><span class="time">8:13 PM</span>
-        </div>
-        <div class="dance" data-age="junior"><span class="num">552</span>
-            <div class="info">
-                <div class="title">Heaven</div>
-                <div class="category">Junior Lyrical Small Group</div>
-            </div><span class="time">8:22 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">553</span>
-            <div class="info">
-                <div class="title">Up All Night</div>
-                <div class="category">Teen Open Line</div>
-            </div><span class="time">8:25 PM</span>
-        </div>
-        <div class="dance" data-age="junior"><span class="num">559</span>
-            <div class="info">
-                <div class="title">She's In Love</div>
-                <div class="category">Junior Broadway Small Group</div>
-            </div><span class="time">8:45 PM</span>
-        </div>
-        <div class="dance" data-age="teen"><span class="num">561</span>
-            <div class="info">
-                <div class="title">Ballad Of A Thin Man</div>
-                <div class="category">Teen Contemporary Large Group</div>
-            </div><span class="time">8:50 PM</span>
-        </div>
-        <div class="dance" data-age="senior"><span class="num">564</span>
-            <div class="info">
-                <div class="title">Bloodbag</div>
-                <div class="category">Senior Contemporary Small Group</div>
-            </div><span class="time">8:59 PM</span>
-        </div>
-        <div class="dance" data-age="junior"><span class="num">567</span>
-            <div class="info">
-                <div class="title">Islands</div>
-                <div class="category">Junior Lyrical Small Group</div>
-            </div><span class="time">9:07 PM</span>
-        </div>
-        <div class="dance" data-age="senior"><span class="num">569</span>
-            <div class="info">
-                <div class="title">Bad Thing</div>
-                <div class="category">Senior Open Small Group</div>
-            </div><span class="time">9:13 PM</span>
-        </div>
-        <div class="dance" data-age="junior"><span class="num">573</span>
-            <div class="info">
-                <div class="title">Puttin on the Ritz</div>
-                <div class="category">Junior Broadway Small Group</div>
-            </div><span class="time">9:26 PM</span>
-        </div>
+        <div class="loading">Loading schedule...</div>
     </div>
-    <script>
-        const pills = document.querySelectorAll('.pill');
-        const dances = document.querySelectorAll('.dance');
-        const countEl = document.getElementById('count');
-        pills.forEach(pill => {
-            pill.addEventListener('click', () => {
-                pills.forEach(p => p.classList.remove('active'));
-                pill.classList.add('active');
-                const filter = pill.dataset.filter;
-                let visible = 0;
-                dances.forEach(d => {
-                    const show = filter === 'all' || d.dataset.age === filter;
-                    d.classList.toggle('hidden', !show);
-                    if (show) visible++;
-                });
-                countEl.textContent = visible + ' dances · Revel 2026';
+
+    <button id="jumpToCurrent">Jump to current</button>
+
+    <script type="module">
+        import { database, ref, onValue } from './js/firebase-config.js';
+        import { loadSchedule, getDance, dancesAway, getOrderedKeys, getPosition } from './js/schedule.js';
+
+        // --- State ---
+        let currentDanceKey = null;
+        let highlightedDances = JSON.parse(localStorage.getItem('highlightedDances') || '[]');
+        let activeDay = 'Saturday';
+        let premierOnly = false;
+        let currentSwipedRow = null;
+        let currentRowObserver = null;
+
+        // --- DOM refs ---
+        const listEl = document.getElementById('list');
+        const countEl = document.getElementById('danceCount');
+        const onStageNumber = document.getElementById('onStageNumber');
+        const onStageTitle = document.getElementById('onStageTitle');
+        const onStageStudio = document.getElementById('onStageStudio');
+        const onStageWaiting = document.getElementById('onStageWaiting');
+        const jumpBtn = document.getElementById('jumpToCurrent');
+        const liveToggleBtn = document.getElementById('liveToggleBtn');
+        const liveStreamContainer = document.getElementById('liveStreamContainer');
+        const liveStreamFrame = document.getElementById('liveStreamFrame');
+        const liveChevron = document.getElementById('liveChevron');
+        const premierToggle = document.getElementById('premierToggle');
+        const dayTabs = document.querySelectorAll('.day-tab');
+
+        // --- Init ---
+        async function init() {
+            await loadSchedule();
+
+            // Auto-detect day
+            const today = new Date().toLocaleDateString('en-US', { weekday: 'long' });
+            if (today === 'Sunday') {
+                activeDay = 'Sunday';
+                dayTabs.forEach(t => t.classList.toggle('active', t.dataset.day === 'Sunday'));
+            }
+
+            renderList();
+            setupFirebaseListener();
+            setupLiveStream();
+            setupDayTabs();
+            setupPremierToggle();
+            setupJumpButton();
+        }
+
+        // --- Render dance list ---
+        function renderList() {
+            const orderedKeys = getOrderedKeys();
+            const fragment = document.createDocumentFragment();
+            let visibleCount = 0;
+            let highlightedCount = 0;
+
+            for (const key of orderedKeys) {
+                const dance = getDance(key);
+                if (!dance || dance.day !== activeDay) continue;
+                if (premierOnly && !dance.studio.toLowerCase().includes('premier dance')) continue;
+
+                visibleCount++;
+                const isHighlighted = highlightedDances.includes(key);
+                if (isHighlighted) highlightedCount++;
+
+                const row = createDanceRow(key, dance, isHighlighted);
+                fragment.appendChild(row);
+            }
+
+            listEl.innerHTML = '';
+            if (visibleCount === 0) {
+                listEl.innerHTML = '<div class="loading">No dances found</div>';
+            } else {
+                listEl.appendChild(fragment);
+            }
+
+            countEl.innerHTML = `${visibleCount} dances` +
+                (highlightedCount > 0 ? ` · <span>${highlightedCount} saved</span>` : '');
+
+            updateProximityBadges();
+            updateCurrentDanceRow();
+        }
+
+        // --- Create a dance row ---
+        function createDanceRow(key, dance, isHighlighted) {
+            const row = document.createElement('div');
+            row.className = 'dance-row';
+            row.dataset.danceKey = key;
+
+            // Actions panel (behind swipe)
+            const actions = document.createElement('div');
+            actions.className = 'dance-actions';
+            const btn = document.createElement('button');
+            btn.className = 'highlight-btn';
+            btn.textContent = isHighlighted ? 'Saved' : 'Save';
+            actions.appendChild(btn);
+
+            // Dance content
+            const danceEl = document.createElement('div');
+            danceEl.className = 'dance' + (isHighlighted ? ' highlighted' : '');
+
+            const num = document.createElement('span');
+            num.className = 'num';
+            num.textContent = key;
+
+            const info = document.createElement('div');
+            info.className = 'info';
+
+            const title = document.createElement('div');
+            title.className = 'title';
+            title.textContent = dance.routine_title;
+
+            const meta = document.createElement('div');
+            meta.className = 'meta';
+            meta.textContent = dance.studio;
+
+            const currentLabel = document.createElement('div');
+            currentLabel.className = 'current-label';
+            currentLabel.textContent = 'On Stage';
+
+            info.appendChild(title);
+            info.appendChild(meta);
+            info.appendChild(currentLabel);
+
+            const timeCol = document.createElement('span');
+            timeCol.className = 'time-col';
+            timeCol.textContent = dance.time;
+
+            danceEl.appendChild(num);
+            danceEl.appendChild(info);
+            danceEl.appendChild(timeCol);
+
+            row.appendChild(actions);
+            row.appendChild(danceEl);
+
+            // Swipe handlers (touch + mouse for desktop testing)
+            let startX = 0;
+
+            function handleSwipeStart(x) { startX = x; }
+            function handleSwipeEnd(x) {
+                const diff = startX - x;
+                if (diff > 50) {
+                    if (currentSwipedRow && currentSwipedRow !== row) {
+                        currentSwipedRow.querySelector('.dance').classList.remove('swiped');
+                        currentSwipedRow.classList.remove('swiped-open');
+                    }
+                    danceEl.classList.add('swiped');
+                    row.classList.add('swiped-open');
+                    currentSwipedRow = row;
+                } else if (diff < -50) {
+                    danceEl.classList.remove('swiped');
+                    row.classList.remove('swiped-open');
+                    if (currentSwipedRow === row) currentSwipedRow = null;
+                }
+            }
+
+            row.addEventListener('touchstart', e => handleSwipeStart(e.changedTouches[0].screenX), { passive: true });
+            row.addEventListener('touchend', e => handleSwipeEnd(e.changedTouches[0].screenX), { passive: true });
+            row.addEventListener('mousedown', e => { e.preventDefault(); handleSwipeStart(e.screenX); });
+            row.addEventListener('mouseup', e => handleSwipeEnd(e.screenX));
+
+            // Highlight toggle
+            btn.addEventListener('click', () => {
+                const isNowHighlighted = danceEl.classList.toggle('highlighted');
+                if (isNowHighlighted) {
+                    if (!highlightedDances.includes(key)) highlightedDances.push(key);
+                } else {
+                    highlightedDances = highlightedDances.filter(id => id !== key);
+                }
+                localStorage.setItem('highlightedDances', JSON.stringify(highlightedDances));
+                btn.textContent = isNowHighlighted ? 'Saved' : 'Save';
+
+                // Close swipe
+                danceEl.classList.remove('swiped');
+                row.classList.remove('swiped-open');
+                currentSwipedRow = null;
+
+                // Update count and badges
+                const highlightedCount = highlightedDances.length;
+                const totalVisible = listEl.querySelectorAll('.dance-row:not(.hidden)').length;
+                countEl.innerHTML = `${totalVisible} dances` +
+                    (highlightedCount > 0 ? ` · <span>${highlightedCount} saved</span>` : '');
+                updateProximityBadges();
             });
+
+            return row;
+        }
+
+        // --- Firebase listener (read only) ---
+        function setupFirebaseListener() {
+            if (database) {
+                const danceRef = ref(database, 'competitions/revel2026/currentDance');
+                onValue(danceRef, (snapshot) => {
+                    const val = snapshot.val();
+                    if (val) updateCurrentDance(val);
+                });
+            } else {
+                // Fallback to localStorage
+                const saved = localStorage.getItem('danceTrack_currentDance');
+                if (saved) updateCurrentDance(saved);
+            }
+        }
+
+        // --- Update current dance ---
+        function updateCurrentDance(key) {
+            currentDanceKey = key;
+
+            // Update header
+            onStageNumber.textContent = key;
+            const data = getDance(key);
+            if (data) {
+                onStageTitle.textContent = data.routine_title;
+                onStageStudio.textContent = data.studio;
+                onStageTitle.style.display = '';
+                onStageStudio.style.display = '';
+                onStageWaiting.style.display = 'none';
+            }
+
+            updateCurrentDanceRow();
+            updateProximityBadges();
+        }
+
+        // --- Highlight the current dance row in the list ---
+        function updateCurrentDanceRow() {
+            // Remove previous
+            const prev = listEl.querySelector('.dance.current-dance');
+            if (prev) prev.classList.remove('current-dance');
+
+            if (!currentDanceKey) return;
+
+            const row = listEl.querySelector(`[data-dance-key="${currentDanceKey}"]`);
+            if (row) {
+                const danceEl = row.querySelector('.dance');
+                danceEl.classList.add('current-dance');
+                observeCurrentRow(row);
+            }
+        }
+
+        // --- Proximity badges ---
+        function updateProximityBadges() {
+            if (!currentDanceKey) return;
+
+            listEl.querySelectorAll('.dance-row').forEach(row => {
+                const key = row.dataset.danceKey;
+                const danceEl = row.querySelector('.dance');
+                const isHighlighted = highlightedDances.includes(key);
+
+                // Remove previous badge and classes
+                const oldBadge = danceEl.querySelector('.proximity-badge');
+                if (oldBadge) oldBadge.remove();
+                danceEl.classList.remove('soon-1-2', 'soon-3-5', 'done');
+
+                if (!isHighlighted) return;
+
+                const away = dancesAway(currentDanceKey, key);
+                if (away === null) return;
+
+                if (away < 0) {
+                    danceEl.classList.add('done');
+                } else if (away === 0) {
+                    const badge = document.createElement('span');
+                    badge.className = 'proximity-badge now';
+                    badge.textContent = 'Now';
+                    // Insert before time column
+                    const timeEl = danceEl.querySelector('.time-col');
+                    danceEl.insertBefore(badge, timeEl);
+                } else if (away <= 2) {
+                    danceEl.classList.add('soon-1-2');
+                    const badge = document.createElement('span');
+                    badge.className = 'proximity-badge urgent';
+                    badge.textContent = away === 1 ? 'Next' : '2 away';
+                    const timeEl = danceEl.querySelector('.time-col');
+                    danceEl.insertBefore(badge, timeEl);
+                } else if (away <= 5) {
+                    danceEl.classList.add('soon-3-5');
+                    const badge = document.createElement('span');
+                    badge.className = 'proximity-badge soon';
+                    badge.textContent = `${away} away`;
+                    const timeEl = danceEl.querySelector('.time-col');
+                    danceEl.insertBefore(badge, timeEl);
+                }
+            });
+        }
+
+        // --- Jump to Current button ---
+        function setupJumpButton() {
+            jumpBtn.addEventListener('click', () => {
+                if (!currentDanceKey) return;
+                const row = listEl.querySelector(`[data-dance-key="${currentDanceKey}"]`);
+                if (row) {
+                    row.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        }
+
+        function observeCurrentRow(row) {
+            if (currentRowObserver) currentRowObserver.disconnect();
+
+            currentRowObserver = new IntersectionObserver(entries => {
+                jumpBtn.classList.toggle('visible', !entries[0].isIntersecting);
+            }, { threshold: 0.1 });
+
+            currentRowObserver.observe(row);
+        }
+
+        // --- Live stream toggle ---
+        function setupLiveStream() {
+            let liveOpen = false;
+            liveToggleBtn.addEventListener('click', () => {
+                liveOpen = !liveOpen;
+                if (liveOpen) {
+                    if (!liveStreamFrame.src || liveStreamFrame.src === 'about:blank') {
+                        liveStreamFrame.src = 'https://player.restream.io/?token=2ff6dc8313dd4a7a908680e9e66bfd4c';
+                    }
+                    liveStreamContainer.style.maxHeight = '300px';
+                    liveChevron.style.transform = 'rotate(180deg)';
+                } else {
+                    liveStreamContainer.style.maxHeight = '0';
+                    liveChevron.style.transform = 'rotate(0)';
+                }
+            });
+        }
+
+        // --- Day tabs ---
+        function setupDayTabs() {
+            dayTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    activeDay = tab.dataset.day;
+                    dayTabs.forEach(t => t.classList.toggle('active', t.dataset.day === activeDay));
+                    renderList();
+                });
+            });
+        }
+
+        // --- Premier toggle ---
+        function setupPremierToggle() {
+            premierToggle.addEventListener('click', () => {
+                premierOnly = !premierOnly;
+                premierToggle.classList.toggle('active', premierOnly);
+                renderList();
+            });
+        }
+
+        // --- Close swiped row on outside touch/click ---
+        function closeSwipedRow(e) {
+            if (currentSwipedRow && !currentSwipedRow.contains(e.target)) {
+                currentSwipedRow.querySelector('.dance').classList.remove('swiped');
+                currentSwipedRow.classList.remove('swiped-open');
+                currentSwipedRow = null;
+            }
+        }
+        document.addEventListener('touchstart', closeSwipedRow, { passive: true });
+        document.addEventListener('mousedown', closeSwipedRow);
+
+        // --- Cross-tab sync ---
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'highlightedDances') {
+                highlightedDances = JSON.parse(e.newValue || '[]');
+                renderList();
+            }
         });
+
+        init();
     </script>
 </body>
 
