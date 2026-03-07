@@ -87,3 +87,16 @@ export function getDaysAvailable() {
     }
     return [...days];
 }
+
+// Get all dances for a specific studio on a specific day
+export function getDancesByStudioAndDay(studio, day) {
+    const results = [];
+    for (const key of orderedKeys) {
+        const d = danceMap[key];
+        if (d.studio && d.studio.toLowerCase().includes(studio.toLowerCase()) &&
+            d.day && d.day.toLowerCase() === day.toLowerCase()) {
+            results.push(key);
+        }
+    }
+    return results;
+}

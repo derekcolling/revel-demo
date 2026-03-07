@@ -1,7 +1,7 @@
 import { database, ref, set, onValue } from './firebase-config.js';
 import { triggerAlert } from './alerts.js';
 import {
-    loadSchedule, getDance, dancesAway, getCompetitionName, getPosition, getKeyAtPosition, searchDances
+    loadSchedule, getDance, dancesAway, getCompetitionName, getPosition, getKeyAtPosition, searchDances, getDancesByStudioAndDay
 } from './schedule.js';
 
 const currentDisplay = document.getElementById('currentDanceDisplay');
@@ -18,8 +18,18 @@ const tapHint = document.getElementById('tapHint');
 const prevDanceBtn = document.getElementById('prevDanceBtn');
 const nextDanceBtn = document.getElementById('nextDanceBtn');
 const searchResults = document.getElementById('searchResults');
+const scheduleChangeBanner = document.getElementById('scheduleChangeBanner');
+const scheduleChangeText = document.getElementById('scheduleChangeText');
+const dismissBanner = document.getElementById('dismissBanner');
+const premierDanceBtn = document.getElementById('premierDanceBtn');
+const premierDayLabel = document.getElementById('premierDayLabel');
+const liveToggleBtn = document.getElementById('liveToggleBtn');
+const liveStreamContainer = document.getElementById('liveStreamContainer');
+const liveStreamFrame = document.getElementById('liveStreamFrame');
+const liveChevron = document.getElementById('liveChevron');
 
 let currentDanceKey = null;
+let previousDanceKey = null;
 let trackedDances = JSON.parse(localStorage.getItem('danceTrack_saved')) || [];
 let alertsEnabled = localStorage.getItem('danceTrack_alerts') !== 'off';
 let lastAlertedKey = null;
@@ -255,7 +265,7 @@ function renderTrackedList() {
                 <span class="text-2xl font-black leading-none ${badgeColor}">${badgeText}</span>
                 <span class="text-[8px] font-bold uppercase tracking-wider ${badgeColor} mt-0.5">${badgeLabel}</span>
             </div>
-            <button onclick="removeTracked('${key}')" class="w-7 h-7 rounded-full text-gray-400 hover:text-red-400 flex items-center justify-center active:scale-90 transition-all text-sm shrink-0">&times;</button>
+            <button onclick="removeTracked('${key}')" class="w-8 h-8 rounded-full bg-gray-700/50 text-gray-300 hover:bg-red-500/30 hover:text-red-400 flex items-center justify-center active:scale-90 transition-all text-base font-bold shrink-0">&times;</button>
         `;
         trackedContainer.appendChild(card);
     });
@@ -293,6 +303,26 @@ function checkAlerts() {
 
 function updateCurrentDance(key) {
     key = String(key);
+
+    // Detect schedule changes (jump > 5 positions)
+    if (currentDanceKey && key !== currentDanceKey) {
+        const prevPos = getPosition(currentDanceKey);
+        const newPos = getPosition(key);
+        if (prevPos !== -1 && newPos !== -1) {
+            const jump = newPos - prevPos;
+            // Show banner for big jumps (skipping forward > 5, or any backward jump)
+            if (jump > 5 || jump < -1) {
+                const newData = getDance(key);
+                const routineName = newData ? newData.routine_title : 'Unknown';
+                scheduleChangeText.textContent = `#${key} (${routineName}) is now on stage`;
+                scheduleChangeBanner.classList.remove('hidden');
+                // Auto-hide after 30 seconds
+                setTimeout(() => scheduleChangeBanner.classList.add('hidden'), 30000);
+            }
+        }
+    }
+
+    previousDanceKey = currentDanceKey;
     currentDanceKey = key;
     localStorage.setItem('danceTrack_currentDance', key);
 
@@ -361,6 +391,37 @@ async function init() {
     });
     updateAlertToggleUI();
 
+    // Dismiss schedule change banner
+    dismissBanner.addEventListener('click', () => {
+        scheduleChangeBanner.classList.add('hidden');
+    });
+
+    // Premier Dance quick-add
+    const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const today = dayNames[new Date().getDay()];
+    premierDayLabel.textContent = today;
+    premierDanceBtn.addEventListener('click', () => {
+        const dances = getDancesByStudioAndDay('Premier Dance', today);
+        let added = 0;
+        dances.forEach(key => {
+            if (!trackedDances.includes(key)) {
+                trackedDances.push(key);
+                added++;
+            }
+        });
+        if (added > 0) {
+            sortTracked();
+            saveTracked();
+        }
+        // Visual feedback
+        premierDanceBtn.textContent = added > 0 ? `✓ Added ${added} dances` : `All ${dances.length} already tracked`;
+        premierDanceBtn.classList.add('bg-electricBlue/20');
+        setTimeout(() => {
+            premierDanceBtn.innerHTML = `<span>💃</span> Premier Dance — <span>${today}</span>`;
+            premierDanceBtn.classList.remove('bg-electricBlue/20');
+        }, 2000);
+    });
+
     // Connect to Firebase or demo mode
     if (database) {
         const danceRef = ref(database, 'competitions/revel2026/currentDance');
@@ -372,6 +433,23 @@ async function init() {
         const saved = localStorage.getItem('danceTrack_currentDance');
         updateCurrentDance(saved && getPosition(saved) !== -1 ? saved : '1');
     }
+
+    // Live stream toggle
+    let liveOpen = false;
+    liveToggleBtn.addEventListener('click', () => {
+        liveOpen = !liveOpen;
+        if (liveOpen) {
+            // Lazy-load iframe on first open
+            if (!liveStreamFrame.src || liveStreamFrame.src === 'about:blank') {
+                liveStreamFrame.src = 'https://player.restream.io/?token=2ff6dc8313dd4a7a908680e9e66bfd4c';
+            }
+            liveStreamContainer.style.maxHeight = liveStreamContainer.scrollHeight + 200 + 'px';
+            liveChevron.style.transform = 'rotate(180deg)';
+        } else {
+            liveStreamContainer.style.maxHeight = '0';
+            liveChevron.style.transform = 'rotate(0)';
+        }
+    });
 }
 
 init();

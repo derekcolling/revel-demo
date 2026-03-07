@@ -116,11 +116,20 @@
                     class="bg-surface text-gray-400 font-bold px-6 py-2.5 rounded-xl border border-gray-700 hover:text-white hover:border-gray-500 active:scale-95 transition-all text-sm hidden">
                     ⏹ Stop
                 </button>
-                <div class="flex items-center gap-2 ml-auto">
-                    <label for="intervalInput" class="text-xs text-gray-500">Scan every</label>
-                    <input id="intervalInput" type="number" value="5" min="2" max="30" step="1"
-                        class="w-14 bg-dark border border-gray-700 rounded-lg px-2 py-1 text-sm text-center focus:outline-none focus:border-electricBlue">
-                    <span class="text-xs text-gray-500">sec</span>
+                <div class="flex items-center gap-4 ml-auto">
+                    <div class="flex items-center gap-2">
+                        <label for="offsetInput" class="text-xs text-gray-500">Delay offset</label>
+                        <input id="offsetInput" type="number" value="1" min="0" max="5" step="1"
+                            class="w-14 bg-dark border border-gray-700 rounded-lg px-2 py-1 text-sm text-center focus:outline-none focus:border-electricBlue"
+                            title="Advance this many dances to compensate for stream delay">
+                        <span class="text-xs text-gray-500">dances</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <label for="intervalInput" class="text-xs text-gray-500">Scan every</label>
+                        <input id="intervalInput" type="number" value="5" min="2" max="30" step="1"
+                            class="w-14 bg-dark border border-gray-700 rounded-lg px-2 py-1 text-sm text-center focus:outline-none focus:border-electricBlue">
+                        <span class="text-xs text-gray-500">sec</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -193,7 +202,7 @@
     <!-- Firebase -->
     <script type="module">
         import { database, ref, set, get } from './js/firebase-config.js';
-        import { loadSchedule, getDance, getPosition } from './js/schedule.js';
+        import { loadSchedule, getDance, getPosition, getKeyAtPosition } from './js/schedule.js';
 
         // --- DOM refs ---
         const startBtn = document.getElementById('startBtn');
@@ -213,15 +222,15 @@
         const logEl = document.getElementById('log');
         const manualInput = document.getElementById('manualInput');
         const manualBtn = document.getElementById('manualBtn');
+        const offsetInput = document.getElementById('offsetInput');
 
         let stream = null;
         let scanTimer = null;
-        let currentDetected = null;
+        let lastRawDetected = null;   // what OCR actually read (before offset)
+        let currentPushed = null;     // what's been pushed to Firebase (after offset)
         let worker = null;
         let pendingCandidate = null;
         let pendingCount = 0;
-        const CONFIRM_THRESHOLD = 3;  // require 3 consecutive reads for big jumps
-        const NEARBY_RANGE = 15;      // positions within ±15 are accepted immediately
 
         // --- Logging ---
         function log(msg, type = 'info') {
@@ -256,60 +265,73 @@
             }
         }
 
-        // --- Sequence-aware validation ---
-        function isNearby(newKey) {
-            if (!currentDetected) return true; // no previous, accept anything
-            const curPos = getPosition(currentDetected);
-            const newPos = getPosition(newKey);
-            if (curPos === -1 || newPos === -1) return false;
-            return Math.abs(newPos - curPos) <= NEARBY_RANGE;
-        }
-
+        // --- Validation ---
+        // Simple rule: if OCR reads the same number twice in a row, it's real.
+        // First detection after startup (no previous) is accepted immediately.
+        // This handles out-of-order dances AND filters random OCR noise.
         function validateAndUpdate(danceKey) {
-            if (danceKey === currentDetected) {
-                // Same as current — reset any pending candidate
+            // Same as what we already read — no change needed
+            if (danceKey === lastRawDetected) {
                 pendingCandidate = null;
                 pendingCount = 0;
                 return;
             }
 
-            if (isNearby(danceKey)) {
-                // Close to current position — accept immediately
-                log(`#${danceKey} is nearby, accepting immediately`, 'success');
+            // First ever detection — accept immediately
+            if (!lastRawDetected) {
+                log(`First detection: #${danceKey}`, 'success');
                 pendingCandidate = null;
                 pendingCount = 0;
                 commitDetected(danceKey);
-            } else {
-                // Big jump — require multiple consecutive reads
-                if (pendingCandidate === danceKey) {
-                    pendingCount++;
-                    log(`#${danceKey} seen ${pendingCount}/${CONFIRM_THRESHOLD} times (big jump from #${currentDetected})`, 'warn');
-                    if (pendingCount >= CONFIRM_THRESHOLD) {
-                        log(`Confirmed #${danceKey} after ${CONFIRM_THRESHOLD} reads`, 'success');
-                        pendingCandidate = null;
-                        pendingCount = 0;
-                        commitDetected(danceKey);
-                    }
+                return;
+            }
+
+            // New number detected — require 2 consecutive identical reads
+            if (pendingCandidate === danceKey) {
+                pendingCount++;
+                if (pendingCount >= 2) {
+                    log(`Confirmed #${danceKey} (2 consecutive reads)`, 'success');
+                    pendingCandidate = null;
+                    pendingCount = 0;
+                    commitDetected(danceKey);
                 } else {
-                    // New candidate, start counting
-                    pendingCandidate = danceKey;
-                    pendingCount = 1;
-                    log(`#${danceKey} is far from #${currentDetected} — need ${CONFIRM_THRESHOLD} reads to confirm (1/${CONFIRM_THRESHOLD})`, 'warn');
+                    log(`#${danceKey} seen once — need 1 more read to confirm`, 'warn');
                 }
+            } else {
+                // Brand new candidate
+                pendingCandidate = danceKey;
+                pendingCount = 1;
+                log(`New number #${danceKey} — need 1 more read to confirm`, 'warn');
             }
         }
 
-        // --- Update detected display ---
-        function commitDetected(danceKey) {
-            currentDetected = danceKey;
-            detectedNumber.textContent = danceKey;
+        // --- Apply delay offset and update display ---
+        function commitDetected(rawKey) {
+            lastRawDetected = rawKey;
+
+            // Apply stream delay offset
+            const offset = parseInt(offsetInput.value) || 0;
+            let finalKey = rawKey;
+            if (offset > 0) {
+                const pos = getPosition(rawKey);
+                if (pos !== -1) {
+                    const advancedKey = getKeyAtPosition(pos + offset);
+                    if (advancedKey) {
+                        log(`Offset +${offset}: #${rawKey} → #${advancedKey}`, 'info');
+                        finalKey = advancedKey;
+                    }
+                }
+            }
+
+            currentPushed = finalKey;
+            detectedNumber.textContent = finalKey;
             detectedNumber.className = 'text-5xl font-black text-electricBlue leading-none';
 
-            const data = getDance(danceKey);
+            const data = getDance(finalKey);
             detectedRoutine.textContent = data ? `${data.routine_title} — ${data.studio}` : 'Not in schedule';
 
             lastUpdate.textContent = `Last update: ${new Date().toLocaleTimeString()}`;
-            pushToFirebase(danceKey);
+            pushToFirebase(finalKey);
         }
 
         // --- OCR Processing ---
@@ -348,14 +370,14 @@
             const ctx = captureCanvas.getContext('2d');
             ctx.drawImage(video, 0, 0, vw, vh);
 
-            // Crop the bottom 15% where the overlay banner is
-            // and only the left 60% where the number appears (avoids right-side noise)
-            const cropTop = Math.floor(vh * 0.85);
+            // Crop the bottom 20% where the overlay banner is
+            // and only the left 65% where the number appears (avoids right-side noise)
+            const cropTop = Math.floor(vh * 0.80);
             const cropHeight = vh - cropTop;
-            const cropWidth = Math.floor(vw * 0.60);
+            const cropWidth = Math.floor(vw * 0.65);
             cropCanvas.width = cropWidth;
             cropCanvas.height = cropHeight;
-            const cropCtx = cropCanvas.getContext('2d');
+            const cropCtx = cropCanvas.getContext('2d', { willReadFrequently: true });
             cropCtx.drawImage(captureCanvas, 0, cropTop, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
 
             // Pre-process: isolate white/light text on dark overlay background
@@ -363,16 +385,12 @@
             const data = imageData.data;
             for (let i = 0; i < data.length; i += 4) {
                 const r = data[i], g = data[i + 1], b = data[i + 2];
-                // Convert to grayscale
                 const gray = r * 0.299 + g * 0.587 + b * 0.114;
-                // Filter: keep only bright white/light text, reject colored stage lights
-                // White text has high brightness AND low color saturation
                 const maxC = Math.max(r, g, b);
                 const minC = Math.min(r, g, b);
                 const saturation = maxC > 0 ? (maxC - minC) / maxC : 0;
-                // Accept: high brightness + low saturation (white/gray text)
-                // Reject: colored light (high saturation) or dark background
-                const isText = gray > 120 && saturation < 0.4;
+                // Keep bright, low-saturation pixels (white/gray text)
+                const isText = gray > 110 && saturation < 0.45;
                 const val = isText ? 255 : 0;
                 data[i] = val;
                 data[i + 1] = val;
@@ -380,13 +398,13 @@
             }
             cropCtx.putImageData(imageData, 0, 0);
 
-            // Scale up 2x for better OCR accuracy on small text
+            // Scale up 3x for better OCR accuracy on small text
             const scaledCanvas = document.createElement('canvas');
-            scaledCanvas.width = cropWidth * 2;
-            scaledCanvas.height = cropHeight * 2;
+            scaledCanvas.width = cropWidth * 3;
+            scaledCanvas.height = cropHeight * 3;
             const scaledCtx = scaledCanvas.getContext('2d');
             scaledCtx.imageSmoothingEnabled = false;
-            scaledCtx.drawImage(cropCanvas, 0, 0, cropWidth * 2, cropHeight * 2);
+            scaledCtx.drawImage(cropCanvas, 0, 0, cropWidth * 3, cropHeight * 3);
 
             // Show scan animation
             scanOverlay.classList.remove('hidden');
@@ -400,31 +418,60 @@
                 ocrConfidence.textContent = `Confidence: ${Math.round(confidence)}%`;
                 log(`OCR raw: "${text.trim().substring(0, 80)}" (${Math.round(confidence)}%)`);
 
-                // Extract dance number: look for #NNN pattern
-                const hashMatch = text.match(/#\s*(\d+[A-Za-z]?)/);
+                let found = false;
+
+                // Strategy 1: Look for #NNN pattern (possibly with spaces from OCR garbling)
+                const hashMatch = text.match(/#\s*(\d[\s\d]*\d[A-Za-z]?)/);
                 if (hashMatch) {
-                    const num = hashMatch[1].toUpperCase();
-                    log(`Detected: #${num}`, 'success');
-                    validateAndUpdate(num);
-                    setStatus('Watching', 'neonGreen');
-                } else {
-                    // Fallback: look for any 2-3 digit number near the start
-                    const numMatch = text.match(/\b(\d{2,3}[A-Za-z]?)\b/);
-                    if (numMatch) {
-                        const num = numMatch[1].toUpperCase();
-                        // Verify it's a valid dance in the schedule
-                        if (getPosition(num) !== -1) {
-                            log(`Fallback detected: #${num}`, 'success');
-                            validateAndUpdate(num);
-                            setStatus('Watching', 'neonGreen');
-                        } else {
-                            log(`Found number ${num} but not in schedule`, 'warn');
-                            setStatus('Watching (no match)', 'yellow-400');
-                        }
-                    } else {
-                        log('No dance number found in frame');
-                        setStatus('Watching (scanning)', 'electricBlue');
+                    const num = hashMatch[1].replace(/\s/g, '').toUpperCase();
+                    if (getPosition(num) !== -1) {
+                        log(`Detected: #${num}`, 'success');
+                        validateAndUpdate(num);
+                        setStatus('Watching', 'neonGreen');
+                        found = true;
                     }
+                }
+
+                // Strategy 2: Extract ALL digit sequences and check each against the schedule
+                if (!found) {
+                    const allNums = text.match(/\d{2,4}/g);
+                    if (allNums) {
+                        for (const candidate of allNums) {
+                            if (getPosition(candidate) !== -1) {
+                                log(`Schedule match: #${candidate}`, 'success');
+                                validateAndUpdate(candidate);
+                                setStatus('Watching', 'neonGreen');
+                                found = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                // Strategy 3: Try combining adjacent single digits (OCR sometimes splits "342" → "3 4 2")
+                if (!found) {
+                    const stripped = text.replace(/[^0-9]/g, '');
+                    if (stripped.length >= 2) {
+                        // Try all 2-3 digit substrings
+                        for (let len = 3; len >= 2; len--) {
+                            for (let start = 0; start <= stripped.length - len; start++) {
+                                const candidate = stripped.substring(start, start + len);
+                                if (getPosition(candidate) !== -1) {
+                                    log(`Digit-combine match: #${candidate}`, 'success');
+                                    validateAndUpdate(candidate);
+                                    setStatus('Watching', 'neonGreen');
+                                    found = true;
+                                    break;
+                                }
+                            }
+                            if (found) break;
+                        }
+                    }
+                }
+
+                if (!found) {
+                    log('No dance number found in frame');
+                    setStatus('Watching (scanning)', 'electricBlue');
                 }
             } catch (err) {
                 log(`OCR error: ${err.message}`, 'error');
@@ -515,7 +562,8 @@
             // Restore last detected from localStorage
             const saved = localStorage.getItem('danceTrack_currentDance');
             if (saved) {
-                currentDetected = saved;
+                lastRawDetected = saved;
+                currentPushed = saved;
                 detectedNumber.textContent = saved;
                 detectedNumber.className = 'text-5xl font-black text-gray-400 leading-none';
                 const data = getDance(saved);
