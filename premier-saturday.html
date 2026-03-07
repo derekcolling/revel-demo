@@ -116,25 +116,6 @@
             padding: 0 0 10px;
         }
 
-        .day-tab {
-            padding: 6px 16px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            background: transparent;
-            color: #888;
-            font-family: inherit;
-            font-size: 13px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .day-tab.active {
-            background: rgba(37, 78, 240, 0.15);
-            color: #254EF0;
-            border-color: rgba(37, 78, 240, 0.4);
-        }
 
         .premier-toggle {
             padding: 6px 12px;
@@ -570,9 +551,7 @@
 
         <!-- Day Tabs + Premier Filter -->
         <nav>
-            <button class="day-tab active" data-day="Saturday">Saturday</button>
-            <button class="day-tab" data-day="Sunday">Sunday</button>
-            <button class="premier-toggle" id="trackedToggle">Tracked</button>
+<button class="premier-toggle" id="trackedToggle">Tracked</button>
             <button class="premier-toggle" id="premierToggle">Premier</button>
             <button class="search-btn" id="searchBtn">
                 <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -645,7 +624,6 @@
         const adminDanceInput = document.getElementById('adminDanceInput');
         const adminSetBtn = document.getElementById('adminSetBtn');
         const eventInfo = document.querySelector('.event-info');
-        const dayTabs = document.querySelectorAll('.day-tab');
 
         // --- Init ---
         async function init() {
@@ -653,15 +631,13 @@
 
             // Auto-detect day
             const today = new Date().toLocaleDateString('en-US', { weekday: 'long' });
-            if (today === 'Sunday') {
-                activeDay = 'Sunday';
-                dayTabs.forEach(t => t.classList.toggle('active', t.dataset.day === 'Sunday'));
+            if (['Thursday', 'Friday', 'Saturday', 'Sunday'].includes(today)) {
+                activeDay = today;
             }
 
             renderList();
             setupFirebaseListener();
             setupLiveStream();
-            setupDayTabs();
             setupPremierToggle();
             setupSearch();
             setupAdmin();
@@ -973,16 +949,6 @@
         }
 
         // --- Day tabs ---
-        function setupDayTabs() {
-            dayTabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    activeDay = tab.dataset.day;
-                    dayTabs.forEach(t => t.classList.toggle('active', t.dataset.day === activeDay));
-                    renderList();
-                });
-            });
-        }
-
         // --- Premier toggle ---
         function setupPremierToggle() {
             premierToggle.addEventListener('click', () => {
