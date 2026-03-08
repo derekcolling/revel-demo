@@ -114,15 +114,15 @@
             align-items: center;
             gap: 6px;
             padding: 0 0 10px;
+            flex-wrap: wrap;
         }
 
-
-        .premier-toggle {
-            padding: 6px 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .my-dances-btn {
+            padding: 6px 14px;
+            border: 1px solid rgba(192, 132, 252, 0.4);
             border-radius: 20px;
-            background: transparent;
-            color: #888;
+            background: rgba(192, 132, 252, 0.1);
+            color: #c084fc;
             font-family: inherit;
             font-size: 12px;
             font-weight: 700;
@@ -131,10 +131,10 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        .premier-toggle.active {
-            background: rgba(37, 78, 240, 0.15);
-            color: #254EF0;
-            border-color: rgba(37, 78, 240, 0.4);
+        .my-dances-btn.active {
+            background: rgba(192, 132, 252, 0.25);
+            color: #d8b4fe;
+            border-color: rgba(192, 132, 252, 0.6);
         }
 
         /* Search icon button */
@@ -202,20 +202,6 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* Category filters */
-        .category-filters {
-            display: flex;
-            gap: 6px;
-            padding: 0 0 10px;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-        }
-
-        .category-filters::-webkit-scrollbar {
-            display: none;
-        }
-
         .cat-btn {
             padding: 5px 12px;
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -228,7 +214,6 @@
             cursor: pointer;
             white-space: nowrap;
             -webkit-tap-highlight-color: transparent;
-            flex-shrink: 0;
         }
 
         .cat-btn.active {
@@ -606,6 +591,12 @@
             <span class="event-info">Tulsa, OK · Mar 6–8</span>
         </div>
 
+        <!-- Search (expandable) -->
+        <div class="search-wrap" id="searchWrap">
+            <input type="text" id="searchInput" placeholder="Search dances, studios..." autocomplete="off">
+            <button class="search-clear" id="searchClear">✕</button>
+        </div>
+
         <!-- Live Stream -->
         <button class="live-btn" id="liveToggleBtn">
             <span class="live-dot"></span>
@@ -619,10 +610,13 @@
             <iframe id="liveStreamFrame" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
 
-        <!-- Day Tabs + Premier Filter -->
+        <!-- Filters -->
         <nav>
-<button class="premier-toggle" id="trackedToggle">Tracked</button>
-            <button class="premier-toggle" id="premierToggle">Premier</button>
+            <button class="my-dances-btn" id="trackedToggle">My Dances</button>
+            <button class="cat-btn" data-cat="Mini">Mini</button>
+            <button class="cat-btn" data-cat="Junior">Junior</button>
+            <button class="cat-btn" data-cat="Teen">Teen</button>
+            <button class="cat-btn" data-cat="Senior">Senior</button>
             <button class="search-btn" id="searchBtn">
                 <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <circle cx="11" cy="11" r="8" stroke-width="2"/>
@@ -630,20 +624,6 @@
                 </svg>
             </button>
         </nav>
-
-        <!-- Search (expandable) -->
-        <div class="search-wrap" id="searchWrap">
-            <input type="text" id="searchInput" placeholder="Search dances, studios..." autocomplete="off">
-            <button class="search-clear" id="searchClear">✕</button>
-        </div>
-
-        <!-- Category filters -->
-        <div class="category-filters">
-            <button class="cat-btn" data-cat="Mini">Mini</button>
-            <button class="cat-btn" data-cat="Junior">Junior</button>
-            <button class="cat-btn" data-cat="Teen">Teen</button>
-            <button class="cat-btn" data-cat="Senior">Senior</button>
-        </div>
         <div class="next-up-bar" id="nextUpBar">
             <div class="next-up-text" id="nextUpText"></div>
         </div>
@@ -672,7 +652,6 @@
         let isOutOfOrder = false;
         let highlightedDances = JSON.parse(localStorage.getItem('highlightedDances') || '[]');
         let activeDay = 'Saturday';
-        let premierOnly = false;
         let trackedOnly = false;
         let searchQuery = '';
         let activeCategory = null;
@@ -688,7 +667,6 @@
         const liveStreamContainer = document.getElementById('liveStreamContainer');
         const liveStreamFrame = document.getElementById('liveStreamFrame');
         const liveChevron = document.getElementById('liveChevron');
-        const premierToggle = document.getElementById('premierToggle');
         const trackedToggle = document.getElementById('trackedToggle');
         const searchBtn = document.getElementById('searchBtn');
         const searchWrap = document.getElementById('searchWrap');
@@ -713,7 +691,7 @@
             renderList();
             setupFirebaseListener();
             setupLiveStream();
-            setupPremierToggle();
+            setupTrackedToggle();
             setupSearch();
             setupAdmin();
             setupJumpButton();
@@ -729,7 +707,6 @@
             for (const key of orderedKeys) {
                 const dance = getDance(key);
                 if (!dance || dance.day !== activeDay) continue;
-                if (premierOnly && !dance.studio.toLowerCase().includes('premier dance')) continue;
                 if (trackedOnly && !highlightedDances.includes(key)) continue;
                 if (activeCategory && !(dance.category || '').startsWith(activeCategory)) continue;
                 if (searchQuery) {
@@ -1071,14 +1048,8 @@
             });
         }
 
-        // --- Day tabs ---
-        // --- Premier toggle ---
-        function setupPremierToggle() {
-            premierToggle.addEventListener('click', () => {
-                premierOnly = !premierOnly;
-                premierToggle.classList.toggle('active', premierOnly);
-                renderList();
-            });
+        // --- My Dances toggle ---
+        function setupTrackedToggle() {
             trackedToggle.addEventListener('click', () => {
                 trackedOnly = !trackedOnly;
                 trackedToggle.classList.toggle('active', trackedOnly);
