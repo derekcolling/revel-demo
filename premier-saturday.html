@@ -468,12 +468,11 @@
         /* Next Up bar */
         .next-up-bar {
             display: none;
+            margin: 0 -20px;
             padding: 14px 20px;
             background: #1a1520;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            position: sticky;
-            top: 0;
-            z-index: 9;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .next-up-bar.visible {
@@ -645,11 +644,10 @@
             <button class="cat-btn" data-cat="Teen">Teen</button>
             <button class="cat-btn" data-cat="Senior">Senior</button>
         </div>
+        <div class="next-up-bar" id="nextUpBar">
+            <div class="next-up-text" id="nextUpText"></div>
+        </div>
     </header>
-
-    <div class="next-up-bar" id="nextUpBar">
-        <div class="next-up-text" id="nextUpText"></div>
-    </div>
 
     <div class="admin-bar" id="adminBar">
         <span class="admin-label">Admin</span>
