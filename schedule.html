@@ -249,7 +249,7 @@
 
         /* Dance List */
         .list {
-            padding: 0 0 100px;
+            padding: 0 0 140px;
         }
 
         .dance-row {
@@ -443,7 +443,7 @@
         /* Jump to Current FAB */
         #jumpToCurrent {
             position: fixed;
-            bottom: 24px;
+            bottom: 90px;
             left: 50%;
             transform: translateX(-50%) translateY(80px);
             padding: 10px 20px;
@@ -463,6 +463,74 @@
 
         #jumpToCurrent.visible {
             transform: translateX(-50%) translateY(0);
+        }
+
+        /* Next Up bar */
+        .next-up-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: none;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            padding-bottom: calc(12px + env(safe-area-inset-bottom));
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            z-index: 30;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .next-up-bar.visible {
+            display: flex;
+        }
+
+        .next-up-count {
+            font-size: 28px;
+            font-weight: 800;
+            color: #254EF0;
+            line-height: 1;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .next-up-count.urgent {
+            color: #FF4D00;
+        }
+
+        .next-up-count.soon {
+            color: #39FF14;
+        }
+
+        .next-up-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .next-up-label {
+            font-size: 10px;
+            color: #666;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .next-up-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .next-up-meta {
+            font-size: 11px;
+            color: #888;
         }
 
         /* Admin bar */
@@ -589,6 +657,15 @@
 
     <button id="jumpToCurrent">Jump to current</button>
 
+    <div class="next-up-bar" id="nextUpBar">
+        <div class="next-up-count" id="nextUpCount">--</div>
+        <div class="next-up-info">
+            <div class="next-up-label" id="nextUpLabel">Next saved dance</div>
+            <div class="next-up-title" id="nextUpTitle">--</div>
+            <div class="next-up-meta" id="nextUpMeta"></div>
+        </div>
+    </div>
+
     <script type="module">
         import { database, ref, onValue, set } from './js/firebase-config.js';
         import { loadSchedule, getDance, dancesAway, getOrderedKeys, getPosition } from './js/schedule.js';
@@ -609,6 +686,11 @@
         const listEl = document.getElementById('list');
         const countEl = document.getElementById('danceCount');
         const jumpBtn = document.getElementById('jumpToCurrent');
+        const nextUpBar = document.getElementById('nextUpBar');
+        const nextUpCount = document.getElementById('nextUpCount');
+        const nextUpLabel = document.getElementById('nextUpLabel');
+        const nextUpTitle = document.getElementById('nextUpTitle');
+        const nextUpMeta = document.getElementById('nextUpMeta');
         const liveToggleBtn = document.getElementById('liveToggleBtn');
         const liveStreamContainer = document.getElementById('liveStreamContainer');
         const liveStreamFrame = document.getElementById('liveStreamFrame');
@@ -694,6 +776,7 @@
                 (highlightedCount > 0 ? ` · <span>${highlightedCount} saved</span>` : '');
 
             updateProximityBadges();
+                updateNextUp();
             updateCurrentDanceRow();
         }
 
@@ -768,6 +851,7 @@
                 countEl.innerHTML = `${totalVisible} dances` +
                     (highlightedCount > 0 ? ` · <span>${highlightedCount} saved</span>` : '');
                 updateProximityBadges();
+                updateNextUp();
             });
 
             return row;
@@ -895,9 +979,59 @@
                     const totalVisible = listEl.querySelectorAll('.dance-row:not(.hidden)').length;
                     countEl.innerHTML = `${totalVisible} dances` +
                         (highlightedCount > 0 ? ` · <span>${highlightedCount} saved</span>` : '');
+                    updateNextUp();
                 });
                 danceEl.appendChild(badge);
             });
+        }
+
+        // --- Next Up sticky bar ---
+        function updateNextUp() {
+            if (!currentDanceKey || highlightedDances.length === 0) {
+                nextUpBar.classList.remove('visible');
+                return;
+            }
+
+            // Find the closest upcoming tracked dance
+            let closest = null;
+            let closestAway = Infinity;
+
+            for (const key of highlightedDances) {
+                const dance = getDance(key);
+                if (!dance) continue;
+                const away = dancesAway(currentDanceKey, key);
+                if (away === null || away < 0) continue;
+                if (away < closestAway) {
+                    closestAway = away;
+                    closest = { key, dance, away };
+                }
+            }
+
+            if (!closest) {
+                nextUpBar.classList.remove('visible');
+                return;
+            }
+
+            nextUpBar.classList.add('visible');
+
+            if (closest.away === 0) {
+                nextUpCount.textContent = 'ON';
+                nextUpCount.className = 'next-up-count urgent';
+                nextUpLabel.textContent = 'On stage now';
+            } else {
+                nextUpCount.textContent = closest.away;
+                nextUpLabel.textContent = closest.away === 1 ? 'dance away' : 'dances away';
+                if (closest.away <= 2) {
+                    nextUpCount.className = 'next-up-count urgent';
+                } else if (closest.away <= 5) {
+                    nextUpCount.className = 'next-up-count soon';
+                } else {
+                    nextUpCount.className = 'next-up-count';
+                }
+            }
+
+            nextUpTitle.textContent = `#${closest.key} — ${closest.dance.routine_title}`;
+            nextUpMeta.textContent = closest.dance.studio;
         }
 
         // --- Jump to Current button ---
