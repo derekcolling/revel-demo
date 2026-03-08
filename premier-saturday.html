@@ -298,10 +298,6 @@
             color: #fff;
         }
 
-        .dance.current-dance .current-label {
-            display: inline-block;
-        }
-
         /* Out-of-order row in the list */
         .dance.current-dance.out-of-order-row {
             background: rgba(250, 204, 21, 0.1);
@@ -310,11 +306,6 @@
 
         .dance.current-dance.out-of-order-row .num {
             color: #facc15;
-        }
-
-        .dance.current-dance.out-of-order-row .current-label {
-            color: #facc15;
-            background: rgba(250, 204, 21, 0.15);
         }
 
         .num {
@@ -378,19 +369,6 @@
 
         .pre-start-msg strong {
             color: #e5e5e5;
-        }
-
-        .current-label {
-            display: none;
-            font-size: 8px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: #254EF0;
-            background: rgba(37, 78, 240, 0.15);
-            padding: 2px 6px;
-            border-radius: 4px;
-            margin-top: 2px;
         }
 
         /* Proximity badge */
@@ -795,14 +773,9 @@
             categoryInfo.className = 'category-info';
             categoryInfo.textContent = cat;
 
-            const currentLabel = document.createElement('div');
-            currentLabel.className = 'current-label';
-            currentLabel.textContent = 'On Stage';
-
             info.appendChild(title);
             info.appendChild(meta);
             info.appendChild(categoryInfo);
-            info.appendChild(currentLabel);
 
             const trackBtn = document.createElement('button');
             trackBtn.className = 'track-btn';
@@ -914,9 +887,13 @@
                 if (away === null) return;
                 if (away < 0) return;
 
-                // Current dance: hide track button
+                // Current dance: show "On Stage" badge
                 if (away === 0) {
+                    const badge = document.createElement('span');
+                    badge.className = 'proximity-badge now';
+                    badge.textContent = 'On Stage';
                     if (trackBtn) trackBtn.style.display = 'none';
+                    danceEl.appendChild(badge);
                     return;
                 }
 
