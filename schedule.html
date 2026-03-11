@@ -50,6 +50,25 @@
             right: 0;
         }
 
+        .demo-toggle-btn {
+            position: absolute;
+            left: 0;
+            font-size: 9px;
+            font-weight: 800;
+            color: #39FF14;
+            letter-spacing: 1px;
+            padding: 4px 8px;
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            border-radius: 4px;
+            background: transparent;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .demo-toggle-btn.active {
+            background: rgba(57, 255, 20, 0.1);
+        }
+
         .logo {
             height: 28px;
         }
@@ -557,6 +576,74 @@
             letter-spacing: 1px;
         }
 
+        /* Demo Control Bar */
+        .demo-bar {
+            display: none;
+            padding: 8px 16px;
+            background: rgba(57, 255, 20, 0.06);
+            border-bottom: 1px solid rgba(57, 255, 20, 0.15);
+            gap: 8px;
+            align-items: center;
+        }
+
+        .demo-bar.visible {
+            display: flex;
+        }
+
+        .demo-label {
+            font-size: 10px;
+            color: #39FF14;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 2px 8px;
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            border-radius: 4px;
+        }
+
+        .demo-btn {
+            padding: 4px 10px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            color: #e5e5e5;
+            font-size: 14px;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .demo-btn:active {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .demo-speed {
+            padding: 4px 8px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            color: #e5e5e5;
+            font-family: inherit;
+            font-size: 11px;
+            cursor: pointer;
+        }
+
+        .demo-progress {
+            margin-left: auto;
+            font-size: 11px;
+            color: #555;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .demo-bar.paused {
+            background: rgba(250, 204, 21, 0.06);
+            border-bottom-color: rgba(250, 204, 21, 0.15);
+        }
+
+        .demo-bar.paused .demo-label {
+            color: #facc15;
+            border-color: rgba(250, 204, 21, 0.3);
+        }
+
         /* Loading state */
         .loading {
             text-align: center;
@@ -570,6 +657,7 @@
 <body>
     <header>
         <div class="header-top">
+            <button class="demo-toggle-btn" id="demoToggleBtn">DEMO</button>
             <div style="display:flex;flex-direction:column;align-items:center">
                 <img src="./62ace49c152a984444341217_Rev Nav Logo.svg" alt="Revel" class="logo">
                 <span class="event-info">Tulsa, OK · Mar 6–8</span>
@@ -590,8 +678,8 @@
 
         <!-- Live Stream -->
         <button class="live-btn" id="liveToggleBtn">
-            <span class="live-dot"></span>
-            Watch Live
+            <span class="live-dot" style="background:#254EF0;animation:none"></span>
+            View Live Stream
             <svg class="live-chevron" id="liveChevron" width="16" height="16" fill="none" stroke="currentColor"
                 viewBox="0 0 24 24">
                 <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
@@ -620,6 +708,19 @@
         <button id="adminSetBtn">Set</button>
     </div>
 
+    <div class="demo-bar" id="demoBar">
+        <span class="demo-label">DEMO</span>
+        <button class="demo-btn" id="demoPauseBtn" title="Pause/Resume">&#x23F8;</button>
+        <button class="demo-btn" id="demoSkipBtn" title="Skip to next">&#x23ED;</button>
+        <select class="demo-speed" id="demoSpeedSelect">
+            <option value="4000">4s</option>
+            <option value="8000">8s</option>
+            <option value="30000">30s</option>
+            <option value="120000" selected>2min</option>
+        </select>
+        <span class="demo-progress" id="demoProgress"></span>
+    </div>
+
     <div class="dance-count" id="danceCount" style="padding: 8px 20px 4px"></div>
     <div class="list" id="list">
         <div class="loading">Loading schedule...</div>
@@ -628,8 +729,7 @@
     <button id="jumpToCurrent">Jump to current</button>
 
     <script type="module">
-        import { database, ref, onValue, set } from './js/firebase-config.js';
-        import { loadSchedule, getDance, dancesAway, getOrderedKeys, getPosition } from './js/schedule.js';
+        import { loadSchedule, getDance, dancesAway, getOrderedKeys, getPosition, getKeyAtPosition } from './js/schedule.js';
 
         // --- State ---
         let currentDanceKey = null;
@@ -641,6 +741,13 @@
         let searchQuery = '';
         let activeCategory = null;
         let currentRowObserver = null;
+
+        // --- Demo Mode State ---
+        let demoInterval = null;
+        let demoRunning = false;
+        let demoPaused = false;
+        let demoSpeed = 120000; // 2 minutes default
+        let dayKeys = [];
 
         // --- DOM refs ---
         const listEl = document.getElementById('list');
@@ -667,19 +774,24 @@
         async function init() {
             await loadSchedule();
 
-            // Auto-detect day
-            const today = new Date().toLocaleDateString('en-US', { weekday: 'long' });
-            if (['Thursday', 'Friday', 'Saturday', 'Sunday'].includes(today)) {
-                activeDay = today;
-            }
+            // Force Friday for demo (304 dances, longest day)
+            activeDay = 'Friday';
+
+            // Build day-specific key list for demo advancement
+            const allKeys = getOrderedKeys();
+            dayKeys = allKeys.filter(k => {
+                const d = getDance(k);
+                return d && d.day === activeDay;
+            });
 
             renderList();
-            setupFirebaseListener();
+            setupDemoMode();
             setupLiveStream();
             setupTrackedToggle();
             setupSearch();
             setupAdmin();
             setupJumpButton();
+            setupDemoControls();
         }
 
         // --- Render dance list ---
@@ -721,7 +833,7 @@
                 if (!currentDanceKey) {
                     const msg = document.createElement('div');
                     msg.className = 'pre-start-msg';
-                    msg.innerHTML = 'Competition starts at <strong>2:30 PM</strong>';
+                    msg.innerHTML = 'Starting demo...';
                     listEl.appendChild(msg);
                 }
                 listEl.appendChild(fragment);
@@ -807,19 +919,127 @@
             return row;
         }
 
-        // --- Firebase listener (read only) ---
-        function setupFirebaseListener() {
-            if (database) {
-                const danceRef = ref(database, 'competitions/revel2026/currentDance');
-                onValue(danceRef, (snapshot) => {
-                    const val = snapshot.val();
-                    if (val) updateCurrentDance(val);
-                });
-            } else {
-                // Fallback to localStorage
-                const saved = localStorage.getItem('danceTrack_currentDance');
-                if (saved) updateCurrentDance(saved);
+        // --- Demo Mode ---
+        function setupDemoMode() {
+            // Filter existing highlights to active day, remove stale ones
+            highlightedDances = highlightedDances.filter(k => {
+                const d = getDance(k);
+                return d && d.day === activeDay;
+            });
+
+            // Seed tracked dances if empty so badges/next-up work out of the box
+            if (highlightedDances.length === 0) {
+                const step = Math.floor(dayKeys.length / 10);
+                for (let i = 2; i < dayKeys.length && highlightedDances.length < 10; i += step) {
+                    highlightedDances.push(dayKeys[i]);
+                }
             }
+            localStorage.setItem('highlightedDances', JSON.stringify(highlightedDances));
+
+            // Start at first dance of the day
+            if (dayKeys.length > 0) {
+                updateCurrentDance(dayKeys[0]);
+            }
+
+            startDemoAdvance();
+        }
+
+        function startDemoAdvance() {
+            if (demoInterval) clearInterval(demoInterval);
+            demoRunning = true;
+            demoPaused = false;
+            updateDemoUI();
+
+            demoInterval = setInterval(() => {
+                if (demoPaused) return;
+                advanceToNextDance();
+            }, demoSpeed);
+        }
+
+        function pauseDemo() {
+            demoPaused = true;
+            updateDemoUI();
+        }
+
+        function resumeDemo() {
+            demoPaused = false;
+            updateDemoUI();
+        }
+
+        function advanceToNextDance() {
+            if (!currentDanceKey) {
+                if (dayKeys.length > 0) updateCurrentDance(dayKeys[0]);
+                return;
+            }
+
+            const dayIdx = dayKeys.indexOf(currentDanceKey);
+
+            if (dayIdx === -1 || dayIdx >= dayKeys.length - 1) {
+                // Reached end of day or invalid key — loop back
+                previousDanceKey = null;
+                currentDanceKey = null;
+                updateCurrentDance(dayKeys[0]);
+                return;
+            }
+
+            updateCurrentDance(dayKeys[dayIdx + 1]);
+        }
+
+        function setDemoSpeed(ms) {
+            demoSpeed = ms;
+            if (demoRunning && !demoPaused) {
+                clearInterval(demoInterval);
+                demoInterval = setInterval(() => {
+                    if (demoPaused) return;
+                    advanceToNextDance();
+                }, demoSpeed);
+            }
+        }
+
+        function updateDemoUI() {
+            const bar = document.getElementById('demoBar');
+            const pauseBtn = document.getElementById('demoPauseBtn');
+            const progress = document.getElementById('demoProgress');
+            if (!bar) return;
+
+            if (demoPaused) {
+                bar.classList.add('paused');
+                pauseBtn.textContent = '\u25B6';
+            } else {
+                bar.classList.remove('paused');
+                pauseBtn.textContent = '\u23F8';
+            }
+
+            const dayIdx = dayKeys.indexOf(currentDanceKey);
+            if (dayIdx !== -1) {
+                progress.textContent = `${dayIdx + 1} of ${dayKeys.length}`;
+            }
+        }
+
+        function setupDemoControls() {
+            const toggleBtn = document.getElementById('demoToggleBtn');
+            const demoBar = document.getElementById('demoBar');
+            const pauseBtn = document.getElementById('demoPauseBtn');
+            const skipBtn = document.getElementById('demoSkipBtn');
+            const speedSelect = document.getElementById('demoSpeedSelect');
+
+            toggleBtn.addEventListener('click', () => {
+                demoBar.classList.toggle('visible');
+                toggleBtn.classList.toggle('active');
+            });
+
+            pauseBtn.addEventListener('click', () => {
+                if (demoPaused) resumeDemo();
+                else pauseDemo();
+            });
+
+            skipBtn.addEventListener('click', () => {
+                advanceToNextDance();
+            });
+
+            speedSelect.addEventListener('change', (e) => {
+                setDemoSpeed(parseInt(e.target.value));
+            });
         }
 
         // --- Update current dance ---
@@ -847,6 +1067,7 @@
 
             // Re-render to hide past dances
             renderList();
+            updateDemoUI();
         }
 
         // --- Highlight the current dance row in the list ---
@@ -1009,7 +1230,7 @@
         function setupLiveStream() {
             let liveOpen = true;
             // Open by default
-            liveStreamFrame.src = 'https://player.restream.io/?token=2ff6dc8313dd4a7a908680e9e66bfd4c&autoplay=true';
+            liveStreamFrame.src = 'https://player.vimeo.com/video/1112290419?background=1';
             liveStreamContainer.style.maxHeight = '300px';
             liveChevron.style.transform = 'rotate(180deg)';
 
@@ -1017,7 +1238,7 @@
                 liveOpen = !liveOpen;
                 if (liveOpen) {
                     if (!liveStreamFrame.src || liveStreamFrame.src === 'about:blank') {
-                        liveStreamFrame.src = 'https://player.restream.io/?token=2ff6dc8313dd4a7a908680e9e66bfd4c&autoplay=true';
+                        liveStreamFrame.src = 'https://player.vimeo.com/video/1112290419?background=1';
                     }
                     liveStreamContainer.style.maxHeight = '300px';
                     liveChevron.style.transform = 'rotate(180deg)';
@@ -1102,10 +1323,8 @@
             adminSetBtn.addEventListener('click', () => {
                 const val = adminDanceInput.value.trim();
                 if (!val) return;
-                if (database) {
-                    const danceRef = ref(database, 'competitions/revel2026/currentDance');
-                    set(danceRef, val);
-                }
+                pauseDemo();
+                updateCurrentDance(val);
                 localStorage.setItem('danceTrack_currentDance', val);
                 adminDanceInput.value = '';
             });
@@ -1126,25 +1345,6 @@
         init();
     </script>
 
-    <script>
-        // Auto-refresh: polls version.json every 60s, reloads if version changes
-        (function() {
-            let currentVersion = null;
-            async function checkVersion() {
-                try {
-                    const res = await fetch('version.json?t=' + Date.now());
-                    const data = await res.json();
-                    if (currentVersion === null) {
-                        currentVersion = data.v;
-                    } else if (data.v !== currentVersion) {
-                        window.location.reload();
-                    }
-                } catch (e) {}
-            }
-            checkVersion();
-            setInterval(checkVersion, 60000);
-        })();
-    </script>
 </body>
 
 </html>
